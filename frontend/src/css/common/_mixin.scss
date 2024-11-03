@@ -1,0 +1,92 @@
+@use './variables' as v;
+
+@mixin sp {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin tb {
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin tb-h {
+    @media screen and (min-width: 1024px) and (max-width: 1279px) {
+        @content;
+    }
+}
+
+@mixin not-sp {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin max-w {
+    @media screen and (min-width: 1440px) {
+        @content;
+    }
+}
+
+
+@mixin height-min {
+    @media screen and (max-height: 840px) and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin fontSize($pcValue, $spValue) {
+    @include not-sp {
+        font-size: min(calc($pcValue / v.$pcWidth * 100vw), calc($pcValue * 1px));
+    }
+    @include sp {
+        font-size: calc($spValue / v.$spWidth * 100vw);
+    }
+}
+
+@mixin width($pcValue, $spValue) {
+    @include not-sp {
+        width: calc($pcValue / v.$pcWidth * 100vw);
+    }
+    @include sp {
+        width: calc($spValue / v.$spWidth * 100vw);
+    }
+}
+
+@mixin widthOnlyPc($value) {
+    width: calc($value / v.$pcWidth * 100vw);
+}
+
+@mixin widthOnlySp($value) {
+    width: calc($value / v.$spWidth * 100vw);
+}
+
+@mixin widthSp100($pcValue) {
+    @include not-sp {
+        width: calc($pcValue / v.$pcWidth * 100vw);
+    }
+    @include sp {
+        width: 100%;
+    }
+}
+
+@mixin height($pcValue, $spValue) {
+    @include not-sp {
+        height: calc($pcValue / v.$pcWidth * 100vw);
+    }
+    @include sp {
+        height: calc($spValue / v.$spWidth * 100vw);
+    }
+}
+
+@mixin hoverAlpha($value) {
+    @include not-sp {
+        transition-property: opacity;
+        transition-duration: 400ms;
+        &:hover {
+            opacity: $value;
+        }
+    }
+}

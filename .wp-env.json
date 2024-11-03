@@ -1,7 +1,7 @@
 {
     "phpVersion": "8.0",
     "mappings": {
-        "wp-content/themes/": "./theme/",
+        "wp-content/themes/": "./themes/",
         "wp-content/plugins": "./plugins/"
     }
 }

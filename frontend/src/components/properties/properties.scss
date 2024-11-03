@@ -1,0 +1,222 @@
+@use '../../css/common/variables' as v;
+@use '../../css/common/mixin' as m;
+
+.properties {
+    .aboutMenu {
+        @include m.not-sp {
+            width: calc(440 / v.$pcWidth * 100vw);
+            margin-top: calc(40 / v.$pcWidth * 100vw);
+            position: sticky;
+            top: calc(100 / v.$pcWidth * 100vw);
+        }
+        @include m.sp {
+            height: calc(80 / v.$spWidth * 100vw);
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        a {
+            @include m.fontSize(16, 24);
+            color: v.$fontColorGold;
+            font-family: v.$fontFamilyYuGothic;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            @include m.not-sp {
+                margin-left: auto;
+                width: calc(223 / v.$pcWidth * 100vw);
+                padding-left: calc(16 / v.$pcWidth * 100vw);
+                min-height: calc(50 / v.$pcWidth * 100vw);
+            }
+            @include m.sp {
+                justify-content: center;
+                background-color: v.$colorBeige;
+                min-height: calc(80 / v.$spWidth * 100vw);
+                text-align: center;
+                &:not(:first-of-type) {
+                    border-top: 1px solid v.$colorGold;
+                }
+                &:last-of-type {
+                    border-left: 1px solid v.$colorGold;
+                }
+            }
+            &::before {
+                content: "▶︎";
+                color: v.$fontColorWineRed;
+                margin-right: 0.5em;
+            }
+            &.-current {
+                @include m.not-sp {
+                    background-color: #fff;
+                }
+            }
+            &.-root {
+                @include m.sp {
+                    width: 100%;
+                }
+            }
+            &:not(.-root) {
+                @include m.sp {
+                    width: 50%;
+                }
+            }
+        }
+        .aboutMenu__toggle {
+            position: absolute;
+            top: calc(15 / v.$spWidth * 100vw);
+            right: calc(24 / v.$spWidth * 100vw);
+            background-color: v.$colorGold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(50 / v.$spWidth * 100vw);
+            height: calc(50 / v.$spWidth * 100vw);
+            &::before,
+            &::after {
+                content: "";
+                background-color: #fff;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+            }
+            &::before {
+                width: calc(24 / v.$spWidth * 100vw);
+                height: calc(4 / v.$spWidth * 100vw);
+            }
+            &::after {
+                width: calc(4 / v.$spWidth * 100vw);
+                height: calc(24 / v.$spWidth * 100vw);
+            }
+        }
+        &.-upper {
+            &.-open {
+                .aboutMenu__toggle {
+                    &::after {
+                        content: normal;
+                    }
+                }
+            }
+            &:not(.-open) {
+                a {
+                    &:not(.-root) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        background-color: v.$colorWhite;
+        @include m.not-sp {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding-top: calc(60 / v.$pcWidth * 100vw);
+        }
+        @include m.sp {
+            padding-top: calc(86 / v.$spWidth * 100vw);
+        }
+        .aboutContent {
+            @include m.not-sp {
+                flex: 1;
+            }
+            .aboutBlock {
+                padding-top: calc(72 / v.$pcWidth * 100vw);
+                padding-right: calc(56 / v.$pcWidth * 100vw);
+                padding-bottom: calc(56 / v.$pcWidth * 100vw);
+                padding-left: calc(56 / v.$pcWidth * 100vw);
+                border-top: 1px solid v.$colorBeige;
+                background-color: #fff;
+                position: relative;
+                @include m.sp {
+                    padding-top: calc(88 / v.$spWidth * 100vw);
+                    padding-right: calc(32 / v.$spWidth * 100vw);
+                    padding-bottom: calc(56 / v.$spWidth * 100vw);
+                    padding-left: calc(32 / v.$spWidth * 100vw);
+                }
+                .block__title {
+                    @include m.fontSize(36, 50);
+                    font-family: v.$fontFamilyYuGothic;
+                }
+                &::before {
+                    content: "";
+                    background-image: url("../images/common/colorful.png");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: 0;
+                    left: calc(60 / v.$pcWidth * 100vw);
+                    @include m.width(55, 117);
+                    @include m.height(37, 48);
+                    @include m.sp {
+                        background-size: cover;
+                    }
+                }
+                &:not(:first-of-type) {
+                    margin-top: calc(50 / v.$pcWidth * 100vw);
+                    @include m.sp {
+                        margin-top: calc(60 / v.$spWidth * 100vw);
+                    }
+                }
+            }
+        }
+        .aboutLink {
+            width: 100%;
+            padding-top: calc(88 / v.$pcWidth * 100vw);
+            padding-bottom: calc(80 / v.$pcWidth * 100vw);
+            @include m.not-sp {
+                display: flex;
+                justify-content: center;
+            }
+            @include m.sp {
+                padding: calc(80 / v.$spWidth * 100vw) calc(40 / v.$spWidth * 100vw);
+            }
+            a {
+                @include m.width(420, 670);
+                @include m.height(80, 100);
+                @include m.fontSize(18, 27);
+                color: v.$fontColorGold;
+                text-decoration: none;
+                font-family: v.$fontFamilyYuGothic;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border: calc(5 / v.$pcWidth * 100vw) solid v.$colorBeige;
+                background-color: #fff;
+                padding-left: calc(32 / v.$pcWidth * 100vw);
+                padding-right: calc(32 / v.$pcWidth * 100vw);
+                @include m.not-sp {
+                    transition-property: background-color;
+                    transition-duration: 400ms;
+                    &:hover {
+                        background-color: v.$colorBeige;
+                    }
+                }
+                @include m.sp {
+                    justify-content: center;
+                    position: relative;
+                }
+                span {
+                    @include m.sp {
+                        position: absolute;
+                        right: calc(40 / v.$spWidth * 100vw);
+                    }
+                }
+                &:not(:first-of-type) {
+                    @include m.not-sp {
+                        margin-left: calc(40 / v.$pcWidth * 100vw);
+                    }
+                    @include m.sp {
+                        margin-top: calc(40 / v.$spWidth * 100vw);
+                    }
+                }
+            }
+        }
+    }
+}

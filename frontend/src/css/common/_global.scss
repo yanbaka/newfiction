@@ -1,0 +1,65 @@
+@use 'ress';
+@use './_variables';
+@use './mixin' as m;
+
+.-hidden-pc {
+    @include m.not-sp {
+        display: none !important;
+    }
+}
+
+.-hidden-sp {
+    @include m.sp {
+        display: none !important;
+    }
+}
+
+.-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.main {
+    /* stylelint-disable-next-line */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+}
+
+html {
+    @include m.not-sp {
+        font-size: calc(100vw * 10 / 1440) !important;
+    }
+
+    @include m.max-w {
+        font-size: calc(10px) !important;
+    }
+
+    @include m.sp {
+        font-size: calc(100vw * 10 / 390) !important;
+    }
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+.-pc {
+    @include m.sp {
+        display: none !important;
+    }
+}
+
+.-sp {
+    @include m.not-sp {
+        display: none !important;
+    }
+}
