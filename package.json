@@ -1,0 +1,18 @@
+{
+  "name": "nichido",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "wp-start": "wp-env start",
+    "wp-update": "wp-env start --update",
+    "wp-stop": "wp-env stop",
+    "wp-destroy": "wp-env destroy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/env": "^10.11.0"
+  }
+}
