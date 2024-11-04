@@ -34,6 +34,11 @@
 				get_template_part('template-parts/properties/filter', null, ['title' => 'エリアから探す', 'taxonomy' => 'properties_area']);
 			?>
 		</div>
+		<div class="property">
+			<?php
+				get_template_part('template-parts/properties/property');
+			?>
+		</div>
 	</div>
 
 </div><!-- /#main -->
