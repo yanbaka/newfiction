@@ -4,6 +4,14 @@
     $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
     $thumbnail = '<img src="' . esc_url($thumbnail_url) . '" alt="">';
     $pods = pods('properties', get_the_ID());
+    $groupValue = $pods->field('group');
+    $groupLabels = array(
+        'new' => '新築',
+        'used' => '中古',
+        'land' => '土地',
+        'condominium' => 'マンション'
+    );
+    $group = $groupLabels[$groupValue];
     $price = $pods->field('price');
     $floor_plan = $pods->field('floor_plan');
     $land_area = $pods->field('land_area');
@@ -18,7 +26,7 @@
     }
     $str = <<< EOM
         <div class="item-head">
-            <div class="item-group"></div>
+            <div class="item-group">{$group}</div>
             <div class="item-title">{$post_title}</div>
         </div>
         <div class="item-body">
@@ -61,8 +69,28 @@
             </div>
         EOM;
     } else {
+        $id = $post -> ID;
+        // 種類
+        $taxonomy_type = wp_get_post_terms($id, 'properties_type');
+        $data_type = '';
+        foreach ( $taxonomy_type as $index => $value ) {
+            $data_type .= ($index === 0) ? $value->slug : ','.$value->slug;
+        };
+        // 沿線
+        $taxonomy_line = wp_get_post_terms($id, 'properties_line');
+        $data_line = '';
+        foreach ( $taxonomy_line as $index => $value ) {
+            $data_line .= ($index === 0) ? $value->slug : ','.$value->slug;
+        };
+        // エリア
+        $taxonomy_area = wp_get_post_terms($id, 'properties_area');
+        $data_area = '';
+        foreach ( $taxonomy_area as $index => $value ) {
+            $data_area .= ($index === 0) ? $value->slug : ','.$value->slug;
+        };
+
         echo <<< EOM
-            <div class="property-head">
+            <div class="property-head" data-type="{$data_type}" data-line="{$data_line}" data-area="{$data_area}">
                 <a class="item" href="{$post_url}">
                     {$str}
                 </a>

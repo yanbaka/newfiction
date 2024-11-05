@@ -2,6 +2,7 @@
 <html lang="ja" dir="ltr">
 <?php
 	include( TEMPLATEPATH . '/inc/head.php' );
+	$title = $post -> post_title;
 ?>
 <?php
 	include( TEMPLATEPATH . '/inc/header.php' ); 
