@@ -28051,6 +28051,52 @@ const filter = (taxonomy, slug) => {
     const index = (0,lodash__WEBPACK_IMPORTED_MODULE_0__.findIndex)(states[taxonomy], { slug });
     states[taxonomy][index].check = !states[taxonomy][index].check;
     console.log(states)
+
+    $('.property .property-head').each((_, element) => {
+        let isHit = true;
+        const type = $(element).data("type");
+        const line = $(element).data("line");
+        const area = $(element).data("area");
+        // 種類チェック
+        $('.filter-item[data-taxonomy="properties_type"] li').each((_, f) => {
+            const slug = $(f).data('slug');
+            const check = $('input', f).prop('checked');
+            if (check) {
+                const bool = type.includes(slug);
+                if (!bool) {
+                    isHit = false;
+                }
+            }
+        });
+        // 沿線チェック
+        $('.filter-item[data-taxonomy="properties_line"] li').each((_, f) => {
+            const slug = $(f).data('slug');
+            const check = $('input', f).prop('checked');
+            if (check) {
+                const bool = line.includes(slug);
+                if (!bool) {
+                    isHit = false;
+                }
+            }
+        });
+        // エリアチェック
+        $('.filter-item[data-taxonomy="properties_area"] li').each((_, f) => {
+            const slug = $(f).data('slug');
+            const check = $('input', f).prop('checked');
+            if (check) {
+                const bool = area.includes(slug);
+                if (!bool) {
+                    isHit = false;
+                }
+            }
+        });
+
+        if (isHit) {
+            $(element).removeClass('-hide');
+        } else {
+            $(element).addClass('-hide');
+        }
+    });
 }
 
 class Main {

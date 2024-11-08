@@ -10,4 +10,8 @@
   --app-height: 100%;
 }
 
+#main .content .property .property-head.-hide {
+  display: none;
+}
+
 /*# sourceMappingURL=properties.css.map*/

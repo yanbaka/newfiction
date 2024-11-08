@@ -1,5 +1,17 @@
 @use '../../css/common/variables' as v;
 @use '../../css/common/mixin' as m;
 
-.properties {
+#main {
+    .content {
+        .filter {
+
+        }
+        .property {
+            .property-head {
+                &.-hide {
+                    display: none;
+                }
+            }
+        }
+    }
 }
