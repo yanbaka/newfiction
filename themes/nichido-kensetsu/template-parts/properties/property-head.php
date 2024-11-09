@@ -36,7 +36,7 @@
                     <tbody>
                         <tr>
                             <th>価格</th>
-                            <td>{$price}</td>
+                            <td class="-price"><span>{$price}</span>万円（税込）</td>
                             <th>間取り</th>
                             <td>{$floor_plan}</td>
                         </tr>

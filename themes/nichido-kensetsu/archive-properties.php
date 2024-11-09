@@ -24,7 +24,7 @@
 	<!-- /cover -->
 </div>
 
-<div id="main">
+<div id="main" class="properties">
 
 	<div class="content">
 		<div class="filter">

@@ -6,7 +6,7 @@
         foreach ( $photos as $file ) {
             $file_url = $file['guid'];
             $file_name = $file['post_title'];
-            echo "<li><img src='{$file_url}' alt='{$file_name}' /></li>";
+            echo "<li><figure><img src='{$file_url}' alt='{$file_name}' /><figcaption>{$file_name}</figcaption></figure></li>";
         }
         echo '</ul></div>';
     };

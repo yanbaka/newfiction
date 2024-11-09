@@ -97,7 +97,7 @@
             foreach ($table as $value) {
                 echo '<tr>';
                 echo '<th>'.$value['title'].'</th>';
-                echo '<th>'.$value['value'].'</th>';
+                echo '<td>'.$value['value'].'</td>';
                 echo '</tr>';
             }
             ?>

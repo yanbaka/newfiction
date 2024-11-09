@@ -85,6 +85,7 @@ module.exports = {
     // cssは拡張子つける
     'properties': [ path.resolve(__dirname, 'src/js/properties.js') ],
     'properties.css': [ path.resolve(__dirname, 'src/css/properties.scss') ],
+    'single-property.css': [ path.resolve(__dirname, 'src/css/single-property.scss') ],
   },
   output: {
     filename: '[name].js',

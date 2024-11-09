@@ -4,9 +4,36 @@
 #main {
     .content {
         .filter {
-
+            .filter-item {
+                border-bottom: 1px solid #ccc;
+                display: flex;
+                .filter-title {
+                    font-size: 2.6rem;
+                    width: 240px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+                .filter-list {
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                    li {
+                        padding-top: 8px;
+                        padding-bottom: 8px;
+                        margin-right: 24px;
+                        label {
+                            font-size: 2.0rem;
+                            cursor: pointer;
+                            input {
+                                margin-right: 8px;
+                            }
+                        }
+                    }
+                }
+            }
         }
         .property {
+            margin-top: 64px;
             .property-head {
                 &.-hide {
                     display: none;

@@ -23,7 +23,7 @@
 	<!-- /cover -->
 </div>
 
-<div id="main">
+<div id="main" class="properties">
 	<div class="content">
 		<?php
 			get_template_part('template-parts/properties/property-head');
@@ -32,7 +32,7 @@
 			get_template_part('template-parts/properties/single-contact');
 			get_template_part('template-parts/properties/single-detail');
 		?>
-		<a href="/properties">一覧に戻る</a>
+		<a class="return" href="/properties">一覧に戻る</a>
 	</div>
 </div><!-- /#main -->
 

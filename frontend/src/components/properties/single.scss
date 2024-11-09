@@ -1,0 +1,110 @@
+@use '../../css/common/variables' as v;
+@use '../../css/common/mixin' as m;
+
+#main {
+    .photo {
+        margin-top: 72px;
+        overflow: hidden;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: -24px;
+            margin-left: -24px;
+            li {
+                margin-top: 24px;
+                padding-left: 24px;
+                width: 20%;
+                figure {
+                    img {
+                        height: 10vw;
+                        max-height: 140px;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                figcaption {
+                    font-size: 1.0rem;
+                }
+            }
+        }
+    }
+    .recommended {
+        margin-top: 72px;
+        h3 {
+            font-size: 2.4rem;
+            border-bottom: 1px solid #ccc;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 16px;
+            padding-left: 32px;
+            padding-right: 32px;
+            li {
+                width: calc(100% / 3);
+                font-size: 2.0rem;
+                text-indent: -1em;
+                padding-left: 1em;
+                &::before {
+                    content: "・";
+                }
+            }
+        }
+    }
+
+    .contact {
+        margin-top: 96px;
+        text-align: center;
+        a {
+            width: 320px;
+            height: 64px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            border: 1px solid #000;
+            font-size: 2.6rem;
+        }
+        .contact-tel {
+            font-size: 2.6rem;
+            margin-top: 16px;
+        }
+    }
+
+    .detail {
+        margin-top: 96px;
+        padding-left: 32px;
+        padding-right: 32px;
+        table {
+            tr {
+                th, td {
+                    background: none;
+                    font-size: 2.0rem;
+                    vertical-align: top;
+                    border-bottom: 1px solid #ccc;
+                    padding: 8px;
+                }
+                th {
+                    color: #000;
+                    text-align: left;
+                }
+                td {
+
+                }
+            }
+        }
+    }
+
+    .return {
+        width: 320px;
+        height: 64px;
+        margin: 96px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        border: 1px solid #000;
+        font-size: 2.6rem;
+    }
+}

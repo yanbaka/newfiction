@@ -21,6 +21,7 @@ add_action('wp_enqueue_scripts', 'add_javascript');
 function register_style() {
   if (!is_admin()) {
     wp_register_style('css_properties', get_bloginfo('template_directory').'/css/properties.css');
+    wp_register_style('css_single_properties', get_bloginfo('template_directory').'/css/single-property.css');
   }
 }
 
