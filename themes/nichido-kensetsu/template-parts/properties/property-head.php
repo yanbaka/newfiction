@@ -24,6 +24,32 @@
             $traffic .= ($index === 0) ? $value : '<br>'.$value;
         }
     }
+    $t = ($groupValue === 'new' || $groupValue === 'used') ?
+    <<< HTML
+        <tr>
+            <th>価格</th>
+            <td class="-price"><span>{$price}</span>万円（税込）</td>
+            <th>間取り</th>
+            <td>{$floor_plan}</td>
+        </tr>
+        <tr>
+            <th>土地面積</th>
+            <td>{$land_area}</td>
+            <th>建物面積</th>
+            <td>{$floor_area}</td>
+        </tr>
+    HTML
+    :
+    <<< HTML
+        <tr>
+            <th>価格</th>
+            <td class="-price" colspan="2"><span>{$price}</span>万円（税込）</td>
+        </tr>
+        <tr>
+            <th>土地面積</th>
+            <td colspan="2">{$land_area}</td>
+        </tr>
+    HTML;
     $str = <<< EOM
         <div class="item-head">
             <div class="item-group">{$group}</div>
@@ -34,18 +60,7 @@
             <div class="item-description">
                 <table>
                     <tbody>
-                        <tr>
-                            <th>価格</th>
-                            <td class="-price"><span>{$price}</span>万円（税込）</td>
-                            <th>間取り</th>
-                            <td>{$floor_plan}</td>
-                        </tr>
-                        <tr>
-                            <th>土地面積</th>
-                            <td>{$land_area}</td>
-                            <th>建物面積</th>
-                            <td>{$floor_area}</td>
-                        </tr>
+                        {$t}
                         <tr>
                             <th>所在</th>
                             <td colspan="3">{$address}</td>

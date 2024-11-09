@@ -5,21 +5,36 @@
     .photo {
         margin-top: 72px;
         overflow: hidden;
+        @include m.sp {
+            margin-top: 40px;
+        }
         ul {
             display: flex;
             flex-wrap: wrap;
             margin-top: -24px;
             margin-left: -24px;
+            @include m.sp {
+                margin-top: -8px;
+                margin-left: -8px;
+            }
             li {
                 margin-top: 24px;
                 padding-left: 24px;
                 width: 20%;
+                @include m.sp {
+                    width: calc(100% / 3);
+                    margin-top: 8px;
+                    padding-left: 8px;
+                }
                 figure {
                     img {
                         height: 10vw;
                         max-height: 140px;
                         width: 100%;
                         object-fit: cover;
+                        @include m.sp {
+                            height: 20vw;
+                        }
                     }
                 }
                 figcaption {
@@ -30,23 +45,39 @@
     }
     .recommended {
         margin-top: 72px;
+        @include m.sp {
+            margin-top: 40px;
+        }
         h3 {
             font-size: 2.4rem;
             border-bottom: 1px solid #ccc;
+            @include m.sp {
+                font-size: 2rem;
+            }
         }
         ul {
-            display: flex;
-            flex-wrap: wrap;
             margin-top: 16px;
-            padding-left: 32px;
-            padding-right: 32px;
+            @include m.not-sp {
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+            @include m.sp {
+                margin-top: 8px;
+            }
             li {
-                width: calc(100% / 3);
                 font-size: 2.0rem;
                 text-indent: -1em;
                 padding-left: 1em;
                 &::before {
                     content: "・";
+                }
+                @include m.not-sp {
+                    width: calc(100% / 3);
+                }
+                @include m.sp {
+                    font-size: 1.6rem;
                 }
             }
         }
@@ -55,6 +86,9 @@
     .contact {
         margin-top: 96px;
         text-align: center;
+        @include m.sp {
+            margin-top: 40px;
+        }
         a {
             width: 320px;
             height: 64px;
@@ -65,17 +99,29 @@
             border-radius: 9999px;
             border: 1px solid #000;
             font-size: 2.6rem;
+            @include m.sp {
+                font-size: 2.0rem;
+            }
         }
         .contact-tel {
             font-size: 2.6rem;
             margin-top: 16px;
+            @include m.sp {
+                font-size: 2.0rem;
+                margin-top: 8px;
+            }
         }
     }
 
     .detail {
         margin-top: 96px;
-        padding-left: 32px;
-        padding-right: 32px;
+        @include m.not-sp {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        @include m.sp {
+            margin-top: 40px;
+        }
         table {
             tr {
                 th, td {
@@ -84,6 +130,9 @@
                     vertical-align: top;
                     border-bottom: 1px solid #ccc;
                     padding: 8px;
+                    @include m.sp {
+                        font-size: 1.6rem;
+                    }
                 }
                 th {
                     color: #000;
@@ -106,5 +155,9 @@
         border-radius: 9999px;
         border: 1px solid #000;
         font-size: 2.6rem;
+        @include m.sp {
+            margin-top: 40px;
+            font-size: 2.0rem;
+        }
     }
 }

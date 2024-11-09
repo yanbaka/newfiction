@@ -6,12 +6,19 @@
         .filter {
             .filter-item {
                 border-bottom: 1px solid #ccc;
-                display: flex;
+                @include m.not-sp {
+                    display: flex;
+                }
                 .filter-title {
                     font-size: 2.6rem;
                     width: 240px;
                     padding-top: 8px;
-                    padding-bottom: 8px;
+                    @include m.not-sp {
+                        padding-bottom: 8px;
+                    }
+                    @include m.sp {
+                        font-size: 2.2rem;
+                    }
                 }
                 .filter-list {
                     display: flex;
@@ -27,6 +34,9 @@
                             input {
                                 margin-right: 8px;
                             }
+                            @include m.sp {
+                                font-size: 1.6rem;
+                            }
                         }
                     }
                 }
@@ -34,6 +44,9 @@
         }
         .property {
             margin-top: 64px;
+            @include m.sp {
+                margin-top: 40px;
+            }
             .property-head {
                 &.-hide {
                     display: none;
