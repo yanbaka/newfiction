@@ -2,6 +2,12 @@
     $post_title = get_the_title();
     $pods = pods('properties', get_the_ID());
     $price = $pods->field('price');
+    $price_unitValue = $pods->field('price_unit');
+    $price_unitLabels = array(
+        'thousand' => '万円',
+        'million' => '億円',
+    );
+    $price_unit = $price_unitLabels[$price_unitValue];
     $address = $pods->field('address');
     $traffics = $pods->field('traffic');
     $traffic = '';
@@ -31,7 +37,7 @@
         ),
         array(
             'title' => '価格',
-            'value' => $price
+            'value' => $price.$price_unit
         ),
         array(
             'title' => '所在地',
@@ -54,7 +60,7 @@
             array_push($table, array('title' => '間取り', 'value' => $floor_plan));
             array_push($table, array('title' => '販売戸数', 'value' => $number_of_units_for_sale));
             array_push($table, array('title' => '総戸数	', 'value' => $total_number_of_units));
-            array_push($table, array('title' => '接道状況・私道負担', 'value' => $total_number_of_units));
+            array_push($table, array('title' => '接道状況・私道負担', 'value' => $road_access_status));
             array_push($table, array('title' => '完成時期（築年月）	', 'value' => $completion_date));
             break;
 
@@ -62,19 +68,19 @@
             array_push($table, array('title' => '建物面積', 'value' => $floor_area));
             array_push($table, array('title' => '築年数', 'value' => $building_age));
             array_push($table, array('title' => '間取り', 'value' => $floor_plan));
-            array_push($table, array('title' => '接道状況・私道負担', 'value' => $total_number_of_units));
+            array_push($table, array('title' => '接道状況・私道負担', 'value' => $road_access_status));
             break;
 
         case 'land':
             array_push($table, array('title' => '販売区画数', 'value' => $number_of_lots_for_sale));
             array_push($table, array('title' => '総区画数', 'value' => $total_number_of_lots));
-            array_push($table, array('title' => '接道状況・私道負担', 'value' => $total_number_of_units));
+            array_push($table, array('title' => '接道状況・私道負担', 'value' => $road_access_status));
             break;
 
         case 'condominium':
             array_push($table, array('title' => '販売区画数', 'value' => $number_of_lots_for_sale));
             array_push($table, array('title' => '総区画数', 'value' => $total_number_of_lots));
-            array_push($table, array('title' => '接道状況・私道負担', 'value' => $total_number_of_units));
+            array_push($table, array('title' => '接道状況・私道負担', 'value' => $road_access_status));
             break;
             
         default:

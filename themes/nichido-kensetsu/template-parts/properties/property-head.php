@@ -13,6 +13,12 @@
     );
     $group = $groupLabels[$groupValue];
     $price = $pods->field('price');
+    $price_unitValue = $pods->field('price_unit');
+    $price_unitLabels = array(
+        'thousand' => '万円',
+        'million' => '億円',
+    );
+    $price_unit = $price_unitLabels[$price_unitValue];
     $floor_plan = $pods->field('floor_plan');
     $land_area = $pods->field('land_area');
     $floor_area = $pods->field('floor_area');
@@ -28,7 +34,7 @@
     <<< HTML
         <tr>
             <th>価格</th>
-            <td class="-price"><span>{$price}</span>万円（税込）</td>
+            <td class="-price"><span>{$price}</span>{$price_unit}</td>
             <th>間取り</th>
             <td>{$floor_plan}</td>
         </tr>
@@ -43,7 +49,7 @@
     <<< HTML
         <tr>
             <th>価格</th>
-            <td class="-price" colspan="2"><span>{$price}</span>万円（税込）</td>
+            <td class="-price" colspan="2"><span>{$price}</span>{$price_unit}</td>
         </tr>
         <tr>
             <th>土地面積</th>

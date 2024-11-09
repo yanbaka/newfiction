@@ -159,7 +159,6 @@
   background: none;
   border-bottom: 1px solid #ccc;
   text-align: left;
-  vertical-align: top;
   font-size: 2rem;
 }
 @media screen and (max-width: 768px) {
