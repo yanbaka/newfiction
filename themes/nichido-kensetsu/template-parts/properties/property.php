@@ -1,8 +1,22 @@
 <?php
     $args = array(
-        'post_type' => array('properties_new', 'properties_used', 'properties_land', 'properties_condomini'),
+        'post_type'      => array('properties_new', 'properties_used', 'properties_land', 'properties_condomini'),
         'posts_per_page' => -1,
-        'post_status' => 'publish',
+        'post_status'    => 'publish',
+        'meta_query'     => array(
+            'relation' => 'OR',
+            array(
+                'key'     => 'update_dt', // Podsで定義したカスタムフィールドのキー
+                'compare' => 'EXISTS',
+            ),
+            array(
+                'key'     => 'update_dt',
+                'compare' => 'NOT EXISTS',
+            ),
+        ),
+        'orderby'        => array(
+            'update_dt' => 'DESC', // 最新の日付順
+        ),
     );
     
     $custom_query = new WP_Query( $args );
