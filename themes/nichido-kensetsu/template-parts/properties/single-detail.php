@@ -1,6 +1,7 @@
 <?php
+    $post_type = get_post_type();
     $post_title = get_the_title();
-    $pods = pods('properties', get_the_ID());
+    $pods = pods($post_type, get_the_ID());
     $price = $pods->field('price');
     $price_unitValue = $pods->field('price_unit');
     $price_unitLabels = array(
@@ -53,8 +54,8 @@
         ),
     );
 
-    switch($group) {
-        case 'new':
+    switch($post_type) {
+        case 'properties_new':
             array_push($table, array('title' => '建物面積', 'value' => $floor_area));
             array_push($table, array('title' => '建築確認番号', 'value' => $building_confirmation_number));
             array_push($table, array('title' => '間取り', 'value' => $floor_plan));
@@ -64,20 +65,20 @@
             array_push($table, array('title' => '完成時期（築年月）	', 'value' => $completion_date));
             break;
 
-        case 'used':
+        case 'properties_used':
             array_push($table, array('title' => '建物面積', 'value' => $floor_area));
             array_push($table, array('title' => '築年数', 'value' => $building_age));
             array_push($table, array('title' => '間取り', 'value' => $floor_plan));
             array_push($table, array('title' => '接道状況・私道負担', 'value' => $road_access_status));
             break;
 
-        case 'land':
+        case 'properties_land':
             array_push($table, array('title' => '販売区画数', 'value' => $number_of_lots_for_sale));
             array_push($table, array('title' => '総区画数', 'value' => $total_number_of_lots));
             array_push($table, array('title' => '接道状況・私道負担', 'value' => $road_access_status));
             break;
 
-        case 'condominium':
+        case 'properties_condomini':
             array_push($table, array('title' => '販売区画数', 'value' => $number_of_lots_for_sale));
             array_push($table, array('title' => '総区画数', 'value' => $total_number_of_lots));
             array_push($table, array('title' => '接道状況・私道負担', 'value' => $road_access_status));

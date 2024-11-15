@@ -9,7 +9,7 @@ function register_js() {
 function add_javascript() {
   register_js();
 
-  if(is_post_type_archive('properties')) {
+  if(is_page('properties')) {
     wp_enqueue_script('js_properties');
   }
 
@@ -28,11 +28,11 @@ function register_style() {
 function add_stylesheet() {
   register_style();
 
-  if(is_post_type_archive('properties')) {
+  if(is_page('properties')) {
     wp_enqueue_style('css_properties');
   }
 
-  if(is_singular('properties')) {
+  if(is_singular(['properties_new', 'properties_used', 'properties_land', 'properties_condomini'])) {
     wp_enqueue_style('css_single_properties');
   }
 }

@@ -1,14 +1,15 @@
 <?php
     $args = array(
-        'post_type' => 'properties',
+        'post_type' => array('properties_new', 'properties_used', 'properties_land', 'properties_condomini'),
         'posts_per_page' => -1,
+        'post_status' => 'publish',
     );
     
     $custom_query = new WP_Query( $args );
 ?>
 
-    <?php if($wp_query->have_posts()): ?>
-        <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
+    <?php if($custom_query->have_posts()): ?>
+        <?php while($custom_query->have_posts()): $custom_query->the_post(); ?>
             <?php
                 get_template_part('template-parts/properties/property-head');
             ?>

@@ -1,17 +1,11 @@
 <?php
+    $post_type = get_post_type();
     $post_url = get_permalink($post -> ID);
     $post_title = get_the_title();
     $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
     $thumbnail = '<img src="' . esc_url($thumbnail_url) . '" alt="">';
-    $pods = pods('properties', get_the_ID());
+    $pods = pods($post_type, get_the_ID());
     $groupValue = $pods->field('group');
-    $groupLabels = array(
-        'new' => '新築',
-        'used' => '中古',
-        'land' => '土地',
-        'condominium' => 'マンション'
-    );
-    $group = $groupLabels[$groupValue];
     $price = $pods->field('price');
     $price_unitValue = $pods->field('price_unit');
     $price_unitLabels = array(
@@ -30,35 +24,43 @@
             $traffic .= ($index === 0) ? $value : '<br>'.$value;
         }
     }
-    $t = ($groupValue === 'new' || $groupValue === 'used') ?
-    <<< HTML
-        <tr>
-            <th>価格</th>
-            <td class="-price"><span>{$price}</span>{$price_unit}</td>
-            <th>間取り</th>
-            <td>{$floor_plan}</td>
-        </tr>
-        <tr>
-            <th>土地面積</th>
-            <td>{$land_area}</td>
-            <th>建物面積</th>
-            <td>{$floor_area}</td>
-        </tr>
-    HTML
-    :
-    <<< HTML
-        <tr>
-            <th>価格</th>
-            <td class="-price" colspan="2"><span>{$price}</span>{$price_unit}</td>
-        </tr>
-        <tr>
-            <th>土地面積</th>
-            <td colspan="2">{$land_area}</td>
-        </tr>
-    HTML;
+    if ($post_type === 'properties_new' || $post_type === 'properties_used') {
+        $t = <<< HTML
+            <tr>
+                <th>価格</th>
+                <td class="-price"><span>{$price}</span>{$price_unit}</td>
+                <th>間取り</th>
+                <td>{$floor_plan}</td>
+            </tr>
+            <tr>
+                <th>土地面積</th>
+                <td>{$land_area}</td>
+                <th>建物面積</th>
+                <td>{$floor_area}</td>
+            </tr>
+        HTML;
+    } elseif ($post_type === 'properties_land') {
+        $t = <<< HTML
+            <tr>
+                <th>価格</th>
+                <td class="-price" colspan="2"><span>{$price}</span>{$price_unit}</td>
+            </tr>
+            <tr>
+                <th>土地面積</th>
+                <td colspan="2">{$land_area}</td>
+            </tr>
+        HTML;
+    } else {
+        $t = <<< HTML
+            <tr>
+                <th>価格</th>
+                <td class="-price" colspan="2"><span>{$price}</span>{$price_unit}</td>
+            </tr>
+        HTML;
+    }
     $str = <<< EOM
         <div class="item-head">
-            <div class="item-group">{$group}</div>
+            <div class="item-group"></div>
             <div class="item-title">{$post_title}</div>
         </div>
         <div class="item-body">
