@@ -1,5 +1,6 @@
 <?php
-    $pods = pods('properties', get_the_ID());
+    $post_type = get_post_type();
+    $pods = pods($post_type, get_the_ID());
     $photos = $pods->field('photo');
     if ( ! empty( $photos ) ) {
         echo '<div class="photo"><ul>';
