@@ -63,10 +63,11 @@ module.exports = {
         },
         {
           test: /\.(gif|png|jpg|jpeg|svg)$/,
-          type: 'asset',
-          parser: {
-            dataUrlCondition: {
-              maxSize: 50 * 1024,
+          type: 'asset/resource',
+          generator: {
+            filename: (pathData) => {
+              const relativePath = pathData.filename.split('src/images/')[1]; // 'src/images/'を除去
+              return `../images/${relativePath}`;
             },
           },
         }
@@ -90,7 +91,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(`${assetsDir}/js`),
-    publicPath: '/',
+    publicPath: '../js/',
     clean: true,
   },
   resolve: {
@@ -117,15 +118,6 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: "jquery"
-    }),
-    new CopyPlugin({
-      patterns: [
-        {
-          context: path.resolve(__dirname, "src/images"),
-          from: `${path.resolve(__dirname, 'src/images/**/*')}`,
-          to: `${path.resolve(__dirname, `${assetsDir}`)}/images`,
-        }
-      ]
     }),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
