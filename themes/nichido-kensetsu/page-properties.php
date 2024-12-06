@@ -24,6 +24,9 @@
 	<!-- /cover -->
 </div>
 
+<div class="visual">
+	<img src="<?=$site_url?>/images/properties/main.jpeg" alt="">
+</div>
 <div id="main" class="properties">
 
 	<div class="content">

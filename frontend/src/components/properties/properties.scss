@@ -1,34 +1,21 @@
 @use '../../css/common/variables' as v;
 @use '../../css/common/mixin' as m;
 
-
-#main {
-    position: relative;
-    &::before,
-    &::after {
+.visual {
+    height: 500px;
+    @include m.sp {
+        height: 250px;
+    }
+    img {
+        height: 100%;
         width: 100%;
-        position: absolute;
-        height: 500px;
-        top: 0;
-        transform: translateY(-100%);
-        pointer-events: none;
-        z-index: -1;
+        object-fit: cover;
+        object-position: bottom;
     }
-    &::before {
-        content: "";
-        background-image: url('../images/properties/main.jpeg');
-        background-size: 100% auto;
-        background-position: center bottom;
-        background-repeat: no-repeat;
-        @include m.sp {
-            background-size: 200% auto;
-        }
-    }
-    &::after {
-        content: "";
-        background-color: #fff;
-        opacity: 0.5;
-    }
+}
+
+#main.properties {
+    margin-top: 0;
     .content {
         .filter {
             .filter-item {
