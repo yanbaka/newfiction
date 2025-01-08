@@ -85,8 +85,10 @@ module.exports = {
   entry: {
     // cssは拡張子つける
     'properties': [ path.resolve(__dirname, 'src/js/properties.js') ],
-    'properties.css': [ path.resolve(__dirname, 'src/css/properties.scss') ],
-    'single-property.css': [ path.resolve(__dirname, 'src/css/single-property.scss') ],
+    'properties.css': [ path.resolve(__dirname, 'src/css/properties.scss')],
+    'single-property.css': [ path.resolve(__dirname, 'src/css/single-property.scss')  ],
+    'single-property': [ path.resolve(__dirname, 'src/js/single-property.js') ],
+    'magnific-popup.css': [ 'magnific-popup/dist/magnific-popup.css'  ],
   },
   output: {
     filename: '[name].js',

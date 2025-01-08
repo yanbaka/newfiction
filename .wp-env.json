@@ -3,5 +3,8 @@
     "mappings": {
         "wp-content/themes/": "./themes/",
         "wp-content/plugins": "./plugins/"
-    }
+    },
+    "config": {
+        "WP_DEBUG": false
+}
 }

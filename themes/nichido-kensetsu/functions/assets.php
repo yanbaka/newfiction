@@ -3,6 +3,7 @@
 function register_js() {
   if (!is_admin()) {
     wp_register_script('js_properties', get_bloginfo('template_directory').'/js/properties.js', array(), false, true);
+    wp_register_script('js_single_property', get_bloginfo('template_directory').'/js/single-property.js', array(), false, true);
   }
 }
 
@@ -11,6 +12,11 @@ function add_javascript() {
 
   if(is_page('properties')) {
     wp_enqueue_script('js_properties');
+  }
+
+
+  if(is_singular(['properties_new', 'properties_used', 'properties_land', 'properties_condomini'])) {
+    wp_enqueue_script('js_single_property');
   }
 
 }
@@ -22,6 +28,7 @@ function register_style() {
   if (!is_admin()) {
     wp_register_style('css_properties', get_bloginfo('template_directory').'/css/properties.css');
     wp_register_style('css_single_properties', get_bloginfo('template_directory').'/css/single-property.css');
+    wp_register_style('css_magnific-popup', get_bloginfo('template_directory').'/css/magnific-popup.css');
   }
 }
 
@@ -34,6 +41,7 @@ function add_stylesheet() {
 
   if(is_singular(['properties_new', 'properties_used', 'properties_land', 'properties_condomini'])) {
     wp_enqueue_style('css_single_properties');
+    wp_enqueue_style('css_magnific-popup');
   }
 }
 add_action('wp_enqueue_scripts', 'add_stylesheet');

@@ -42,6 +42,7 @@
     "jquery": "^3.6.3",
     "jquery.easing": "^1.4.1",
     "lodash": "^4.17.21",
+    "magnific-popup": "^1.2.0",
     "pubsub-js": "^1.9.4",
     "ress": "^5.0.2",
     "ua-parser-js": "^1.0.35",
