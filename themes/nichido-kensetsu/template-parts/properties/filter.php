@@ -5,7 +5,10 @@
     $post_type = 'properties';
 
     // カスタム投稿タイプに関連付けられているタクソノミーを確認
-    $taxonomies = get_object_taxonomies($post_type, 'names');
+
+    // NOTE カスタム投稿プラグインの競合？で取得できないため、直で指定
+    // $taxonomies = get_object_taxonomies($post_type, 'names');
+    $taxonomies = ["properties_type", "properties_line", "properties_area"];
 
     if (in_array($taxonomy, $taxonomies)) {
         // タクソノミーのタームを取得
