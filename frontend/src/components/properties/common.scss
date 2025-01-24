@@ -84,8 +84,19 @@
                         }
                         th {
                             color: #000;
+                            @include m.not-sp {
+                                width: 20%;
+                            }
                         }
                         td {
+                            @include m.not-sp {
+                                width: 30%;
+                            }
+                            &.-colspan {
+                                @include m.not-sp {
+                                    width: 80%;
+                                }
+                            }
                             &.-price {
                                 color: #f00;
                                 span {

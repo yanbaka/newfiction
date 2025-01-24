@@ -43,7 +43,7 @@
         $t = <<< HTML
             <tr>
                 <th>価格</th>
-                <td class="-price" colspan="2"><span>{$price}</span>{$price_unit}</td>
+                <td class="-price -colspan" colspan="2"><span>{$price}</span>{$price_unit}</td>
             </tr>
             <tr>
                 <th>土地面積</th>
@@ -54,7 +54,7 @@
         $t = <<< HTML
             <tr>
                 <th>価格</th>
-                <td class="-price" colspan="2"><span>{$price}</span>{$price_unit}</td>
+                <td class="-price -colspan" colspan="2"><span>{$price}</span>{$price_unit}</td>
             </tr>
         HTML;
     }
