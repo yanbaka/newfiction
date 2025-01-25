@@ -12,7 +12,7 @@
         'thousand' => '万円',
         'million' => '億円',
     );
-    $price_unit = $price_unitLabels[$price_unitValue];
+    $price_unit = $price_unitLabels[$price_unitValue] . '（税込）';
     $floor_plan = $pods->field('floor_plan');
     $land_area = $pods->field('land_area');
     $floor_area = $pods->field('floor_area');

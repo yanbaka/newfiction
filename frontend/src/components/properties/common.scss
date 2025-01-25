@@ -17,7 +17,7 @@
     }
     .content {
         width: calc(1000 / 1280 * 100%);
-        max-width: 1000px;
+        max-width: 1160px;
         margin: 0 auto;
         @include m.sp {
             width: 90%;
