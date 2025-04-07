@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
-/*!****************************!*\
-  !*** ./src/js/projects.js ***!
-  \****************************/
+/*!************************!*\
+  !*** ./src/js/work.js ***!
+  \************************/
 class Main {
     onDOMContentLoaded = () => {
         
@@ -13,4 +13,4 @@ class Main {
   
 /******/ })()
 ;
-//# sourceMappingURL=projects.js.map
+//# sourceMappingURL=work.js.map

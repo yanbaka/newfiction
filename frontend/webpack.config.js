@@ -85,11 +85,12 @@ module.exports = {
   },
   entry: {
     'tailwind.css': [ path.resolve(__dirname, 'src/css/tailwind.css') ],
+    'newfiction.css': [ path.resolve(__dirname, 'src/css/newfiction.scss') ],
     // cssは拡張子つける
-    'projects': [ path.resolve(__dirname, 'src/js/projects.js') ],
-    'projects.css': [ path.resolve(__dirname, 'src/css/projects.scss')],
-    'single-projects.css': [ path.resolve(__dirname, 'src/css/single-projects.scss')  ],
-    'single-projects': [ path.resolve(__dirname, 'src/js/single-projects.js') ],
+    'work': [ path.resolve(__dirname, 'src/js/work.js') ],
+    'work.css': [ path.resolve(__dirname, 'src/css/work.scss')],
+    'single-work.css': [ path.resolve(__dirname, 'src/css/single-work.scss')  ],
+    'single-work': [ path.resolve(__dirname, 'src/js/single-work.js') ],
   },
   output: {
     filename: '[name].js',

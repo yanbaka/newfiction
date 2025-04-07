@@ -1,0 +1,8 @@
+@use '../../css/common/variables' as v;
+
+header {
+    border-top: 12px solid v.$colorRed;
+    ul, a {
+        font-family: v.$fontFragmentMono;
+    }
+}

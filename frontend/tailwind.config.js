@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ["../themes/newfiction/**/*.php"],
   theme: {
     extend: {},
   },

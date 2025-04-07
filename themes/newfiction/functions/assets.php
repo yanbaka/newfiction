@@ -2,21 +2,21 @@
 // js
 function register_js() {
   if (!is_admin()) {
-    wp_register_script('js_projects', get_bloginfo('template_directory').'/js/projects.js', array(), false, true);
-    wp_register_script('js_single_projects', get_bloginfo('template_directory').'/js/single-projects.js', array(), false, true);
+    wp_register_script('js_work', get_bloginfo('template_directory').'/js/work.js', array(), false, true);
+    wp_register_script('js_single_work', get_bloginfo('template_directory').'/js/single-work.js', array(), false, true);
   }
 }
 
 function add_javascript() {
   register_js();
 
-  if(is_archive('projects')) {
-    wp_enqueue_script('projects');
+  if(is_archive('work')) {
+    wp_enqueue_script('work');
   }
 
 
-  if(is_singular(['projects'])) {
-    wp_enqueue_script('js_single_projects');
+  if(is_singular(['work'])) {
+    wp_enqueue_script('js_single_work');
   }
 
 }
@@ -27,26 +27,23 @@ add_action('wp_enqueue_scripts', 'add_javascript');
 function register_style() {
   if (!is_admin()) {
     wp_register_style('css_tailwind', get_bloginfo('template_directory').'/css/tailwind.css');
-    wp_register_style('css_projects', get_bloginfo('template_directory').'/css/projects.css');
-    wp_register_style('css_single_projects', get_bloginfo('template_directory').'/css/single-projects.css');
-    wp_register_style('css_contact', get_bloginfo('template_directory').'/css/contact.css');
+    wp_register_style('css_newfiction', get_bloginfo('template_directory').'/css/newfiction.css');
+    wp_register_style('css_work', get_bloginfo('template_directory').'/css/work.css');
+    wp_register_style('css_single_work', get_bloginfo('template_directory').'/css/single-work.css');
   }
 }
 
 function add_stylesheet() {
   register_style();
   wp_enqueue_style('css_tailwind');
+  wp_enqueue_style('css_newfiction');
 
-  if(is_page('contact')) {
-    wp_enqueue_style('css_contact');
+  if(is_archive('work')) {
+    wp_enqueue_style('css_work');
   }
 
-  if(is_archive('projects')) {
-    wp_enqueue_style('css_projects');
-  }
-
-  if(is_singular(['projects'])) {
-    wp_enqueue_style('css_single_projects');
+  if(is_singular(['work'])) {
+    wp_enqueue_style('css_single_work');
   }
 }
 add_action('wp_enqueue_scripts', 'add_stylesheet');

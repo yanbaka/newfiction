@@ -25,6 +25,10 @@
     <meta property="og:locale" content="ja_JP">
     <meta name="twitter:card" content="summary_large_image">
     <?php wp_head(); ?>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap');
+    </style>
 </head>
 
 <body <?php body_class(); ?>>
+<?php get_template_part('template-parts/global', 'header'); ?>

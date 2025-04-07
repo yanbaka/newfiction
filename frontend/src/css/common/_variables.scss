@@ -7,21 +7,9 @@
 $pcWidth: 1600;
 $spWidth: 750;
 
-$colorBlue: #0011B1;
-$colorWhite: #f6f6f2;
-$colorWhite95: rgba(246 246 242 / 95%);
-$colorGold: #877944;
-$colorBeige: #e0ddcf;
-$colorWineRed: #840e10;
-$colorGold20: rgba(135 121 68 / 20%);
-$colorGoldGradation: linear-gradient(to right, #877944 0%,#dbc466 100%);
-$fontColorGold: #5c583c;
-$fontColorBlack: #000;
-$fontColorWineRed: #840e10;
-$fontColorGray: #a3a3a3;
+$colorRed: #E01A12;
 
-$fontFamilyGoogle: 'Castoro Titling', serif;
-$fontFamilyYuGothic: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+$fontFragmentMono: "Fragment Mono", monospace;
 
 :root {
     --app-height: 100%;

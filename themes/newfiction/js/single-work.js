@@ -12748,9 +12748,9 @@ var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
-/*!***********************************!*\
-  !*** ./src/js/single-projects.js ***!
-  \***********************************/
+/*!*******************************!*\
+  !*** ./src/js/single-work.js ***!
+  \*******************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! magnific-popup */ "./node_modules/magnific-popup/dist/jquery.magnific-popup.js");
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_0__);
@@ -12769,4 +12769,4 @@ class Main {
 
 /******/ })()
 ;
-//# sourceMappingURL=single-projects.js.map
+//# sourceMappingURL=single-work.js.map
