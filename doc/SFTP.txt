@@ -1,0 +1,6 @@
+SSHコマンド
+ ssh client_df7747ba8a_77170@7zb.488.myftpupload.com
+ユーザー名
+ client_df7747ba8a_77170
+パスワード
+ jDxRHBg2FQOpz1

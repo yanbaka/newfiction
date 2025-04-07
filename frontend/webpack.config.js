@@ -13,7 +13,7 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 
 const Dotenv = require('dotenv-webpack');
 
-const themeDir = '../themes/nichido-kensetsu/';
+const themeDir = '../themes/newfiction/';
 const assetsDir = `${themeDir}/`;
 
 module.exports = {
@@ -48,6 +48,7 @@ module.exports = {
                     postcssOptions: {
                       plugins: [
                         ["autoprefixer", { grid: true }],
+                        "tailwindcss",
                       ],
                     },
                   },
@@ -83,12 +84,12 @@ module.exports = {
     ],
   },
   entry: {
+    'tailwind.css': [ path.resolve(__dirname, 'src/css/tailwind.css') ],
     // cssは拡張子つける
-    'properties': [ path.resolve(__dirname, 'src/js/properties.js') ],
-    'properties.css': [ path.resolve(__dirname, 'src/css/properties.scss')],
-    'single-property.css': [ path.resolve(__dirname, 'src/css/single-property.scss')  ],
-    'single-property': [ path.resolve(__dirname, 'src/js/single-property.js') ],
-    'magnific-popup.css': [ 'magnific-popup/dist/magnific-popup.css'  ],
+    'projects': [ path.resolve(__dirname, 'src/js/projects.js') ],
+    'projects.css': [ path.resolve(__dirname, 'src/css/projects.scss')],
+    'single-projects.css': [ path.resolve(__dirname, 'src/css/single-projects.scss')  ],
+    'single-projects': [ path.resolve(__dirname, 'src/js/single-projects.js') ],
   },
   output: {
     filename: '[name].js',
