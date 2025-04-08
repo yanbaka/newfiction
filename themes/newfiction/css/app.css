@@ -1,0 +1,96 @@
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/css/app.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/* major breakpoints */
+@custom-media --sp (max-width: 767px);
+@custom-media --tb (min-width: 768px) and (max-width: 1023px);
+@custom-media --tb-h (min-width: 1024px) and (max-width: 1279px);
+@custom-media --not-sp (min-width: 768px);
+:root {
+  --app-height: 100%;
+}
+
+header {
+  border-top: 12px solid #E01A12;
+}
+header ul, header .language {
+  font-family: "Fragment Mono", monospace;
+}
+
+.contact {
+  width: 696px;
+  position: fixed;
+  bottom: 0;
+  background-color: #16161A;
+  padding: 4rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 48px 32px rgba(0, 0, 0, 0.4);
+}
+.contact .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #E01A12;
+  border-bottom-left-radius: 1.25rem;
+}
+.contact .close span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+}
+.contact .close span::before, .contact .close span::after {
+  content: "";
+  position: absolute;
+  background-color: #FFFFFF;
+}
+.contact .close span::before {
+  width: 1.75rem;
+  height: 2.5px;
+}
+.contact .close span::after {
+  width: 2.5px;
+  height: 1.75rem;
+}
+.contact h2 {
+  color: #F7F7FA;
+  font-size: 3rem;
+}
+.contact .form {
+  margin-top: 1.5rem;
+}
+.contact .form input, .contact .form textarea {
+  width: 100%;
+  background-color: #272729;
+  font-size: 1rem;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  vertical-align: bottom;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.contact .form textarea {
+  height: 10rem;
+  resize: none;
+}
+.contact .submit {
+  background-color: #F7F7FA;
+  width: 100%;
+  font-size: 1rem;
+  color: #16161A;
+  height: 3.25rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+.contact:not(.-show) {
+  transform: translateY(100%);
+}
+
+/*# sourceMappingURL=app.css.map*/

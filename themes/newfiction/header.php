@@ -30,5 +30,5 @@
     </style>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-barba="wrapper">
 <?php get_template_part('template-parts/global', 'header'); ?>
