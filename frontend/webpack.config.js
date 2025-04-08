@@ -8,10 +8,8 @@ const webpack = require('webpack');
 const TerserPlugin = require("terser-webpack-plugin");
 
 const CopyPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const ImageminMozjpeg = require('imagemin-mozjpeg');
-
 const Dotenv = require('dotenv-webpack');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const themeDir = '../themes/newfiction/';
 const assetsDir = `${themeDir}/`;
@@ -78,19 +76,32 @@ module.exports = {
     minimizer: [
       new CssMinimizerPlugin(),
       new TerserPlugin({
-        // LICENSE.txt出力しない
         extractComments: false,
+      }),
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ['gifsicle', { interlaced: false, optimizationLevel: 10, colors: 256 }],
+              ['mozjpeg', { quality: 85, progressive: true }],
+              ['pngquant', { quality: [0.7, 0.85] }],
+              ['svgo']
+            ],
+          },
+        },
       }),
     ],
   },
   entry: {
     'tailwind.css': [ path.resolve(__dirname, 'src/css/tailwind.css') ],
-    'newfiction.css': [ path.resolve(__dirname, 'src/css/newfiction.scss') ],
     // cssは拡張子つける
     'work': [ path.resolve(__dirname, 'src/js/work.js') ],
     'work.css': [ path.resolve(__dirname, 'src/css/work.scss')],
     'single-work.css': [ path.resolve(__dirname, 'src/css/single-work.scss')  ],
     'single-work': [ path.resolve(__dirname, 'src/js/single-work.js') ],
+    'app.css': [ path.resolve(__dirname, 'src/css/app.scss') ],
+    'app': [ path.resolve(__dirname, 'src/js/app.js') ],
   },
   output: {
     filename: '[name].js',
@@ -123,23 +134,14 @@ module.exports = {
       $: 'jquery',
       jQuery: "jquery"
     }),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      plugins: [
-        ImageminMozjpeg({
-          quality: 85,
-          progressive: true,
-        }),
-      ],
-      pngquant: {
-        quality: '70-85',
-      },
-      gifsicle: {
-        interlaced: false,
-        optimizationLevel: 10,
-        colors: 256,
-      },
-      svgo: {}
+    new CopyPlugin({
+      patterns: [
+        {
+          context: path.resolve(__dirname, "src/images"),
+          from: `${path.resolve(__dirname, 'src/images/**/*')}`,
+          to: `${path.resolve(__dirname, `${assetsDir}`)}/images`,
+        }
+      ]
     }),
     new Dotenv(),
   ],
