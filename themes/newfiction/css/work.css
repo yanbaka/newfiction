@@ -10,4 +10,19 @@
   --app-height: 100%;
 }
 
+.copy {
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-weight: 700;
+}
+
+.cards .card:not(:nth-child(3n)) {
+  width: calc(50% - 0.5rem);
+}
+.cards .card img {
+  width: 100%;
+}
+.cards .card .caption {
+  font-size: 15px;
+}
+
 /*# sourceMappingURL=work.css.map*/

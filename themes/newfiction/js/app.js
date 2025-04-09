@@ -6324,13 +6324,19 @@ _barba_core__WEBPACK_IMPORTED_MODULE_0___default().init({
         // 前のページをフェードアウト
         return gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(data.current.container, {
           opacity: 0,
-          duration: 0.5,
+          duration: 0,
+          onComplete: () => {
+            data.current.container.style.display = 'none';
+          },
         });
       },
       enter(data) {
+        const container = data.next.container;
+        container.style.display = 'block';
+        container.style.opacity = 0;
         // 新しいページをフェードイン
-        return gsap__WEBPACK_IMPORTED_MODULE_1__["default"].from(data.next.container, {
-          opacity: 0,
+        return gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(container, {
+          opacity: 1,
           duration: 0.5,
         });
       },

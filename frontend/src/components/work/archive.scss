@@ -1,2 +1,21 @@
 @use '../../css/common/variables' as v;
 @use '../../css/common/mixin' as m;
+
+.copy {
+    font-family: v.$fontIBMPlexSansJP;
+    font-weight: 700;
+}
+
+.cards {
+    .card {
+        &:not(:nth-child(3n)) {
+            width: calc(50% - 0.5rem);
+        }
+        img {
+            width: 100%;
+        }
+        .caption {
+            font-size: 15px;
+        }
+    }
+}

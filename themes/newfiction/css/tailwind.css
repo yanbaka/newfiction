@@ -538,17 +538,32 @@ video {
 .mr-6 {
   margin-right: 1.5rem;
 }
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
 .flex {
   display: flex;
 }
 .w-full {
   width: 100%;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .items-center {
   align-items: center;
 }
 .justify-between {
   justify-content: space-between;
+}
+.p-4 {
+  padding: 1rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -558,9 +573,34 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.pt-12 {
+  padding-top: 3rem;
+}
+.pb-12 {
+  padding-bottom: 3rem;
+}
+.text-\[56px\] {
+  font-size: 56px;
+}
+.text-\[80px\] {
+  font-size: 80px;
+}
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.font-light {
+  font-weight: 300;
+}
+.font-normal {
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=tailwind.css.map*/

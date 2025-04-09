@@ -27,6 +27,7 @@
     <?php wp_head(); ?>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&display=swap');
     </style>
 </head>
 

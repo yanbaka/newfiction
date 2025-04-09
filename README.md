@@ -14,3 +14,9 @@ https://host.godaddy.com/hosting
 ### WordPress
 https://7zb.488.myftpupload.com
 - /doc/SFTP.txt
+
+
+## ページ遷移参考
+- https://www.basicagency.com/
+- https://udatsu.co.jp/journal/
+- https://www.murakamifarm.com/sprout/
