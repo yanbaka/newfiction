@@ -11,11 +11,28 @@
         &:not(:nth-child(3n)) {
             width: calc(50% - 0.5rem);
         }
+        &:nth-child(3n) {
+            width: 100%;
+        }
         img {
             width: 100%;
         }
         .caption {
             font-size: 15px;
         }
+    }
+}
+
+.flow {
+    background-color: v.$colorOffWhite;
+    .num {
+        color: v.$colorRed;
+        font-family: v.$fontFragmentMono;
+    }
+    .title {
+        color: v.$colorBlack;
+    }
+    .text {
+        color: #7A7676;
     }
 }

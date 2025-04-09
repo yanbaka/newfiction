@@ -18,11 +18,28 @@
 .cards .card:not(:nth-child(3n)) {
   width: calc(50% - 0.5rem);
 }
+.cards .card:nth-child(3n) {
+  width: 100%;
+}
 .cards .card img {
   width: 100%;
 }
 .cards .card .caption {
   font-size: 15px;
+}
+
+.flow {
+  background-color: #F7F7FA;
+}
+.flow .num {
+  color: #E01A12;
+  font-family: "Fragment Mono", monospace;
+}
+.flow .title {
+  color: #16161A;
+}
+.flow .text {
+  color: #7A7676;
 }
 
 /*# sourceMappingURL=work.css.map*/

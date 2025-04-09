@@ -91,6 +91,8 @@ header ul, header .language {
 }
 .contact:not(.-show) {
   transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=app.css.map*/
