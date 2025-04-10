@@ -1,0 +1,44 @@
+@use '../../css/common/variables' as v;
+
+footer {
+    .capabilities {
+        background-color: v.$colorBlack;
+        h2 {
+            color: v.$colorWhite;
+        }
+        h3 {
+            color: v.$colorOffWhite;
+            font-size: 13px;
+            font-family: v.$fontFragmentMono;
+        }
+        ul {
+            li {
+                color: v.$colorOffWhite;
+                font-size: 17px;
+            }
+        }
+        .our-services {
+            color: v.$colorBlack;
+            background-color: v.$colorOffWhite;
+            font-size: 17px;
+        }
+    }
+
+    .foot {
+        background-color: v.$colorRed;
+        h2 {
+            color: v.$colorOffWhite;
+        }
+        .logo {
+            margin-top: 160px;
+        }
+        .links {
+            a {
+                color: v.$colorOffWhite;
+            }
+        }
+        small {
+            color: v.$colorOffWhite;
+        }
+    }
+}

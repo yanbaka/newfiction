@@ -17,6 +17,42 @@ header ul, header .language {
   font-family: "Fragment Mono", monospace;
 }
 
+footer .capabilities {
+  background-color: #16161A;
+}
+footer .capabilities h2 {
+  color: #FFFFFF;
+}
+footer .capabilities h3 {
+  color: #F7F7FA;
+  font-size: 13px;
+  font-family: "Fragment Mono", monospace;
+}
+footer .capabilities ul li {
+  color: #F7F7FA;
+  font-size: 17px;
+}
+footer .capabilities .our-services {
+  color: #16161A;
+  background-color: #F7F7FA;
+  font-size: 17px;
+}
+footer .foot {
+  background-color: #E01A12;
+}
+footer .foot h2 {
+  color: #F7F7FA;
+}
+footer .foot .logo {
+  margin-top: 160px;
+}
+footer .foot .links a {
+  color: #F7F7FA;
+}
+footer .foot small {
+  color: #F7F7FA;
+}
+
 .contact {
   width: 696px;
   position: fixed;
