@@ -37,7 +37,7 @@ module.exports = {
                       // 0 => no loaders (default);
                       // 1 => postcss-loader;
                       // 2 => postcss-loader, sass-loader
-                      url: true,
+                      url: false,
                     },
                 },
                 {
@@ -140,7 +140,13 @@ module.exports = {
           context: path.resolve(__dirname, "src/images"),
           from: `${path.resolve(__dirname, 'src/images/**/*')}`,
           to: `${path.resolve(__dirname, `${assetsDir}`)}/images`,
-        }
+        },
+        {
+          context: path.resolve(__dirname, "public/fonts"),
+          from: `**/*`,
+          to: path.resolve(__dirname, `${assetsDir}/fonts`),
+          noErrorOnMissing: true,
+        },
       ]
     }),
     new Dotenv(),
