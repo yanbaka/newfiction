@@ -10,10 +10,10 @@
     <title><?php bloginfo('name'); ?></title>
     <?php get_template_part('template-parts/google/tag-manager'); ?>
     <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" type="text/css">
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/images/og.jpg">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
+    <meta property="og:title" content="<?php bloginfo('name'); ?>">
+    <meta property="og:description" content="<?php bloginfo( 'description' ); ?>">
+    <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/images/opengraph.png">
     <?php if(is_front_page()): ?>
         <meta property="og:url" content="<?php echo home_url();?>">
         <meta property="og:type" content="website">
