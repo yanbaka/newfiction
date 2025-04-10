@@ -5,4 +5,8 @@ header {
     ul, .language {
         font-family: v.$fontFragmentMono;
     }
+
+    #trigger-contact {
+        cursor: pointer;
+    }
 }

@@ -535,6 +535,15 @@ video {
     max-width: 1536px;
   }
 }
+.fixed {
+  position: fixed;
+}
+.left-0 {
+  left: 0px;
+}
+.top-0 {
+  top: 0px;
+}
 .ml-12 {
   margin-left: 3rem;
 }
@@ -561,6 +570,9 @@ video {
 }
 .h-\[52px\] {
   height: 52px;
+}
+.h-full {
+  height: 100%;
 }
 .w-1\/2 {
   width: 50%;
@@ -598,6 +610,9 @@ video {
 .border-\[\#E5E1E1\] {
   --tw-border-opacity: 1;
   border-color: rgb(229 225 225 / var(--tw-border-opacity, 1));
+}
+.p-2 {
+  padding: 0.5rem;
 }
 .px-4 {
   padding-left: 1rem;

@@ -16,6 +16,9 @@ header {
 header ul, header .language {
   font-family: "Fragment Mono", monospace;
 }
+header #trigger-contact {
+  cursor: pointer;
+}
 
 footer .capabilities {
   background-color: #16161A;
@@ -73,6 +76,40 @@ footer .foot small {
   font-weight: 500;
 }
 
+.contact-parent:not(.-show) {
+  pointer-events: none;
+}
+.contact-parent:not(.-show) .contact {
+  transform: translateY(100%) scale(0.6);
+}
+.contact-parent:not(.-show) .background {
+  opacity: 0;
+}
+.contact-parent.-show .contact,
+.contact-parent.-show .background {
+  transition-duration: 1s;
+}
+.contact-parent.-hide {
+  pointer-events: none;
+}
+.contact-parent.-hide .contact,
+.contact-parent.-hide .background {
+  transition-duration: 0.4s;
+}
+.contact-parent.-hide .contact {
+  transform: translateY(-16px);
+  opacity: 0;
+}
+.contact-parent.-hide .background {
+  opacity: 0;
+}
+
+.background {
+  background-color: #16161A;
+  opacity: 0.7;
+  transition-property: opacity;
+}
+
 .contact {
   width: 696px;
   position: fixed;
@@ -86,6 +123,8 @@ footer .foot small {
   border-top-right-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 48px 32px rgba(0, 0, 0, 0.4);
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
 }
 .contact .close {
   position: absolute;
@@ -95,6 +134,7 @@ footer .foot small {
   height: 3.5rem;
   background-color: #E01A12;
   border-bottom-left-radius: 1.25rem;
+  cursor: pointer;
 }
 .contact .close span {
   display: flex;
@@ -144,11 +184,6 @@ footer .foot small {
   height: 3.25rem;
   margin-top: 2rem;
   border-radius: 1rem;
-}
-.contact:not(.-show) {
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
 }
 
 /*# sourceMappingURL=app.css.map*/

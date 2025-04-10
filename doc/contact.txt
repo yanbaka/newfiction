@@ -1,12 +1,8 @@
-<div class="contact">
-    <button class="close"><span></span></button>
-    <h2>Get in touch</h2>
-    <div class="form">
-        [text* your-name autocomplete:name placeholder "Name"] 
-        [text* company placeholder "Company"] 
-        [email* your-email autocomplete:email placeholder "Email address"]
-        [text* your-subject placeholder "Subject"]
-        [textarea your-message placeholder "Inquiry details"]
-    </div>
-    [submit class:submit "Send it"]
+<div class="form">
+    [text* your-name autocomplete:name placeholder "Name"] 
+    [text* company placeholder "Company"] 
+    [email* your-email autocomplete:email placeholder "Email address"]
+    [text* your-subject placeholder "Subject"]
+    [textarea your-message placeholder "Inquiry details"]
 </div>
+[submit class:submit "Send it"]

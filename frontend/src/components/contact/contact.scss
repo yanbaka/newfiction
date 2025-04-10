@@ -1,5 +1,45 @@
 @use '../../css/common/variables' as v;
 
+.contact-parent {
+    &:not(.-show) {
+        pointer-events: none;
+        .contact {
+            transform: translateY(100%) scale(0.6);
+        }
+        .background {
+            opacity: 0;
+        }
+    }
+
+    &.-show {
+        .contact,
+        .background {
+            transition-duration: 1s;
+        }
+    }
+
+    &.-hide {
+        pointer-events: none;
+        .contact,
+        .background {
+            transition-duration: 0.4s;
+        }
+        .contact {
+            transform: translateY(-16px);
+            opacity: 0;
+        }
+        .background {
+            opacity: 0;
+        }
+    }
+}
+
+.background {
+    background-color: v.$colorBlack;
+    opacity: 0.7;
+    transition-property: opacity;
+}
+
 .contact {
     width: 696px;
     position: fixed;
@@ -13,6 +53,8 @@
     border-top-right-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 48px 32px rgba(0, 0, 0, 0.4);
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
     .close {
         position: absolute;
         top: 0;
@@ -21,6 +63,7 @@
         height: 3.5rem;
         background-color: v.$colorRed;
         border-bottom-left-radius: 1.25rem;
+        cursor: pointer;
         span {
             display: flex;
             align-items: center;
@@ -71,10 +114,5 @@
         height: 3.25rem;
         margin-top: 2rem;
         border-radius: 1rem;
-    }
-    &:not(.-show) {
-        transform: translateY(100%);
-        opacity: 0;
-        pointer-events: none;
     }
 }
