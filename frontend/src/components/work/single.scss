@@ -1,2 +1,20 @@
 @use '../../css/common/variables' as v;
 @use '../../css/common/mixin' as m;
+
+.profile {
+    dl {
+        width: 25%;
+        dt {
+            color: #7A7676;
+            font-size: 11px;
+            font-family: v.$fontFragmentMono;
+            margin-bottom: 12px;
+        }
+        dd {
+            color: v.$colorBlack;
+            font-size: 13px;
+            font-family: 'Selecta';
+            font-weight: 400;
+        }
+    }
+}

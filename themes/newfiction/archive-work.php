@@ -11,7 +11,7 @@
     
     $custom_query = new WP_Query( $args );
 ?>
-<main role="main" id="main" class="main"  data-barba="container" data-barba-namespace="work">
+<main role="main" id="main" class="main" data-barba="container" data-barba-namespace="work">
 	<p class="px-4 pt-12 pb-8 text-[56px] copy">実用性と表現力を兼ね備えたプロダクト<p>
 	<div class="px-4 pb-12 cards flex flex-wrap justify-between">
 		<?php if($custom_query->have_posts()): ?>

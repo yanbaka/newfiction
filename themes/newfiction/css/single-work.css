@@ -10,4 +10,20 @@
   --app-height: 100%;
 }
 
+.profile dl {
+  width: 25%;
+}
+.profile dl dt {
+  color: #7A7676;
+  font-size: 11px;
+  font-family: "Fragment Mono", monospace;
+  margin-bottom: 12px;
+}
+.profile dl dd {
+  color: #16161A;
+  font-size: 13px;
+  font-family: "Selecta";
+  font-weight: 400;
+}
+
 /*# sourceMappingURL=single-work.css.map*/
