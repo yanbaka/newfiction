@@ -15,9 +15,77 @@
   font-weight: 700;
   font-family: "IBM Plex Sans JP", sans-serif;
 }
+.main[data-language=ja] .lead {
+  font-size: 2.25rem;
+  font-weight: 500;
+  font-family: "IBM Plex Sans JP", sans-serif;
+}
 .main[data-language=en] .copy {
   font-size: 80px;
   font-family: "Selecta";
+}
+.main .lead {
+  color: #16161A;
+}
+.main .beliefs {
+  background-color: #F7F7FA;
+  font-family: "Selecta";
+}
+.main .beliefs h2 {
+  color: #16161A;
+  width: 32.4519230769%;
+}
+.main .beliefs .description {
+  width: 57.7724358974%;
+}
+.main .beliefs .description dl {
+  display: flex;
+  border-top: 1px solid #E5E1E1;
+  padding-top: 16px;
+  padding-bottom: 48px;
+}
+.main .beliefs .description dl dt {
+  color: #16161A;
+  font-weight: 500;
+  font-size: 28px;
+  width: 41.6088765603%;
+  margin-right: 16px;
+}
+.main .beliefs .description dl dd {
+  color: #7A7676;
+  font-size: 17px;
+  flex: 1;
+}
+.main .flow .summary {
+  width: 32.4519230769%;
+  margin-right: 16px;
+}
+.main .flow .summary .num {
+  color: #E01A12;
+  font-size: 22px;
+  font-family: "Fragment Mono", monospace;
+}
+.main .flow .summary h3 {
+  color: #16161A;
+  font-weight: 500;
+  font-family: "Selecta";
+}
+.main .flow .summary .text {
+  color: #7A7676;
+  font-size: 22px;
+  font-family: "Selecta";
+}
+.main .flow .summary .link {
+  color: #FFFFFF;
+  font-size: 17px;
+  font-family: "Selecta";
+  font-weight: 500;
+  background-color: #E01A12;
+  width: 144px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=about.css.map*/

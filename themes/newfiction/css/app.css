@@ -15,7 +15,8 @@ header {
 }
 header ul, header .language {
   font-family: "Selecta";
-  font-size: var(--text-base);
+  font-size: 1rem;
+  color: #454547;
 }
 header .language a {
   cursor: pointer;

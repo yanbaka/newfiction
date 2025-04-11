@@ -4,7 +4,8 @@ header {
     border-top: 12px solid v.$colorRed;
     ul, .language {
         font-family: v.$fontSelecta;
-        font-size: var(--text-base);
+        font-size: 1rem;
+        color: #454547;
     }
 
     .language {
