@@ -1,4 +1,4 @@
-<div class="contact-parent">
+<div class="contact-parent relative z-10">
     <div class="background w-full h-full fixed top-0 left-0"></div>
     <div class="contact">
         <button class="close"><span></span></button>

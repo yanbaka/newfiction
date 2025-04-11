@@ -2,17 +2,19 @@ import barba from '@barba/core';
 import gsap from 'gsap';
 import PubSub from 'pubsub-js';
 
+import '../components/global/resize';
 import '../components/contact/contact';
+
+const $window = $(window);
 
 class Main {
   onDOMContentLoaded = () => {
-
     barba.init({
       transitions: [
         {
           name: 'fade-transition',
           leave(data) {
-            // 前のページをフェードアウト
+            $window.scrollTop(0);
             return gsap.to(data.current.container, {
               opacity: 0,
               duration: 0,
@@ -34,8 +36,13 @@ class Main {
         },
       ],
     });
+
+    $window.on('resize', () => {
+      PubSub.publish('resize');
+    })
     
     PubSub.publish('init');
+    PubSub.publish('resize');
   };
 }
 

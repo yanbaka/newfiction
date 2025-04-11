@@ -1,4 +1,16 @@
+@use './common/variables' as v;
+
 @use '../components/global/header';
 @use '../components/global/footer';
 @use '../components/global/font';
 @use '../components/contact/contact';
+
+body {
+    padding-top: 87px; // ヘッダーの高さ（75px + 12px）
+}
+
+.main {
+    background-color: v.$colorWhite;
+    position: relative;
+    z-index: 1;
+}

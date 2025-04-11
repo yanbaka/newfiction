@@ -14,7 +14,8 @@ header {
   border-top: 12px solid #E01A12;
 }
 header ul, header .language {
-  font-family: "Fragment Mono", monospace;
+  font-family: "Selecta";
+  font-size: var(--text-base);
 }
 header #trigger-contact {
   cursor: pointer;
@@ -184,6 +185,16 @@ footer .foot small {
   height: 3.25rem;
   margin-top: 2rem;
   border-radius: 1rem;
+}
+
+body {
+  padding-top: 87px;
+}
+
+.main {
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=app.css.map*/

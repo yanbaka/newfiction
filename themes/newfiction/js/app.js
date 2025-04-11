@@ -17362,6 +17362,29 @@ pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('init', () => {
     })
 });
 
+/***/ }),
+
+/***/ "./src/components/global/resize.js":
+/*!*****************************************!*\
+  !*** ./src/components/global/resize.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pubsub-js */ "./node_modules/pubsub-js/src/pubsub.js");
+/* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(pubsub_js__WEBPACK_IMPORTED_MODULE_0__);
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+
+const $body = $('body');
+const $fixedFoot = $('.foot');
+
+pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('resize', () => {
+    const pb = $fixedFoot.innerHeight();
+    $body.css('padding-bottom', pb);
+});
+
 /***/ })
 
 /******/ 	});
@@ -17466,26 +17489,30 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _barba_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @barba/core */ "./node_modules/@barba/core/dist/barba.umd.js");
 /* harmony import */ var _barba_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_barba_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pubsub-js */ "./node_modules/pubsub-js/src/pubsub.js");
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(pubsub_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_contact_contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/contact/contact */ "./src/components/contact/contact.js");
+/* harmony import */ var _components_global_resize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/global/resize */ "./src/components/global/resize.js");
+/* harmony import */ var _components_contact_contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/contact/contact */ "./src/components/contact/contact.js");
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
 
 
 
+
+
+const $window = $(window);
 
 class Main {
   onDOMContentLoaded = () => {
-
     _barba_core__WEBPACK_IMPORTED_MODULE_0___default().init({
       transitions: [
         {
           name: 'fade-transition',
           leave(data) {
-            // 前のページをフェードアウト
-            return gsap__WEBPACK_IMPORTED_MODULE_3__["default"].to(data.current.container, {
+            $window.scrollTop(0);
+            return gsap__WEBPACK_IMPORTED_MODULE_4__["default"].to(data.current.container, {
               opacity: 0,
               duration: 0,
               onComplete: () => {
@@ -17498,7 +17525,7 @@ class Main {
             container.style.display = 'block';
             container.style.opacity = 0;
             // 新しいページをフェードイン
-            return gsap__WEBPACK_IMPORTED_MODULE_3__["default"].to(container, {
+            return gsap__WEBPACK_IMPORTED_MODULE_4__["default"].to(container, {
               opacity: 1,
               duration: 0.5,
             });
@@ -17506,8 +17533,13 @@ class Main {
         },
       ],
     });
+
+    $window.on('resize', () => {
+      pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
+    })
     
     pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('init');
+    pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
   };
 }
 

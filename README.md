@@ -17,6 +17,6 @@ https://7zb.488.myftpupload.com
 
 
 ## ページ遷移参考
-- https://www.basicagency.com/
+- https://www.basicagency.com/case-studies/ocean-spray
 - https://udatsu.co.jp/journal/
 - https://www.murakamifarm.com/sprout/
