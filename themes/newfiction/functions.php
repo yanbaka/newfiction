@@ -4,6 +4,7 @@
  */
 $function_files = [
   '/functions/assets.php',
+  '/functions/language.php',
 ];
 
 foreach ($function_files as $file) {
@@ -15,3 +16,13 @@ foreach ($function_files as $file) {
     trigger_error("`$file`ファイルが見つかりません", E_USER_ERROR);
   }
 }
+
+// rest url
+function generate_js_params() {
+  ?>
+    <script>
+      let ajaxUrl = '<?php echo esc_html(admin_url( 'admin-ajax.php')); ?>';
+    </script>
+  <?php
+  }
+  add_action('wp_head', 'generate_js_params');

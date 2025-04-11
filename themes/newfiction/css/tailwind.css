@@ -541,23 +541,23 @@ video {
 .relative {
   position: relative;
 }
+.bottom-0 {
+  bottom: 0px;
+}
 .left-0 {
   left: 0px;
 }
 .top-0 {
   top: 0px;
 }
-.bottom-0 {
-  bottom: 0px;
+.z-10 {
+  z-index: 10;
 }
 .z-\[1\] {
   z-index: 1;
 }
 .z-\[2\] {
   z-index: 2;
-}
-.z-10 {
-  z-index: 10;
 }
 .ml-12 {
   margin-left: 3rem;
@@ -586,11 +586,11 @@ video {
 .h-\[52px\] {
   height: 52px;
 }
-.h-full {
-  height: 100%;
-}
 .h-\[75px\] {
   height: 75px;
+}
+.h-full {
+  height: 100%;
 }
 .w-1\/2 {
   width: 50%;
@@ -644,10 +644,6 @@ video {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -669,6 +665,12 @@ video {
 .pt-8 {
   padding-top: 2rem;
 }
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+.pt-\[256px\] {
+  padding-top: 256px;
+}
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -688,10 +690,6 @@ video {
 }
 .text-\[80px\] {
   font-size: 80px;
-}
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
 }
 .font-light {
   font-weight: 300;

@@ -30,6 +30,7 @@ function register_style() {
   if (!is_admin()) {
     wp_register_style('css_tailwind', get_bloginfo('template_directory').'/css/tailwind.css');
     wp_register_style('css_app', get_bloginfo('template_directory').'/css/app.css');
+    wp_register_style('css_about', get_bloginfo('template_directory').'/css/about.css');
     wp_register_style('css_work', get_bloginfo('template_directory').'/css/work.css');
     wp_register_style('css_single_work', get_bloginfo('template_directory').'/css/single-work.css');
   }
@@ -39,6 +40,10 @@ function add_stylesheet() {
   register_style();
   wp_enqueue_style('css_tailwind');
   wp_enqueue_style('css_app');
+
+  if(is_page('about')) {
+    wp_enqueue_style('css_about');
+  }
 
   if(is_archive('work')) {
     wp_enqueue_style('css_work');

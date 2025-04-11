@@ -96,6 +96,8 @@ module.exports = {
   entry: {
     'tailwind.css': [ path.resolve(__dirname, 'src/css/tailwind.css') ],
     // cssは拡張子つける
+    'about': [ path.resolve(__dirname, 'src/js/about.js') ],
+    'about.css': [ path.resolve(__dirname, 'src/css/about.scss')],
     'work': [ path.resolve(__dirname, 'src/js/work.js') ],
     'work.css': [ path.resolve(__dirname, 'src/css/work.scss')],
     'single-work.css': [ path.resolve(__dirname, 'src/css/single-work.scss')  ],

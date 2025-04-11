@@ -7,6 +7,12 @@ header {
         font-size: var(--text-base);
     }
 
+    .language {
+        a {
+            cursor: pointer;
+        }
+    }
+
     #trigger-contact {
         cursor: pointer;
     }

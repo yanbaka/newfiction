@@ -1,0 +1,23 @@
+@use '../../css/common/variables' as v;
+@use '../../css/common/mixin' as m;
+
+.copy {
+
+}
+
+.main {
+    &[data-language="ja"] {
+        .copy {
+            font-size: 56px;
+            font-weight: 700;
+            font-family: v.$fontIBMPlexSansJP;
+        }
+    }
+    &[data-language="en"] {
+        .copy {
+            font-size: 80px;
+            font-family: v.$fontSelecta;
+        }
+
+    }
+}

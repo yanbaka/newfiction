@@ -17,6 +17,9 @@ header ul, header .language {
   font-family: "Selecta";
   font-size: var(--text-base);
 }
+header .language a {
+  cursor: pointer;
+}
 header #trigger-contact {
   cursor: pointer;
 }

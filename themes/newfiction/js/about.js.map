@@ -1,0 +1,1 @@
+{"version":3,"file":"about.js","mappings":";;;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,E","sources":["webpack://webpack/./src/js/about.js"],"sourcesContent":["class Main {\n    onDOMContentLoaded = () => {\n        \n    };\n  }\n  \n  const main = new Main();\n  window.addEventListener('DOMContentLoaded', main.onDOMContentLoaded);\n  "],"names":[],"sourceRoot":""}

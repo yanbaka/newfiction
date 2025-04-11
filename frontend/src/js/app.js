@@ -2,6 +2,7 @@ import barba from '@barba/core';
 import gsap from 'gsap';
 import PubSub from 'pubsub-js';
 
+import '../components/global/header';
 import '../components/global/resize';
 import '../components/contact/contact';
 
