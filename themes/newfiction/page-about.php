@@ -1,5 +1,10 @@
 <?php get_header(); ?>
-<main role="main" id="main" class="main" data-barba="container" data-barba-namespace="about" data-language="<?php echo get_language(); ?>">
+<main role="main" id="main" class="main"
+	data-barba="container"
+	data-barba-namespace="about"
+	data-language="<?php echo get_language(); ?>"
+	data-css="<?php echo get_template_directory_uri(); ?>/css/about.css"
+>
 	<p class="px-4 pt-[256px] pb-6 text-[56px] copy">
 		<?php if (get_language() === 'ja'): ?>
 			"異なる"ことは "より良い" よりもより良い。

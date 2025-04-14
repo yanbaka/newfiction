@@ -1,5 +1,10 @@
 <?php get_header(); ?>
-<main role="main" id="main" class="main" data-barba="container" data-barba-namespace="home">
+<main role="main" id="main" class="main"
+	data-barba="container"
+	data-barba-namespace="home"
+	data-css="<?php echo get_template_directory_uri(); ?>/css/top.css"
+	data-js="<?php echo get_template_directory_uri(); ?>/js/top.js"
+>
 	<p class="px-4 pt-[200px] pb-8 text-[80px] bg-white fontSelectaMedium">Product & Brand Design Studio.<br />Based in Tokyo, Working Globally.<p>
 	<div class="h-screen"></div>
 	<div class="h-screen bg-trigger" data-bg-trigger-id="1" data-bg-type="clip"></div>

@@ -14,7 +14,11 @@
 	$linkUrl = $pods->field('link_url');
 	$images = $pods->field('images');
 ?>
-<main role="main" id="main" class="main" data-barba="container" data-barba-namespace="pdp">
+<main role="main" id="main" class="main"
+	data-barba="container"
+	data-barba-namespace="pdp"
+	data-css="<?php echo get_template_directory_uri(); ?>/css/single-work.css"
+>
 	<div class="px-4"><img class="w-full" src="<?php echo $visual_url ?>" alt=""></div>
 	<div class="px-4 pt-8 pb-24">
 		<div class="flex">

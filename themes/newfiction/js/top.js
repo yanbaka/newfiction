@@ -11129,7 +11129,6 @@ pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', (_, $scroll
             } else {
                 imageTarget.css('clip-path', `inset(100% 0% 0% 0%)`)
             }
-            console.log($scrollTop, start);
         }
     });
 });

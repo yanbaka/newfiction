@@ -14,16 +14,16 @@ function add_javascript() {
   wp_enqueue_script('js_app');
 
   if(is_front_page()) {
-    wp_enqueue_script('js_top');
+    // wp_enqueue_script('js_top');
   }
 
   if(is_archive('work')) {
-    wp_enqueue_script('js_work');
+    // wp_enqueue_script('js_work');
   }
 
 
   if(is_singular(['work'])) {
-    wp_enqueue_script('js_single_work');
+    // wp_enqueue_script('js_single_work');
   }
 
 }
@@ -48,19 +48,19 @@ function add_stylesheet() {
   wp_enqueue_style('css_app');
 
   if(is_front_page()) {
-    wp_enqueue_style('css_top');
+    // wp_enqueue_style('css_top');
   }
 
   if(is_page('about')) {
-    wp_enqueue_style('css_about');
+    // wp_enqueue_style('css_about');
   }
 
   if(is_archive('work')) {
-    wp_enqueue_style('css_work');
+    // wp_enqueue_style('css_work');
   }
 
   if(is_singular(['work'])) {
-    wp_enqueue_style('css_single_work');
+    // wp_enqueue_style('css_single_work');
   }
 }
 add_action('wp_enqueue_scripts', 'add_stylesheet');

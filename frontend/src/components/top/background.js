@@ -21,7 +21,6 @@ PubSub.subscribe('scroll', (_, $scrollTop) => {
             } else {
                 imageTarget.css('clip-path', `inset(100% 0% 0% 0%)`)
             }
-            console.log($scrollTop, start);
         }
     });
 });

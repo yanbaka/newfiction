@@ -17546,10 +17546,65 @@ const $window = $(window);
 
 class Main {
   onDOMContentLoaded = () => {
+
+    function loadCSS(href) {
+      if (!href || document.querySelector(`link[href="${href}"]`)) return;
+    
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      link.className = 'page-style';
+      document.head.appendChild(link);
+    }
+    
+    function unloadCSS() {
+      document.querySelectorAll('link.page-style').forEach(link => link.remove());
+    }
+    
+    function loadJS(src, isFirst) {
+      if (!src) return;
+    
+      const script = document.createElement('script');
+      script.src = src;
+      script.className = 'page-script';
+      script.defer = true; // かならずdeferを入れる（順序保証）
+      document.body.appendChild(script);
+
+      if (isFirst) {
+        script.onload = () => {
+          pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('init');
+          pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
+        }
+      }
+    }
+    
+    function unloadJS() {
+      document.querySelectorAll('script.page-script').forEach(script => script.remove());
+    }
+
     _barba_core__WEBPACK_IMPORTED_MODULE_0___default().init({
       transitions: [
         {
-          name: 'fade-transition',
+          name: 'page-resources',
+
+          once(data) {
+            // 初回ページのリソース読み込み
+            const container = data.next.container;
+            loadCSS(container?.getAttribute('data-css'));
+            loadJS(container?.getAttribute('data-js'), true);
+          },
+
+          beforeEnter(data) {
+            // 古いリソースを削除
+            unloadCSS();
+            unloadJS();
+
+            // 新しいリソースを読み込み
+            const container = data.next.container;
+            loadCSS(container?.getAttribute('data-css'));
+            loadJS(container?.getAttribute('data-js'), false);
+          },
+
           leave(data) {
             $window.scrollTop(0);
             return gsap__WEBPACK_IMPORTED_MODULE_5__["default"].to(data.current.container, {
@@ -17581,9 +17636,6 @@ class Main {
     $window.on('scroll', () => {
       pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('scroll', $window.scrollTop());
     })
-    
-    pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('init');
-    pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
   };
 }
 
