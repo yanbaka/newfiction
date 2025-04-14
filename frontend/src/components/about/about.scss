@@ -62,7 +62,6 @@
     .flow {
         .summary {
             width: calc(405 / 1248 * 100%);
-            margin-right: 16px;
             .num {
                 color: v.$colorRed;
                 font-size: 22px;
@@ -89,6 +88,34 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+            }
+        }
+    }
+
+    .profile {
+        .image {
+            width: calc(405 / 1248 * 100%);
+            img {
+                width: calc(300 / 405 * 100%);
+            }
+        }
+        .summary {
+            h3 {
+                font-family: v.$fontSelecta;
+                color: v.$colorBlack;
+            }
+            p {
+                font-family: v.$fontSelecta;
+                color: #7A7676;
+            }
+            ul {
+                li {
+                    a {
+                        color: v.$colorRed;
+                        font-size: 13px;
+                        font-family: v.$fontFragmentMono;
+                    }
+                }
             }
         }
     }

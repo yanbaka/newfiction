@@ -58,7 +58,6 @@
 }
 .main .flow .summary {
   width: 32.4519230769%;
-  margin-right: 16px;
 }
 .main .flow .summary .num {
   color: #E01A12;
@@ -86,6 +85,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.main .profile .image {
+  width: 32.4519230769%;
+}
+.main .profile .image img {
+  width: 74.0740740741%;
+}
+.main .profile .summary h3 {
+  font-family: "Selecta";
+  color: #16161A;
+}
+.main .profile .summary p {
+  font-family: "Selecta";
+  color: #7A7676;
+}
+.main .profile .summary ul li a {
+  color: #E01A12;
+  font-size: 13px;
+  font-family: "Fragment Mono", monospace;
 }
 
 /*# sourceMappingURL=about.css.map*/

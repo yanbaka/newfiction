@@ -33,7 +33,7 @@
 	</div>
 	<div class="flow">
 		<div class="flex px-4 py-16">
-			<div class="summary py-14 flex flex-col justify-between items-start">
+			<div class="summary mr-4 py-14 flex flex-col justify-between items-start">
 				<p class="num">-1 → 0</p>
 				<div>
 					<h3 class="text-5xl">Research & Discovery</h3>
@@ -44,6 +44,19 @@
 			<div class="flex-1">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/about/flow1.png" alt="">
 			</div>
+		</div>
+	</div>
+	<div class="profile px-4 py-24 flex">
+		<div class="image mr-4">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/about/profile.jpg" alt="">
+		</div>
+		<div class="summary flex-1">
+			<h3 class="text-5xl font-medium">Kosuke Futsukaichi</h3>
+			<p class="text-[22px] mt-8">Kosuke is a multicultural designer specializing in product and brand design. Born in Japan but raised between cities in Japan and North America, his identity was shaped in Gilbert, Arizona, where he connected with American culture.After studying design holistically in Vancouver, Canada, Kosuke launched his career as the founding designer at an early-stage startup—an experience that built a strong professional foundation. He later applied his expertise across multiple startups before moving his life to Tokyo for a new adventure.<br />Having spent much of his early life following his father's career moves, Kosuke chose to forge his own path. Recognizing Japan's evolving market—especially the opportunity for growth in corporate digital experiences—he founded his studio, New Fiction, in December 2024. Through New Fiction, Kosuke aims to inspire a new wave that amplifies Japanese excellence on the world stage.</p>
+			<ul class="flex mt-8">
+				<li class="mr-8"><a href="">PORTFOLIO</a></li>
+				<li><a href="">LINKEDIN</a></li>
+			</ul>
 		</div>
 	</div>
 	
