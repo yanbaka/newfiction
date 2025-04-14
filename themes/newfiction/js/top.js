@@ -11095,6 +11095,36 @@ return jQuery;
 
 /***/ }),
 
+/***/ "./src/components/top/background.js":
+/*!******************************************!*\
+  !*** ./src/components/top/background.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pubsub-js */ "./node_modules/pubsub-js/src/pubsub.js");
+/* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(pubsub_js__WEBPACK_IMPORTED_MODULE_0__);
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+
+const $window = $(window);
+
+pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', (_, $scrollTop) => {
+    $('.bg-trigger').each((key, element) => {
+        const triggerTarget = $(element);
+        const triggerTargetId = triggerTarget.data('bg-trigger');
+        const start = triggerTarget.offset().top - $window.height();
+        const end = triggerTarget.offset().top;
+        const p = 1 - ($scrollTop - start) / (end - start);
+
+        const imageTarget = $(`.background-image .background-${triggerTargetId}`);
+        imageTarget.css('clip-path', `inset(${p * 100}% 0% 0% 0%)`)
+    });
+});
+
+/***/ }),
+
 /***/ "./src/components/top/resize.js":
 /*!**************************************!*\
   !*** ./src/components/top/resize.js ***!
@@ -11114,7 +11144,6 @@ const $backgroundImage = $('.background-image');
 
 pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('resize', () => {
     const $heightH = $header.outerHeight();
-    console.log($heightH)
     const $mainH = $main.height();
     $backgroundImage.css('height', $mainH + $heightH);
 });
@@ -11222,6 +11251,8 @@ var __webpack_exports__ = {};
   \***********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_top_resize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/top/resize */ "./src/components/top/resize.js");
+/* harmony import */ var _components_top_background__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/top/background */ "./src/components/top/background.js");
+
 
 
 class Main {

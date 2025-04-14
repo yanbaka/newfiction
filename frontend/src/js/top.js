@@ -1,4 +1,5 @@
 import '../components/top/resize';
+import '../components/top/background';
 
 class Main {
     onDOMContentLoaded = () => {

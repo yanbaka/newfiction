@@ -17577,6 +17577,10 @@ class Main {
     $window.on('resize', () => {
       pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
     })
+
+    $window.on('scroll', () => {
+      pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('scroll', $window.scrollTop());
+    })
     
     pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('init');
     pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');

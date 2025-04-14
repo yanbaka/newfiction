@@ -2,8 +2,8 @@
 <main role="main" id="main" class="main" data-barba="container" data-barba-namespace="home">
 	<p class="px-4 pt-[200px] pb-8 text-[80px] bg-white fontSelectaMedium">Product & Brand Design Studio.<br />Based in Tokyo, Working Globally.<p>
 	<div class="h-screen"></div>
-	<div class="h-screen"></div>
-	<div class="overview px-4 py-[250px] min-h-screen">
+	<div class="h-screen bg-trigger" data-bg-trigger="1" style="background-color: rgba(0, 0, 0, 0.5)"></div>
+	<div class="overview px-4 py-[250px] min-h-screen bg-trigger" data-bg-trigger="2">
 		<p class="lead">日本のデジタルプロダクトとブランドを世界に響く形へ。文化的な感性を大切にしながら、その価値を引き上げます</p>
 		<p class="text mt-4">日本ブランドを世界基準へと磨き上げるときも、海外ブランドの日本市場進出を支援するときも、それぞれの文脈に合わせた最適なアプローチを提供します。</p>
 		<a class="see-the-work rounded-full mt-8">See the work</a>
@@ -13,18 +13,7 @@
 	<div class="overview px-4 py-40">
 		<p class="lead">多様な業界経験を活かし、あらゆる規模の企業と協業。プロダクトとブランドの掛け算で価値を生み出します</p>
 	</div>
-	<div class="h-screen"></div>
+	<div class="h-screen bg-trigger" data-bg-trigger="3"></div>
 </main><!-- /#main -->
-<div class="background-image top-0 absolute z-[1]">
-	<div class="sticky top-[87px] h-[calc(100vh-87px)]">
-		<?php
-			$args = [
-				'pc' => 'top/top_thumbnail1_pc.jpg',
-				'sp' => 'top/top_thumbnail1_sp.jpg',
-				'alt' => '',
-			];
-			include get_template_directory() . '/components/image.php';
-		?>
-	</div>
-</div>
+<?php get_template_part('template-parts/top/background-image'); ?>
 <?php get_footer(); ?>

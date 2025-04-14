@@ -41,6 +41,10 @@ class Main {
     $window.on('resize', () => {
       PubSub.publish('resize');
     })
+
+    $window.on('scroll', () => {
+      PubSub.publish('scroll', $window.scrollTop());
+    })
     
     PubSub.publish('init');
     PubSub.publish('resize');
