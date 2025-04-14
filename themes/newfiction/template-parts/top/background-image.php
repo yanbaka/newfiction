@@ -1,5 +1,5 @@
 <div class="background-image top-0 absolute z-[1]">
-	<div class="sticky top-[87px] h-[calc(100vh-87px)] w-full">
+	<div class="sticky top-0 h-screen w-full">
 		<?php
 			$args = [
 				'pc' => 'top/top_thumbnail1_pc.jpg',

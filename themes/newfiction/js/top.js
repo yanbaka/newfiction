@@ -11113,13 +11113,24 @@ const $window = $(window);
 pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', (_, $scrollTop) => {
     $('.bg-trigger').each((key, element) => {
         const triggerTarget = $(element);
-        const triggerTargetId = triggerTarget.data('bg-trigger');
-        const start = triggerTarget.offset().top - $window.height();
-        const end = triggerTarget.offset().top;
-        const p = 1 - ($scrollTop - start) / (end - start);
+        const triggerTargetId = triggerTarget.data('bg-trigger-id');
+        const triggerTargetType = triggerTarget.data('bg-type');
 
         const imageTarget = $(`.background-image .background-${triggerTargetId}`);
-        imageTarget.css('clip-path', `inset(${p * 100}% 0% 0% 0%)`)
+        if (triggerTargetType === 'clip') {
+            const start = triggerTarget.offset().top - $window.height();
+            const end = triggerTarget.offset().top;
+            const p = 1 - ($scrollTop - start) / (end - start);
+            imageTarget.css('clip-path', `inset(${p * 100}% 0% 0% 0%)`)
+        } else {
+            const start = triggerTarget.offset().top;
+            if ($scrollTop > start) {
+                imageTarget.css('clip-path', `inset(0% 0% 0% 0%)`)
+            } else {
+                imageTarget.css('clip-path', `inset(100% 0% 0% 0%)`)
+            }
+            console.log($scrollTop, start);
+        }
     });
 });
 
