@@ -39,7 +39,7 @@
 					<h3 class="text-5xl">Research & Discovery</h3>
 					<p class="text mt-4">We conduct research and synthesize key findings, to build a strategic foundation that informs the process.</p>
 				</div>
-				<a class="link rounded-full" href="">See the work</a>
+				<a class="see-the-work rounded-full" href="">See the work</a>
 			</div>
 			<div class="flex-1">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/about/flow1.png" alt="">

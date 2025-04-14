@@ -1,6 +1,90 @@
 @use '../../css/common/variables' as v;
 
 .contact-parent {
+
+    .background {
+        background-color: v.$colorBlack;
+        opacity: 0.7;
+        transition-property: opacity;
+    }
+    
+    .contact {
+        width: 696px;
+        position: fixed;
+        bottom: 0;
+        background-color: v.$colorBlack;
+        padding: 4rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 48px 32px rgba(0, 0, 0, 0.4);
+        transition-property: transform, opacity;
+        transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: v.$colorRed;
+            border-bottom-left-radius: 1.25rem;
+            cursor: pointer;
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: rotate(45deg);
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-color: v.$colorWhite;
+                }
+                &::before {
+                    width: 1.75rem;
+                    height: 2.5px;
+                }
+                &::after {
+                    width: 2.5px;
+                    height: 1.75rem;
+                }
+            }
+        }
+        h2 {
+            color: v.$colorOffWhite;
+            font-size: 3rem;
+        }
+        .form {
+            margin-top: 1.5rem;
+            input, textarea {
+                width: 100%;
+                background-color: #272729;
+                font-size: 1rem;
+                padding: 0.75rem;
+                margin-top: 0.5rem;
+                vertical-align: bottom;
+                border-top-left-radius: 0.25rem;
+                border-top-right-radius: 0.25rem;
+            }
+            textarea {
+                height: 10rem;
+                resize: none;
+            }
+        }
+        .submit {
+            background-color: v.$colorOffWhite;
+            width: 100%;
+            font-size: 1rem;
+            color: v.$colorBlack;
+            height: 3.25rem;
+            margin-top: 2rem;
+            border-radius: 1rem;
+        }
+    }
+
     &:not(.-show) {
         pointer-events: none;
         .contact {
@@ -31,88 +115,5 @@
         .background {
             opacity: 0;
         }
-    }
-}
-
-.background {
-    background-color: v.$colorBlack;
-    opacity: 0.7;
-    transition-property: opacity;
-}
-
-.contact {
-    width: 696px;
-    position: fixed;
-    bottom: 0;
-    background-color: v.$colorBlack;
-    padding: 4rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 48px 32px rgba(0, 0, 0, 0.4);
-    transition-property: transform, opacity;
-    transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
-    .close {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 3.5rem;
-        height: 3.5rem;
-        background-color: v.$colorRed;
-        border-bottom-left-radius: 1.25rem;
-        cursor: pointer;
-        span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: rotate(45deg);
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                background-color: v.$colorWhite;
-            }
-            &::before {
-                width: 1.75rem;
-                height: 2.5px;
-            }
-            &::after {
-                width: 2.5px;
-                height: 1.75rem;
-            }
-        }
-    }
-    h2 {
-        color: v.$colorOffWhite;
-        font-size: 3rem;
-    }
-    .form {
-        margin-top: 1.5rem;
-        input, textarea {
-            width: 100%;
-            background-color: #272729;
-            font-size: 1rem;
-            padding: 0.75rem;
-            margin-top: 0.5rem;
-            vertical-align: bottom;
-            border-top-left-radius: 0.25rem;
-            border-top-right-radius: 0.25rem;
-        }
-        textarea {
-            height: 10rem;
-            resize: none;
-        }
-    }
-    .submit {
-        background-color: v.$colorOffWhite;
-        width: 100%;
-        font-size: 1rem;
-        color: v.$colorBlack;
-        height: 3.25rem;
-        margin-top: 2rem;
-        border-radius: 1rem;
     }
 }

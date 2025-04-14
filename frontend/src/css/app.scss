@@ -3,6 +3,7 @@
 @use '../components/global/header';
 @use '../components/global/footer';
 @use '../components/global/font';
+@use '../components/global/ui';
 @use '../components/contact/contact';
 
 body {
@@ -12,5 +13,5 @@ body {
 .main {
     background-color: v.$colorWhite;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }

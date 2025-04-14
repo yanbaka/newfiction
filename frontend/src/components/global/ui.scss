@@ -1,0 +1,14 @@
+@use '../../css/common/variables' as v;
+
+.see-the-work {
+    color: v.$colorWhite;
+    font-size: 17px;
+    font-family: v.$fontSelecta;
+    font-weight: 500;
+    background-color: v.$colorRed;
+    width: 144px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

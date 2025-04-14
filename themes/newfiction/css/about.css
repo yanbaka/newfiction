@@ -74,18 +74,6 @@
   font-size: 22px;
   font-family: "Selecta";
 }
-.main .flow .summary .link {
-  color: #FFFFFF;
-  font-size: 17px;
-  font-family: "Selecta";
-  font-weight: 500;
-  background-color: #E01A12;
-  width: 144px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .main .profile .image {
   width: 32.4519230769%;
 }

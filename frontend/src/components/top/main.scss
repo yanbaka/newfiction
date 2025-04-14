@@ -1,0 +1,21 @@
+@use '../../css/common/variables' as v;
+@use '../../css/common/mixin' as m;
+
+.main {
+    background: none;
+    .overview {
+        background-color: v.$colorWhite;
+        .lead {
+            color: v.$colorBlack;
+            font-family: v.$fontIBMPlexSansJP;
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .text {
+            color: #7A7676;
+            font-family: v.$fontIBMPlexSansJP;
+            font-size: 22px;
+            font-weight: 500;
+        }
+    }
+}

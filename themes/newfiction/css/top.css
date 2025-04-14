@@ -1,0 +1,53 @@
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/css/top.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/* major breakpoints */
+@custom-media --sp (max-width: 767px);
+@custom-media --tb (min-width: 768px) and (max-width: 1023px);
+@custom-media --tb-h (min-width: 1024px) and (max-width: 1279px);
+@custom-media --not-sp (min-width: 768px);
+:root {
+  --app-height: 100%;
+}
+
+.flow {
+  background-color: #F7F7FA;
+}
+.flow .num {
+  color: #E01A12;
+  font-family: "Fragment Mono", monospace;
+}
+.flow .title {
+  color: #16161A;
+}
+.flow .text {
+  color: #7A7676;
+}
+
+.main {
+  background: none;
+}
+.main .overview {
+  background-color: #FFFFFF;
+}
+.main .overview .lead {
+  color: #16161A;
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+.main .overview .text {
+  color: #7A7676;
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.background-image img {
+  width: 100vw;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*# sourceMappingURL=top.css.map*/

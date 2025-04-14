@@ -538,8 +538,14 @@ video {
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
+}
+.sticky {
+  position: sticky;
 }
 .bottom-0 {
   bottom: 0px;
@@ -549,6 +555,9 @@ video {
 }
 .top-0 {
   top: 0px;
+}
+.top-\[87px\] {
+  top: 87px;
 }
 .z-10 {
   z-index: 10;
@@ -571,6 +580,9 @@ video {
 .mr-6 {
   margin-right: 1.5rem;
 }
+.mr-8 {
+  margin-right: 2rem;
+}
 .mt-12 {
   margin-top: 3rem;
 }
@@ -583,11 +595,14 @@ video {
 .mt-8 {
   margin-top: 2rem;
 }
-.mr-8 {
-  margin-right: 2rem;
+.mt-\[100vh\] {
+  margin-top: 100vh;
 }
 .flex {
   display: flex;
+}
+.h-\[300vh\] {
+  height: 300vh;
 }
 .h-\[52px\] {
   height: 52px;
@@ -595,8 +610,23 @@ video {
 .h-\[75px\] {
   height: 75px;
 }
+.h-\[calc\(100vh-87px\)\] {
+  height: calc(100vh - 87px);
+}
 .h-full {
   height: 100%;
+}
+.h-\[400vh\] {
+  height: 400vh;
+}
+.h-\[500vh\] {
+  height: 500vh;
+}
+.h-\[100vh\] {
+  height: 100vh;
+}
+.h-screen {
+  height: 100vh;
 }
 .w-1\/2 {
   width: 50%;
@@ -673,8 +703,19 @@ video {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
+.py-\[250px\] {
+  padding-top: 250px;
+  padding-bottom: 250px;
+}
+.py-40 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
 .pb-12 {
   padding-bottom: 3rem;
+}
+.pb-16 {
+  padding-bottom: 4rem;
 }
 .pb-24 {
   padding-bottom: 6rem;
@@ -699,6 +740,9 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-\[200px\] {
+  padding-top: 200px;
 }
 .pt-\[256px\] {
   padding-top: 256px;

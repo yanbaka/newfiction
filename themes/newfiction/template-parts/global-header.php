@@ -1,4 +1,4 @@
-<header class="w-full px-4 fixed top-0 z-[2] bg-white">
+<header class="w-full px-4 fixed top-0 z-10 bg-white">
     <div class="flex justify-between items-center h-[75px]">
         <h1><a href="<?php echo esc_url(home_url('/')); ?>">New Fiction</a></h1>
         <ul class="flex">
