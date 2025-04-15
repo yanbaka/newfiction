@@ -4,6 +4,7 @@
 	data-barba-namespace="home"
 	data-css="<?php echo get_template_directory_uri(); ?>/css/top.css"
 	data-js="<?php echo get_template_directory_uri(); ?>/js/top.js"
+	data-id="top"
 >
 	<div class="relative z-[2]">
 		<p class="px-4 pt-[200px] pb-8 text-[80px] bg-white flex flex-col fontSelectaMedium">

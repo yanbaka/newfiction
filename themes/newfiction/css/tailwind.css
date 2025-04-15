@@ -664,6 +664,9 @@ video {
 .grow {
   flex-grow: 1;
 }
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .flex-col {
   flex-direction: column;
 }
@@ -805,6 +808,9 @@ video {
 }
 .delay-500 {
   transition-delay: 500ms;
+}
+.delay-300 {
+  transition-delay: 300ms;
 }
 
 /*# sourceMappingURL=tailwind.css.map*/

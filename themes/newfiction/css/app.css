@@ -12,17 +12,36 @@
 
 header {
   border-top: 12px solid #E01A12;
+  transition-property: background-color, border-top-color;
+  transition-duration: 0.5s;
+}
+header h1 a svg path {
+  transition-property: fill;
+  transition-duration: 0.5s;
 }
 header ul, header .language {
   font-family: "Selecta";
   font-size: 1rem;
   color: #454547;
+  transition-property: color;
+  transition-duration: 0.5s;
 }
 header .language a {
   cursor: pointer;
 }
 header #trigger-contact {
   cursor: pointer;
+}
+
+body[data-id=about] header {
+  background-color: #E01A12;
+  border-top-color: #FFFFFF;
+}
+body[data-id=about] header h1 svg path {
+  fill: #FFFFFF;
+}
+body[data-id=about] header ul, body[data-id=about] header .language {
+  color: #FFFFFF;
 }
 
 footer .capabilities {
@@ -108,14 +127,38 @@ footer .foot small {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.28, 0.44, 0.49, 1);
 }
-.main.-show .-enterAnimation span {
+.main .-enterAnimation[data-animation-type=thumbnail] {
+  transition-property: clip-path;
+  transition-timing-function: cubic-bezier(0.72, 0, 0.28, 1);
+}
+.main .-enterAnimation[data-animation-type=thumbnail] img {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.72, 0, 0.28, 1);
+}
+.main.-show .-enterAnimation span[data-animation-type=y] {
   transition-duration: 0.75s;
+}
+.main.-show .-enterAnimation span[data-animation-type=opacity] {
+  transition-duration: 0.65s;
+}
+.main.-show .-enterAnimation[data-animation-type=thumbnail] {
+  clip-path: inset(0% 0% 0% 0%);
+  transition-duration: 1s;
+}
+.main.-show .-enterAnimation[data-animation-type=thumbnail] img {
+  transition-duration: 1.5s;
 }
 .main:not(.-show) .-enterAnimation span[data-animation-type=y] {
   transform: translateY(100%);
 }
 .main:not(.-show) .-enterAnimation span[data-animation-type=opacity] {
   opacity: 0;
+}
+.main:not(.-show) .-enterAnimation[data-animation-type=thumbnail] {
+  clip-path: inset(100% 0% 0% 0%);
+}
+.main:not(.-show) .-enterAnimation[data-animation-type=thumbnail] img {
+  transform: scale(1.25);
 }
 
 .contact-parent .background {

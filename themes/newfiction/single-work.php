@@ -19,6 +19,7 @@
 	data-barba-namespace="pdp"
 	data-css="<?php echo get_template_directory_uri(); ?>/css/single-work.css"
 	data-js="<?php echo get_template_directory_uri(); ?>/js/single-work.js"
+	data-id="pdp"
 >
 	<div class="px-4"><img class="w-full" src="<?php echo $visual_url ?>" alt=""></div>
 	<div class="px-4 pt-8 pb-24">

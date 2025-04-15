@@ -2,10 +2,24 @@
 
 header {
     border-top: 12px solid v.$colorRed;
+    transition-property: background-color, border-top-color;
+    transition-duration: 0.5s;
+    h1 {
+        a {
+            svg {
+                path {
+                    transition-property: fill;
+                    transition-duration: 0.5s;
+                }
+            }
+        }
+    }
     ul, .language {
         font-family: v.$fontSelecta;
         font-size: 1rem;
         color: #454547;
+        transition-property: color;
+        transition-duration: 0.5s;
     }
 
     .language {
@@ -16,5 +30,24 @@ header {
 
     #trigger-contact {
         cursor: pointer;
+    }
+}
+
+body {
+    &[data-id="about"] {
+        header {
+            background-color: v.$colorRed;
+            border-top-color: v.$colorWhite;
+            h1 {
+                svg {
+                    path {
+                        fill: v.$colorWhite;
+                    }
+                }
+            }
+            ul, .language {
+                color: v.$colorWhite;
+            }
+        }
     }
 }

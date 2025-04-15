@@ -24,6 +24,10 @@
   font-size: 80px;
   font-family: "Selecta";
 }
+.main .copy {
+  background-color: #E01A12;
+  color: #FFFFFF;
+}
 .main .lead {
   color: #16161A;
 }

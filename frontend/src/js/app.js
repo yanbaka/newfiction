@@ -7,6 +7,7 @@ import '../components/global/resize';
 import '../components/contact/contact';
 
 const $window = $(window);
+const $body = $('body');
 
 class Main {
   onDOMContentLoaded = () => {
@@ -61,6 +62,9 @@ class Main {
             const container = data.next.container;
             loadCSS(container?.getAttribute('data-css'), container);
             loadJS(container?.getAttribute('data-js'), true);
+
+            const id = $(container).data('id');
+            $body.attr('data-id', id);
           },
 
           beforeEnter(data) {
@@ -72,6 +76,9 @@ class Main {
             const container = data.next.container;
             loadCSS(container?.getAttribute('data-css'), container);
             loadJS(container?.getAttribute('data-js'), false);
+
+            const id = $(container).data('id');
+            $body.attr('data-id', id);
           },
 
           leave(data) {

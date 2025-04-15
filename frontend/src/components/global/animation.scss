@@ -13,12 +13,32 @@
                 transition-timing-function: cubic-bezier(0.28,0.44,0.49,1);
             }
         }
+        &[data-animation-type="thumbnail"] {
+            transition-property: clip-path;
+            transition-timing-function: cubic-bezier(0.72,0,0.28,1);
+            img {
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.72,0,0.28,1);
+            }
+        }
     }
 
     &.-show {
         .-enterAnimation {
             span {
-                transition-duration: 0.75s;
+                &[data-animation-type="y"] {
+                    transition-duration: 0.75s;
+                }
+                &[data-animation-type="opacity"] {
+                    transition-duration: 0.65s;
+                }
+            }
+            &[data-animation-type="thumbnail"] {
+                clip-path: inset(0% 0% 0% 0%);
+                transition-duration: 1s;
+                img {
+                    transition-duration: 1.5s;
+                }
             }
         }
     }
@@ -31,6 +51,12 @@
                 }
                 &[data-animation-type="opacity"] {
                     opacity: 0;
+                }
+            }
+            &[data-animation-type="thumbnail"] {
+                clip-path: inset(100% 0% 0% 0%);
+                img {
+                    transform: scale(1.25);
                 }
             }
         }

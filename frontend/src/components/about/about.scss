@@ -24,6 +24,11 @@
             font-family: v.$fontSelecta;
         }
     }
+
+    .copy {
+        background-color: v.$colorRed;
+        color: v.$colorWhite;
+    }
     
     .lead {
         color: v.$colorBlack;
