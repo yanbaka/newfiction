@@ -2,7 +2,7 @@
 
 .contact-parent {
 
-    .background {
+    .contact-background {
         background-color: v.$colorBlack;
         opacity: 0.7;
         transition-property: opacity;
@@ -90,14 +90,14 @@
         .contact {
             transform: translateY(100%) scale(0.6);
         }
-        .background {
+        .contact-background {
             opacity: 0;
         }
     }
 
     &.-show {
         .contact,
-        .background {
+        .contact-background {
             transition-duration: 0.75s;
         }
     }
@@ -105,14 +105,14 @@
     &.-hide {
         pointer-events: none;
         .contact,
-        .background {
+        .contact-background {
             transition-duration: 0.4s;
         }
         .contact {
             transform: translateY(-16px);
             opacity: 0;
         }
-        .background {
+        .contact-background {
             opacity: 0;
         }
     }

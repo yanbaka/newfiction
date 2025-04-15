@@ -22,6 +22,18 @@ header {
         transition-duration: 0.5s;
     }
 
+    ul {
+        li {
+            a {
+                &.current {
+                    pointer-events: none;
+                    color: v.$colorWhite;
+                    background-color: v.$colorRed;
+                }
+            }
+        }
+    }
+
     .language {
         a {
             cursor: pointer;
@@ -47,6 +59,17 @@ body {
             }
             ul, .language {
                 color: v.$colorWhite;
+            }
+
+            ul {
+                li {
+                    a {
+                        &.current {
+                            color: v.$colorRed;
+                            background-color: v.$colorWhite;
+                        }
+                    }
+                }
             }
         }
     }

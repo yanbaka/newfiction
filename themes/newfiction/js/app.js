@@ -11323,6 +11323,8 @@ __webpack_require__.r(__webpack_exports__);
 const $window = $(window);
 const $body = $('body');
 
+let currentPageId = null;
+
 class Main {
   onDOMContentLoaded = () => {
 
@@ -11379,6 +11381,9 @@ class Main {
 
             const id = $(container).data('id');
             $body.attr('data-id', id);
+
+            $(`.menu a[data-link="${id}"]`).addClass('current');
+            currentPageId = id;
           },
 
           beforeEnter(data) {
@@ -11393,6 +11398,12 @@ class Main {
 
             const id = $(container).data('id');
             $body.attr('data-id', id);
+
+            if (currentPageId) {
+              $(`.menu a[data-link="${currentPageId}"]`).removeClass('current');
+            }
+            $(`.menu a[data-link="${id}"]`).addClass('current');
+            currentPageId = id;
           },
 
           leave(data) {

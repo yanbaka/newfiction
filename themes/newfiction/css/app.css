@@ -26,6 +26,11 @@ header ul, header .language {
   transition-property: color;
   transition-duration: 0.5s;
 }
+header ul li a.current {
+  pointer-events: none;
+  color: #FFFFFF;
+  background-color: #E01A12;
+}
 header .language a {
   cursor: pointer;
 }
@@ -42,6 +47,10 @@ body[data-id=about] header h1 svg path {
 }
 body[data-id=about] header ul, body[data-id=about] header .language {
   color: #FFFFFF;
+}
+body[data-id=about] header ul li a.current {
+  color: #E01A12;
+  background-color: #FFFFFF;
 }
 
 footer .capabilities {
@@ -161,7 +170,7 @@ footer .foot small {
   transform: scale(1.25);
 }
 
-.contact-parent .background {
+.contact-parent .contact-background {
   background-color: #16161A;
   opacity: 0.7;
   transition-property: opacity;
@@ -247,25 +256,25 @@ footer .foot small {
 .contact-parent:not(.-show) .contact {
   transform: translateY(100%) scale(0.6);
 }
-.contact-parent:not(.-show) .background {
+.contact-parent:not(.-show) .contact-background {
   opacity: 0;
 }
 .contact-parent.-show .contact,
-.contact-parent.-show .background {
+.contact-parent.-show .contact-background {
   transition-duration: 0.75s;
 }
 .contact-parent.-hide {
   pointer-events: none;
 }
 .contact-parent.-hide .contact,
-.contact-parent.-hide .background {
+.contact-parent.-hide .contact-background {
   transition-duration: 0.4s;
 }
 .contact-parent.-hide .contact {
   transform: translateY(-16px);
   opacity: 0;
 }
-.contact-parent.-hide .background {
+.contact-parent.-hide .contact-background {
   opacity: 0;
 }
 
