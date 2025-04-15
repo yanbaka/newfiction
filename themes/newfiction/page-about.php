@@ -7,18 +7,22 @@
 	data-js="<?php echo get_template_directory_uri(); ?>/js/about.js"
 >
 	<p class="px-4 pt-[256px] pb-6 text-[56px] copy">
-		<?php if (get_language() === 'ja'): ?>
-			"異なる"ことは "より良い" よりもより良い。
-		<?php else: ?>
-			<i>Different</i> is better than <i>better</i>.
-		<?php endif; ?>
+		<span class="inline-block -enterAnimation"><span data-animation-type="y">
+			<?php if (get_language() === 'ja'): ?>
+				"異なる"ことは "より良い" よりもより良い。
+			<?php else: ?>
+				<i>Different</i> is better than <i>better</i>.
+			<?php endif; ?>
+		</span></span>
 	</p>
 	<p class="px-4 pt-6 pb-24 lead">
-		<?php if (get_language() === 'ja'): ?>
-			New Fictionは、2024年に二日一宏祐が設立した、東京を拠点にグローバルに展開する独立系デザインスタジオです。私たちは、真摯なクラフトと「半分バカ」な姿勢を大切にし、目の前の課題に集中しながらも、創造的な飛躍の余地を確保します。<br />日本のブランドを世界へと送り出すときも、海外のパートナーがターゲット市場に適応する際も、それぞれの文脈に応じたアプローチを採用し、グローバルに響きつつも文化的な感受性を失わないよう心がけています。
-		<?php else: ?>
-			<i>Different</i> is better than <i>better</i>.
-		<?php endif; ?>
+		<span class="inline-block -enterAnimation"><span data-animation-type="opacity" class="delay-500">
+			<?php if (get_language() === 'ja'): ?>
+				New Fictionは、2024年に二日一宏祐が設立した、東京を拠点にグローバルに展開する独立系デザインスタジオです。私たちは、真摯なクラフトと「半分バカ」な姿勢を大切にし、目の前の課題に集中しながらも、創造的な飛躍の余地を確保します。<br />日本のブランドを世界へと送り出すときも、海外のパートナーがターゲット市場に適応する際も、それぞれの文脈に応じたアプローチを採用し、グローバルに響きつつも文化的な感受性を失わないよう心がけています。
+			<?php else: ?>
+				<i>Different</i> is better than <i>better</i>.
+			<?php endif; ?>
+		</span></span>
 	</p>
 	<div class="beliefs flex px-4 py-24">
 		<h2 class="text-5xl font-medium mr-4">Core Beliefs</h2>

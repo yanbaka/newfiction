@@ -1,0 +1,38 @@
+.main {
+
+    .-enterAnimation {
+        overflow: hidden;
+        span {
+            display: block;
+            &[data-animation-type="y"] {
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.5,0,0,1);
+            }
+            &[data-animation-type="opacity"] {
+                transition-property: opacity;
+                transition-timing-function: cubic-bezier(0.28,0.44,0.49,1);
+            }
+        }
+    }
+
+    &.-show {
+        .-enterAnimation {
+            span {
+                transition-duration: 0.75s;
+            }
+        }
+    }
+
+    &:not(.-show) {
+        .-enterAnimation {
+            span {
+                &[data-animation-type="y"] {
+                    transform: translateY(100%);
+                }
+                &[data-animation-type="opacity"] {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

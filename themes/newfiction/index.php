@@ -6,7 +6,10 @@
 	data-js="<?php echo get_template_directory_uri(); ?>/js/top.js"
 >
 	<div class="relative z-[2]">
-		<p class="px-4 pt-[200px] pb-8 text-[80px] bg-white fontSelectaMedium">Product & Brand Design Studio.<br />Based in Tokyo, Working Globally.<p>
+		<p class="px-4 pt-[200px] pb-8 text-[80px] bg-white flex flex-col fontSelectaMedium">
+			<span class="inline-block -enterAnimation"><span data-animation-type="y">Product & Brand Design Studio.</span></span>
+			<span class="inline-block -enterAnimation"><span data-animation-type="y" class="delay-100">Based in Tokyo, Working Globally.</span></span>
+		<p>
 		<div class="h-screen"></div>
 		<div class="h-screen bg-trigger" data-bg-trigger-id="1" data-bg-type="clip"></div>
 		<div class="overview px-4 py-[250px] min-h-screen bg-trigger" data-bg-trigger-id="2" data-bg-type="changer">

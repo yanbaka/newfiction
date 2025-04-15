@@ -17,7 +17,9 @@
 	data-css="<?php echo get_template_directory_uri(); ?>/css/work.css"
 	data-js="<?php echo get_template_directory_uri(); ?>/js/work.js"
 >
-	<p class="px-4 pt-[200px] pb-8 text-[56px] copy">実用性と表現力を兼ね備えたプロダクト<p>
+	<p class="px-4 pt-[200px] pb-8 text-[56px] copy">
+		<span class="inline-block -enterAnimation"><span data-animation-type="y">実用性と表現力を兼ね備えたプロダクト</span></span>
+	<p>
 	<div class="px-4 pb-12 cards flex flex-wrap justify-between">
 		<?php if($custom_query->have_posts()): ?>
 			<?php while($custom_query->have_posts()): $custom_query->the_post(); ?>

@@ -11,7 +11,7 @@ const $window = $(window);
 class Main {
   onDOMContentLoaded = () => {
 
-    function loadCSS(href) {
+    function loadCSS(href, container) {
       if (!href || document.querySelector(`link[href="${href}"]`)) return;
     
       const link = document.createElement('link');
@@ -19,6 +19,10 @@ class Main {
       link.href = href;
       link.className = 'page-style';
       document.head.appendChild(link);
+
+      link.onload = () => {
+        $(container).addClass('-show');
+      }
     }
     
     function unloadCSS() {
@@ -34,12 +38,12 @@ class Main {
       script.defer = true;
       document.body.appendChild(script);
 
-        script.onload = () => {
-          PubSub.publish('resize');
-          PubSub.publish('scroll', $window.scrollTop());
-          if (isFirst) {
-            PubSub.publish('init');
-          }
+      script.onload = () => {
+        PubSub.publish('resize');
+        PubSub.publish('scroll', $window.scrollTop());
+        if (isFirst) {
+          PubSub.publish('init');
+        }
       }
     }
     
@@ -55,7 +59,7 @@ class Main {
           once(data) {
             // 初回ページのリソース読み込み
             const container = data.next.container;
-            loadCSS(container?.getAttribute('data-css'));
+            loadCSS(container?.getAttribute('data-css'), container);
             loadJS(container?.getAttribute('data-js'), true);
           },
 
@@ -66,29 +70,16 @@ class Main {
 
             // 新しいリソースを読み込み
             const container = data.next.container;
-            loadCSS(container?.getAttribute('data-css'));
+            loadCSS(container?.getAttribute('data-css'), container);
             loadJS(container?.getAttribute('data-js'), false);
           },
 
           leave(data) {
             $window.scrollTop(0);
-            return gsap.to(data.current.container, {
-              opacity: 0,
-              duration: 0,
-              onComplete: () => {
-                // data.current.container.style.display = 'none';
-              },
-            });
+            const container = data.current.container;
+            $(container).removeClass('-show');
           },
           enter(data) {
-            // const container = data.next.container;
-            // container.style.display = 'block';
-            // container.style.opacity = 0;
-            // // 新しいページをフェードイン
-            // return gsap.to(container, {
-            //   opacity: 1,
-            //   duration: 0.5,
-            // });
           },
         },
       ],

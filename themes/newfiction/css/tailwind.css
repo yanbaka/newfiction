@@ -604,6 +604,9 @@ video {
 .mt-\[200vh\] {
   margin-top: 200vh;
 }
+.inline-block {
+  display: inline-block;
+}
 .flex {
   display: flex;
 }
@@ -790,6 +793,18 @@ video {
 }
 .underline {
   text-decoration-line: underline;
+}
+.delay-200 {
+  transition-delay: 200ms;
+}
+.delay-100 {
+  transition-delay: 100ms;
+}
+.delay-1000 {
+  transition-delay: 1000ms;
+}
+.delay-500 {
+  transition-delay: 500ms;
 }
 
 /*# sourceMappingURL=tailwind.css.map*/

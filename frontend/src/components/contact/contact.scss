@@ -22,7 +22,7 @@
         overflow: hidden;
         box-shadow: 0 48px 32px rgba(0, 0, 0, 0.4);
         transition-property: transform, opacity;
-        transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+        transition-timing-function: cubic-bezier(0.5,0,0,1);
         .close {
             position: absolute;
             top: 0;
@@ -98,7 +98,7 @@
     &.-show {
         .contact,
         .background {
-            transition-duration: 1s;
+            transition-duration: 0.75s;
         }
     }
 
