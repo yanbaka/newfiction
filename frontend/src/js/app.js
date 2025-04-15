@@ -6,6 +6,8 @@ import '../components/global/header';
 import '../components/global/resize';
 import '../components/contact/contact';
 
+import { preloadImage } from '../components/global/utils';
+
 const $window = $(window);
 
 class Main {
@@ -31,14 +33,14 @@ class Main {
       const script = document.createElement('script');
       script.src = src;
       script.className = 'page-script';
-      script.defer = true; // かならずdeferを入れる（順序保証）
+      script.defer = true;
       document.body.appendChild(script);
 
-      if (isFirst) {
         script.onload = () => {
-          PubSub.publish('init');
           PubSub.publish('resize');
-        }
+          if (isFirst) {
+            PubSub.publish('init');
+          }
       }
     }
     
@@ -75,19 +77,19 @@ class Main {
               opacity: 0,
               duration: 0,
               onComplete: () => {
-                data.current.container.style.display = 'none';
+                // data.current.container.style.display = 'none';
               },
             });
           },
           enter(data) {
-            const container = data.next.container;
-            container.style.display = 'block';
-            container.style.opacity = 0;
-            // 新しいページをフェードイン
-            return gsap.to(container, {
-              opacity: 1,
-              duration: 0.5,
-            });
+            // const container = data.next.container;
+            // container.style.display = 'block';
+            // container.style.opacity = 0;
+            // // 新しいページをフェードイン
+            // return gsap.to(container, {
+            //   opacity: 1,
+            //   duration: 0.5,
+            // });
           },
         },
       ],

@@ -16,7 +16,7 @@
 	data-barba-namespace="work"
 	data-css="<?php echo get_template_directory_uri(); ?>/css/work.css"
 >
-	<p class="px-4 pt-12 pb-8 text-[56px] copy">実用性と表現力を兼ね備えたプロダクト<p>
+	<p class="px-4 pt-[200px] pb-8 text-[56px] copy">実用性と表現力を兼ね備えたプロダクト<p>
 	<div class="px-4 pb-12 cards flex flex-wrap justify-between">
 		<?php if($custom_query->have_posts()): ?>
 			<?php while($custom_query->have_posts()): $custom_query->the_post(); ?>

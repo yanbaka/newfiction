@@ -17423,6 +17423,107 @@ pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('resize', () => {
     $body.css('padding-bottom', pb);
 });
 
+/***/ }),
+
+/***/ "./src/components/global/utils.js":
+/*!****************************************!*\
+  !*** ./src/components/global/utils.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getQuery: () => (/* binding */ getQuery),
+/* harmony export */   getQueryName: () => (/* binding */ getQueryName),
+/* harmony export */   preloadAssets: () => (/* binding */ preloadAssets),
+/* harmony export */   preloadImage: () => (/* binding */ preloadImage),
+/* harmony export */   preloadVideos: () => (/* binding */ preloadVideos)
+/* harmony export */ });
+function getQuery() {
+    const vars = [];
+    let max = 0;
+    let hash =  false || [];
+    const array = '';
+    const url = window.location.search;
+    if (url) {
+        hash = url.slice(1).split('&');
+        max = hash.length;
+        for (let i = 0; i < max; i += 1) {
+        const array = hash[i].split('=');
+        vars.push(array[0]);
+        vars[array[0]] = array[1];
+        }
+        return vars;
+    }
+}
+
+function getQueryName(name) {
+    let response = null;
+    const q = getQuery();
+    if (q) {
+        if (q[name]) {
+        response = q[name];
+        }
+    }
+    return response;
+}
+
+function preloadImage(images, callback) {
+    const imageLength = images.length;
+    let loadCnt = 0;
+    images.forEach((value, index) => {
+        const image = new Image();
+        image.onload = () => {
+        loadComplete();
+        };
+        image.onerror = () => {
+        loadComplete();
+        };
+        image.src = value.src;
+    });
+
+    function loadComplete() {
+        loadCnt += 1;
+        if (loadCnt >= imageLength) {
+            callback();
+        }
+    }
+}
+
+function preloadVideos(videos, callback) {
+    const videoLength = videos.length;
+    let loadCnt = 0;
+    if (videoLength <= 0) {
+        callback();
+    } else {
+        videos.forEach((value, index) => {
+        value.addEventListener('loadeddata', () => {
+            loadComplete();
+        });
+        value.addEventListener('error', () => {
+            loadComplete();
+        });
+        value.load(); // これがないとloadeddata取得できない
+        });
+    }
+
+    function loadComplete() {
+        loadCnt += 1;
+        if (loadCnt >= videoLength) {
+        callback();
+        }
+    }
+}
+
+function preloadAssets(target, callback) {
+    preloadImage(document.querySelectorAll(`${target} img`), () => {
+        preloadVideos(document.querySelectorAll(`${target} video`), () => {
+        callback();
+        });
+    });
+}
+
 /***/ })
 
 /******/ 	});
@@ -17527,13 +17628,16 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _barba_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @barba/core */ "./node_modules/@barba/core/dist/barba.umd.js");
 /* harmony import */ var _barba_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_barba_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pubsub-js */ "./node_modules/pubsub-js/src/pubsub.js");
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(pubsub_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_global_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/global/header */ "./src/components/global/header.js");
 /* harmony import */ var _components_global_resize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/global/resize */ "./src/components/global/resize.js");
 /* harmony import */ var _components_contact_contact__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/contact/contact */ "./src/components/contact/contact.js");
+/* harmony import */ var _components_global_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/global/utils */ "./src/components/global/utils.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+
 
 
 
@@ -17567,14 +17671,14 @@ class Main {
       const script = document.createElement('script');
       script.src = src;
       script.className = 'page-script';
-      script.defer = true; // かならずdeferを入れる（順序保証）
+      script.defer = true;
       document.body.appendChild(script);
 
-      if (isFirst) {
         script.onload = () => {
-          pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('init');
           pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
-        }
+          if (isFirst) {
+            pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('init');
+          }
       }
     }
     
@@ -17607,23 +17711,23 @@ class Main {
 
           leave(data) {
             $window.scrollTop(0);
-            return gsap__WEBPACK_IMPORTED_MODULE_5__["default"].to(data.current.container, {
+            return gsap__WEBPACK_IMPORTED_MODULE_6__["default"].to(data.current.container, {
               opacity: 0,
               duration: 0,
               onComplete: () => {
-                data.current.container.style.display = 'none';
+                // data.current.container.style.display = 'none';
               },
             });
           },
           enter(data) {
-            const container = data.next.container;
-            container.style.display = 'block';
-            container.style.opacity = 0;
-            // 新しいページをフェードイン
-            return gsap__WEBPACK_IMPORTED_MODULE_5__["default"].to(container, {
-              opacity: 1,
-              duration: 0.5,
-            });
+            // const container = data.next.container;
+            // container.style.display = 'block';
+            // container.style.opacity = 0;
+            // // 新しいページをフェードイン
+            // return gsap.to(container, {
+            //   opacity: 1,
+            //   duration: 0.5,
+            // });
           },
         },
       ],
