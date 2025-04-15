@@ -6,8 +6,6 @@ import '../components/global/header';
 import '../components/global/resize';
 import '../components/contact/contact';
 
-import { preloadImage } from '../components/global/utils';
-
 const $window = $(window);
 
 class Main {
@@ -38,6 +36,7 @@ class Main {
 
         script.onload = () => {
           PubSub.publish('resize');
+          PubSub.publish('scroll', $window.scrollTop());
           if (isFirst) {
             PubSub.publish('init');
           }

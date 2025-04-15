@@ -4,6 +4,7 @@
 	data-barba-namespace="about"
 	data-language="<?php echo get_language(); ?>"
 	data-css="<?php echo get_template_directory_uri(); ?>/css/about.css"
+	data-js="<?php echo get_template_directory_uri(); ?>/js/about.js"
 >
 	<p class="px-4 pt-[256px] pb-6 text-[56px] copy">
 		<?php if (get_language() === 'ja'): ?>
