@@ -18,3 +18,20 @@
         }
     }
 }
+
+.next {
+    background-color: v.$colorBlack;
+    dl {
+        dt {
+            font-size: 11px;
+            color: #D1C9C9;
+            font-family: v.$fontFragmentMono;
+        }
+        dd {
+            margin-top: 12px;
+            font-size: 13px;
+            font-family: v.$fontSelecta;
+            color: v.$colorWhite;
+        }
+    }
+}

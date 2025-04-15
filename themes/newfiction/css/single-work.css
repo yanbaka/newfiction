@@ -26,4 +26,19 @@
   font-weight: 400;
 }
 
+.next {
+  background-color: #16161A;
+}
+.next dl dt {
+  font-size: 11px;
+  color: #D1C9C9;
+  font-family: "Fragment Mono", monospace;
+}
+.next dl dd {
+  margin-top: 12px;
+  font-size: 13px;
+  font-family: "Selecta";
+  color: #FFFFFF;
+}
+
 /*# sourceMappingURL=single-work.css.map*/

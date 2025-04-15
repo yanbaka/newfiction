@@ -67,5 +67,48 @@
 			}
 		?>
 	</div>
+<?php
+	global $post;
+	$args = array(
+		'post_type' => get_post_type(),
+		'posts_per_page' => 1,
+		'orderby' => 'date',
+		'order' => 'ASC',
+		'post_status' => 'publish',
+		'date_query' => array(
+			array(
+				'after' => get_the_date( 'Y-m-d H:i:s', $post ),
+				'inclusive' => false,
+			),
+		),
+	);
+	$next_posts = get_posts($args);
+	$next_post = !empty($next_posts) ? $next_posts[0] : null;
+?>
+	<div class="next pt-6 px-4">
+		<img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo_black.png" alt="">
+		<div class="mt-8 flex">
+			<dl class="w-1/2">
+				<dt>Scroll for next project</dt>
+				<dd>↓</dd>
+			</dl>
+			<dl class="w-1/2">
+				<dt>Get in touch</dt>
+				<dd>kosuke@newfiction.org</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="nextPost px-4 pt-24 pb-4" data-url="<?php echo get_permalink($next_post->ID); ?>">
+		<h2 class="text-5xl fontSelectaMedium"><?php echo $next_post->post_title; ?></h2>
+		<?php
+			if ($next_post) {
+				$post_type = get_post_type();
+				$pods = pods($post_type, $next_post->ID);
+				$visual = $pods->field('visual');
+				$visual_url = $visual['guid'];
+				echo "<div class=\"mt-8\"><img class=\"w-full\" src=\"{$visual_url}\" alt=\"\"></div>";
+			}
+		?>
+	</div>
 </main><!-- /#main -->
 <?php get_footer(); ?>
