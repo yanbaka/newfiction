@@ -3,7 +3,7 @@
 
 .profile {
     dl {
-        width: 25%;
+        margin-bottom: 32px;
         dt {
             color: #7A7676;
             font-size: 11px;
@@ -33,5 +33,12 @@
             font-family: v.$fontSelecta;
             color: v.$colorWhite;
         }
+    }
+}
+
+.next-post {
+    background-color: v.$colorBlack;
+    h2 {
+        color: v.$colorWhite;
     }
 }

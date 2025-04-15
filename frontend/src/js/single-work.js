@@ -1,5 +1,4 @@
-// import 'magnific-popup/dist/magnific-popup.css';
-import 'magnific-popup';
+import '../components/work/single';
 
 class Main {
     onDOMContentLoaded = () => {

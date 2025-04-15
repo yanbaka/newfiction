@@ -11,7 +11,7 @@
 }
 
 .profile dl {
-  width: 25%;
+  margin-bottom: 32px;
 }
 .profile dl dt {
   color: #7A7676;
@@ -38,6 +38,13 @@
   margin-top: 12px;
   font-size: 13px;
   font-family: "Selecta";
+  color: #FFFFFF;
+}
+
+.next-post {
+  background-color: #16161A;
+}
+.next-post h2 {
   color: #FFFFFF;
 }
 

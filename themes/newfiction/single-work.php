@@ -21,41 +21,33 @@
 	data-js="<?php echo get_template_directory_uri(); ?>/js/single-work.js"
 	data-id="pdp"
 >
+	<div class="px-4 pt-[200px] pb-16"><h2 class="text-5xl fontSelectaMedium"><?php echo $post_title; ?></h2></div>
 	<div class="px-4"><img class="w-full" src="<?php echo $visual_url ?>" alt=""></div>
 	<div class="px-4 pt-8 pb-24">
 		<div class="flex">
-			<h2 class="w-1/2 text-5xl fontSelectaMedium"><?php echo $post_title; ?></h2>
-			<p class="w-1/2 text-[22px] fontSelectaRegular"><?php echo $description; ?></p>
-		</div>
-		<div class="profile flex mt-8 pt-4 border-t border-[#E5E1E1]">
-			<dl>
-				<dt>INDUSTRY</dt>
-				<?php
-					foreach ( $industry as $value ) {
-						echo "<dd>{$value}</dd>";
-					}
-				?>
-			</dl>
-			<dl>
-				<dt>PLATFORM</dt>
-				<?php
-					foreach ( $platform as $value ) {
-						echo "<dd>{$value}</dd>";
-					}
-				?>
-			</dl>
-			<dl>
-				<dt>CONTRIBUTIONS</dt>
-				<?php
-					foreach ( $contributions as $value ) {
-						echo "<dd>{$value}</dd>";
-					}
-				?>
-			</dl>
-			<dl>
-				<dt>LINK</dt>
-				<dd class="underline"><?php echo "<a href=\"{$linkUrl}\" target=\"_blank\">{$linkLabel}</a>" ?></dd>
-			</dl>
+			<p class="flex-1 text-[22px] mr-4 fontSelectaRegular"><?php echo $description; ?></p>
+			<div class="profile flex-1 ml-4">
+				<dl>
+					<dt>CATEGORY</dt>
+					<?php
+						foreach ( $industry as $value ) {
+							echo "<dd>{$value}</dd>";
+						}
+					?>
+				</dl>
+				<dl>
+					<dt>CONTRIBUTIONS</dt>
+					<?php
+						foreach ( $contributions as $value ) {
+							echo "<dd>{$value}</dd>";
+						}
+					?>
+				</dl>
+				<dl>
+					<dt>LINK</dt>
+					<dd class="underline"><?php echo "<a href=\"{$linkUrl}\" target=\"_blank\">{$linkLabel}</a>" ?></dd>
+				</dl>
+			</div>
 		</div>
 	</div>
 	<div class="px-4 pt-4">
@@ -98,7 +90,7 @@
 			</dl>
 		</div>
 	</div>
-	<div class="nextPost px-4 pt-24 pb-4" data-url="<?php echo get_permalink($next_post->ID); ?>">
+	<div class="next-post px-4 pt-[200px] pb-4" data-url="<?php echo get_permalink($next_post->ID); ?>">
 		<h2 class="text-5xl fontSelectaMedium"><?php echo $next_post->post_title; ?></h2>
 		<?php
 			if ($next_post) {

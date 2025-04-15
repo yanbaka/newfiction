@@ -592,6 +592,9 @@ video {
 .mt-8 {
   margin-top: 2rem;
 }
+.ml-4 {
+  margin-left: 1rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -738,6 +741,9 @@ video {
 }
 .pt-24 {
   padding-top: 6rem;
+}
+.pb-16 {
+  padding-bottom: 4rem;
 }
 .text-4xl {
   font-size: 2.25rem;
