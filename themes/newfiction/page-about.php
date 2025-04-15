@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	<div class="flow">
-		<div class="flex px-4 py-16">
+		<div class="flex px-4 py-16 bg-white sticky top-0">
 			<div class="summary mr-4 py-14 flex flex-col justify-between items-start">
 				<p class="num">-1 → 0</p>
 				<div>
@@ -48,6 +48,32 @@
 			</div>
 			<div class="flex-1">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/about/flow1.png" alt="">
+			</div>
+		</div>
+		<div class="flex px-4 py-16 bg-white sticky top-0">
+			<div class="summary mr-4 py-14 flex flex-col justify-between items-start">
+				<p class="num">0 → 1</p>
+				<div>
+					<h3 class="text-5xl">Design for Launch</h3>
+					<p class="text mt-4">Our strength lies in 0-to-1 design. We draw from research and experience to land on a solution that makes sense.</p>
+				</div>
+				<a class="see-the-work rounded-full" href="">See the work</a>
+			</div>
+			<div class="flex-1">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/about/flow2.png" alt="">
+			</div>
+		</div>
+		<div class="flex px-4 py-16 bg-white sticky top-0">
+			<div class="summary mr-4 py-14 flex flex-col justify-between items-start">
+				<p class="num">1 → 2,3...</p>
+				<div>
+					<h3 class="text-5xl">Redesign & Refinement</h3>
+					<p class="text mt-4">From refinement to evolution to revolution. We operate under the belief that different is better than better.</p>
+				</div>
+				<a class="see-the-work rounded-full" href="">See the work</a>
+			</div>
+			<div class="flex-1">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/about/flow3.png" alt="">
 			</div>
 		</div>
 	</div>

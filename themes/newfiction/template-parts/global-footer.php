@@ -1,5 +1,5 @@
 <footer>
-    <div class="capabilities px-4 py-24 flex justify-between w-full relative z-[1]">
+    <div class="capabilities px-4 py-24 flex justify-between w-full relative z-[2]">
         <h2 class="w-1/3 text-5xl font-medium">Capabilities</h2>
         <div class="w-2/3">
             <h3>PRODUCT</h3>
