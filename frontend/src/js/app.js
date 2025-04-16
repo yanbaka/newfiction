@@ -148,6 +148,7 @@ class Main {
       PubSub.publish('scroll', $window.scrollTop());
     })
 
+    PubSub.publish('init');
     PubSub.publish('scroll', $window.scrollTop());
     PubSub.publish('resize');
   };

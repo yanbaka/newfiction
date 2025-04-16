@@ -90,6 +90,7 @@
 			</dl>
 		</div>
 	</div>
+<?php if ($next_post): ?>
 	<div class="next-post px-4 pt-[200px] pb-4" data-url="<?php echo get_permalink($next_post->ID); ?>">
 		<h2 class="text-5xl fontSelectaMedium"><?php echo $next_post->post_title; ?></h2>
 		<?php
@@ -98,9 +99,10 @@
 				$pods = pods($post_type, $next_post->ID);
 				$visual = $pods->field('visual');
 				$visual_url = $visual['guid'];
-				echo "<div class=\"mt-8\"><img class=\"w-full\" src=\"{$visual_url}\" alt=\"\"></div>";
+				echo "<div class=\"mt-16\"><img class=\"w-full\" src=\"{$visual_url}\" alt=\"\"></div>";
 			}
 		?>
 	</div>
+<?php endif; ?>
 </main><!-- /#main -->
 <?php get_footer(); ?>

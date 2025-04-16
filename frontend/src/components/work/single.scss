@@ -38,7 +38,21 @@
 
 .next-post {
     background-color: v.$colorBlack;
+    transition-property: background-color;
+    transition-duration: 0.3s;
     h2 {
         color: v.$colorWhite;
+        transition-property: color;
+        transition-duration: 0.3s;
     }
+    &.-white {
+        background-color: v.$colorWhite;
+        h2 {
+            color: v.$colorBlack;
+        }
+    }
+}
+
+footer {
+    display: none !important;
 }

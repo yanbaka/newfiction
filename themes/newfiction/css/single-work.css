@@ -43,9 +43,23 @@
 
 .next-post {
   background-color: #16161A;
+  transition-property: background-color;
+  transition-duration: 0.3s;
 }
 .next-post h2 {
   color: #FFFFFF;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+.next-post.-white {
+  background-color: #FFFFFF;
+}
+.next-post.-white h2 {
+  color: #16161A;
+}
+
+footer {
+  display: none !important;
 }
 
 /*# sourceMappingURL=single-work.css.map*/
