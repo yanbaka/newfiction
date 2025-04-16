@@ -11103,6 +11103,10 @@ return jQuery;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   subscibeScroll: () => (/* binding */ subscibeScroll),
+/* harmony export */   unsubscribeScroll: () => (/* binding */ unsubscribeScroll)
+/* harmony export */ });
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pubsub-js */ "./node_modules/pubsub-js/src/pubsub.js");
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(pubsub_js__WEBPACK_IMPORTED_MODULE_0__);
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
@@ -11110,28 +11114,36 @@ __webpack_require__.r(__webpack_exports__);
 
 const $window = $(window);
 
-pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', (_, $scrollTop) => {
-    $('.bg-trigger').each((key, element) => {
-        const triggerTarget = $(element);
-        const triggerTargetId = triggerTarget.data('bg-trigger-id');
-        const triggerTargetType = triggerTarget.data('bg-type');
+let token = null;
 
-        const imageTarget = $(`.background-image .background-${triggerTargetId}`);
-        if (triggerTargetType === 'clip') {
-            const start = triggerTarget.offset().top - $window.height();
-            const end = triggerTarget.offset().top;
-            const p = 1 - ($scrollTop - start) / (end - start);
-            imageTarget.css('clip-path', `inset(${p * 100}% 0% 0% 0%)`)
-        } else {
-            const start = triggerTarget.offset().top;
-            if ($scrollTop > start) {
-                imageTarget.css('clip-path', `inset(0% 0% 0% 0%)`)
+function subscibeScroll() {
+    pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', (_, $scrollTop) => {
+        $('.bg-trigger').each((key, element) => {
+            const triggerTarget = $(element);
+            const triggerTargetId = triggerTarget.data('bg-trigger-id');
+            const triggerTargetType = triggerTarget.data('bg-type');
+    
+            const imageTarget = $(`.background-image .background-${triggerTargetId}`);
+            if (triggerTargetType === 'clip') {
+                const start = triggerTarget.offset().top - $window.height();
+                const end = triggerTarget.offset().top;
+                const p = 1 - ($scrollTop - start) / (end - start);
+                imageTarget.css('clip-path', `inset(${p * 100}% 0% 0% 0%)`)
             } else {
-                imageTarget.css('clip-path', `inset(100% 0% 0% 0%)`)
+                const start = triggerTarget.offset().top;
+                if ($scrollTop > start) {
+                    imageTarget.css('clip-path', `inset(0% 0% 0% 0%)`)
+                } else {
+                    imageTarget.css('clip-path', `inset(100% 0% 0% 0%)`)
+                }
             }
-        }
+        });
     });
-});
+}
+
+function unsubscribeScroll() {
+    pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().unsubscribe(token);
+}
 
 /***/ }),
 
@@ -11143,20 +11155,36 @@ pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', (_, $scroll
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   subscibeResize: () => (/* binding */ subscibeResize),
+/* harmony export */   unsubscribeResize: () => (/* binding */ unsubscribeResize)
+/* harmony export */ });
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pubsub-js */ "./node_modules/pubsub-js/src/pubsub.js");
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(pubsub_js__WEBPACK_IMPORTED_MODULE_0__);
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
 const $header = $('header');
-const $main = $('.main');
-const $backgroundImage = $('.background-image');
 
-pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('resize', () => {
-    const $heightH = $header.outerHeight();
-    const $mainH = $main.height();
-    $backgroundImage.css('height', $mainH + $heightH);
-});
+let token = null;
+
+function subscibeResize() {
+    const $backgroundImage = $('.background-image');
+
+    token = pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('resize', () => {
+    
+        const $heightH = $header.outerHeight();
+        const $main = $('.main');
+        const $mainH = $main.height();
+        $backgroundImage.css('height', $mainH + $heightH);
+    });
+}
+
+function unsubscribeResize() {
+    pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().unsubscribe(token);
+}
+
+
 
 /***/ })
 

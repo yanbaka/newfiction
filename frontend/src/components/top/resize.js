@@ -1,11 +1,22 @@
 import PubSub from 'pubsub-js';
 
 const $header = $('header');
-const $main = $('.main');
-const $backgroundImage = $('.background-image');
 
-PubSub.subscribe('resize', () => {
-    const $heightH = $header.outerHeight();
-    const $mainH = $main.height();
-    $backgroundImage.css('height', $mainH + $heightH);
-});
+let token = null;
+
+export function subscibeResize() {
+    const $backgroundImage = $('.background-image');
+
+    token = PubSub.subscribe('resize', () => {
+    
+        const $heightH = $header.outerHeight();
+        const $main = $('.main');
+        const $mainH = $main.height();
+        $backgroundImage.css('height', $mainH + $heightH);
+    });
+}
+
+export function unsubscribeResize() {
+    PubSub.unsubscribe(token);
+}
+

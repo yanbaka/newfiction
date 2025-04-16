@@ -1,10 +1,15 @@
 import barba from '@barba/core';
-import gsap from 'gsap';
 import PubSub from 'pubsub-js';
 
 import '../components/global/header';
 import '../components/global/resize';
 import '../components/contact/contact';
+
+import '../components/work/single';
+
+import { subscibeScroll as subscibeScrollSingle, unsubscribeScroll as unsubscibeScrollSingle } from '../components/work/single';
+import { subscibeScroll as subscibeScrollTop, unsubscribeScroll as unsubscribeScrollTop } from '../components/top/background';
+import { subscibeResize as subscibeResizeTop, unsubscribeResize as unsubscribeResizeTop } from '../components/top/resize';
 
 const $window = $(window);
 const $body = $('body');
@@ -63,32 +68,51 @@ class Main {
             // 初回ページのリソース読み込み
             const container = data.next.container;
             loadCSS(container?.getAttribute('data-css'), container);
-            loadJS(container?.getAttribute('data-js'), true);
+            // loadJS(container?.getAttribute('data-js'), true);
 
             const id = $(container).data('id');
             $body.attr('data-id', id);
 
             $(`.menu a[data-link="${id}"]`).addClass('current');
+
+            if (id === 'top') {
+              subscibeScrollTop();
+              subscibeResizeTop();
+            }
+            if (id === 'pdp') {
+              subscibeScrollSingle();
+            }
+
             currentPageId = id;
+
           },
 
           beforeEnter(data) {
             // 古いリソースを削除
             unloadCSS();
-            unloadJS();
+            // unloadJS();
 
             // 新しいリソースを読み込み
             const container = data.next.container;
             loadCSS(container?.getAttribute('data-css'), container);
-            loadJS(container?.getAttribute('data-js'), false);
+            // loadJS(container?.getAttribute('data-js'), false);
 
             const id = $(container).data('id');
             $body.attr('data-id', id);
+
+            if (id === 'top') {
+              subscibeScrollTop();
+              subscibeResizeTop();
+            }
+            if (id === 'pdp') {
+              subscibeScrollSingle();
+            }
 
             if (currentPageId) {
               $(`.menu a[data-link="${currentPageId}"]`).removeClass('current');
             }
             $(`.menu a[data-link="${id}"]`).addClass('current');
+
             currentPageId = id;
           },
 
@@ -96,8 +120,21 @@ class Main {
             $window.scrollTop(0);
             const container = data.current.container;
             $(container).removeClass('-show');
+
+            const id = $(container).data('id');
+
+            if (id === 'top') {
+              unsubscribeScrollTop();
+              unsubscribeResizeTop();
+            }
+            if (id === 'pdp') {
+              unsubscibeScrollSingle();
+            }
+
           },
           enter(data) {
+            PubSub.publish('scroll', $window.scrollTop());
+            PubSub.publish('resize');
           },
         },
       ],
@@ -110,6 +147,9 @@ class Main {
     $window.on('scroll', () => {
       PubSub.publish('scroll', $window.scrollTop());
     })
+
+    PubSub.publish('scroll', $window.scrollTop());
+    PubSub.publish('resize');
   };
 }
 

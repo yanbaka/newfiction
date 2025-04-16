@@ -11103,22 +11103,33 @@ return jQuery;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   subscibeScroll: () => (/* binding */ subscibeScroll),
+/* harmony export */   unsubscribeScroll: () => (/* binding */ unsubscribeScroll)
+/* harmony export */ });
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pubsub-js */ "./node_modules/pubsub-js/src/pubsub.js");
 /* harmony import */ var pubsub_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(pubsub_js__WEBPACK_IMPORTED_MODULE_0__);
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
-const $window = $(window);
 const $header = $('header');
-const $nextPost = $('.next-post');
 
-pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', (_, $scrollTop) => {
-    const top = $nextPost.offset().top - $header.outerHeight();
-    if ($scrollTop >= top) {
-        const nextLink = $nextPost.data('url');
-        window.location = nextLink;
-    }
-});
+let token = null;
+
+function subscibeScroll() {
+    const $nextPost = $('.next-post');
+    token = pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', (_, $scrollTop) => {
+        const top = $nextPost.offset().top - $header.outerHeight();
+        if ($scrollTop >= top) {
+            const nextLink = $nextPost.data('url');
+            window.location = nextLink;
+        }
+    });
+}
+
+function unsubscribeScroll() {
+    pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().unsubscribe(token);
+}
 
 /***/ })
 
