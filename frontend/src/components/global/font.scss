@@ -1,5 +1,12 @@
 @font-face {
     font-family: 'Selecta';
+    src: url('/wp-content/themes/newfiction/fonts/selecta/woff/Selecta Light.woff2') format('woff2'),
+         url('/wp-content/themes/newfiction/fonts/selecta/woff/Selecta Light.woff') format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Selecta';
     src: url('/wp-content/themes/newfiction/fonts/selecta/woff/Selecta Regular.woff2') format('woff2'),
          url('/wp-content/themes/newfiction/fonts/selecta/woff/Selecta Regular.woff') format('woff');
     font-weight: 400;

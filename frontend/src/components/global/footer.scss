@@ -5,6 +5,7 @@ footer {
         background-color: v.$colorBlack;
         h2 {
             color: v.$colorWhite;
+            font-family: v.$fontSelecta;
         }
         h3 {
             color: v.$colorOffWhite;
@@ -15,12 +16,15 @@ footer {
             li {
                 color: v.$colorOffWhite;
                 font-size: 17px;
+                font-family: v.$fontSelecta;
             }
         }
         .our-services {
             color: v.$colorBlack;
             background-color: v.$colorOffWhite;
             font-size: 17px;
+            font-family: v.$fontSelecta;
+            font-weight: 500;
         }
     }
 
@@ -34,11 +38,13 @@ footer {
         }
         .links {
             a {
-                color: v.$colorOffWhite;
+                color: #FAF0F1;
+                font-family: v.$fontSelecta;
             }
         }
         small {
-            color: v.$colorOffWhite;
+            color: #FAF0F1;
+            font-family: v.$fontSelecta;
         }
     }
 }

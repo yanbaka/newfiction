@@ -58,6 +58,7 @@ footer .capabilities {
 }
 footer .capabilities h2 {
   color: #FFFFFF;
+  font-family: "Selecta";
 }
 footer .capabilities h3 {
   color: #F7F7FA;
@@ -67,11 +68,14 @@ footer .capabilities h3 {
 footer .capabilities ul li {
   color: #F7F7FA;
   font-size: 17px;
+  font-family: "Selecta";
 }
 footer .capabilities .our-services {
   color: #16161A;
   background-color: #F7F7FA;
   font-size: 17px;
+  font-family: "Selecta";
+  font-weight: 500;
 }
 footer .foot {
   background-color: #E01A12;
@@ -83,12 +87,19 @@ footer .foot .logo {
   margin-top: 160px;
 }
 footer .foot .links a {
-  color: #F7F7FA;
+  color: #FAF0F1;
+  font-family: "Selecta";
 }
 footer .foot small {
-  color: #F7F7FA;
+  color: #FAF0F1;
+  font-family: "Selecta";
 }
 
+@font-face {
+  font-family: "Selecta";
+  src: url("/wp-content/themes/newfiction/fonts/selecta/woff/Selecta Light.woff2") format("woff2"), url("/wp-content/themes/newfiction/fonts/selecta/woff/Selecta Light.woff") format("woff");
+  font-weight: 300;
+}
 @font-face {
   font-family: "Selecta";
   src: url("/wp-content/themes/newfiction/fonts/selecta/woff/Selecta Regular.woff2") format("woff2"), url("/wp-content/themes/newfiction/fonts/selecta/woff/Selecta Regular.woff") format("woff");
@@ -223,6 +234,8 @@ footer .foot small {
 .contact-parent .contact h2 {
   color: #F7F7FA;
   font-size: 3rem;
+  font-weight: 500;
+  font-family: "Selecta";
 }
 .contact-parent .contact .form {
   margin-top: 1.5rem;
@@ -231,6 +244,7 @@ footer .foot small {
   width: 100%;
   background-color: #272729;
   font-size: 1rem;
+  font-family: "Selecta";
   padding: 0.75rem;
   margin-top: 0.5rem;
   vertical-align: bottom;
@@ -245,10 +259,13 @@ footer .foot small {
   background-color: #F7F7FA;
   width: 100%;
   font-size: 1rem;
+  font-family: "Selecta";
+  font-weight: 500;
   color: #16161A;
   height: 3.25rem;
   margin-top: 2rem;
   border-radius: 1rem;
+  border-radius: 9999px;
 }
 .contact-parent:not(.-show) {
   pointer-events: none;
