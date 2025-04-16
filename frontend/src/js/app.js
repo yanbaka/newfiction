@@ -37,28 +37,6 @@ class Main {
       document.querySelectorAll('link.page-style').forEach(link => link.remove());
     }
     
-    function loadJS(src, isFirst) {
-      if (!src) return;
-    
-      const script = document.createElement('script');
-      script.src = src;
-      script.className = 'page-script';
-      script.defer = true;
-      document.body.appendChild(script);
-
-      script.onload = () => {
-        PubSub.publish('resize');
-        PubSub.publish('scroll', $window.scrollTop());
-        if (isFirst) {
-          PubSub.publish('init');
-        }
-      }
-    }
-    
-    function unloadJS() {
-      document.querySelectorAll('script.page-script').forEach(script => script.remove());
-    }
-
     barba.init({
       transitions: [
         {
@@ -82,7 +60,9 @@ class Main {
             if (id === 'pdp') {
               subscibeScrollSingle();
             }
-
+            PubSub.publish('scroll', $window.scrollTop());
+            PubSub.publish('resize');
+        
             currentPageId = id;
 
           },
@@ -149,8 +129,6 @@ class Main {
     })
 
     PubSub.publish('init');
-    PubSub.publish('scroll', $window.scrollTop());
-    PubSub.publish('resize');
   };
 }
 

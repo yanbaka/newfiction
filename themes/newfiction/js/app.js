@@ -11500,28 +11500,6 @@ class Main {
       document.querySelectorAll('link.page-style').forEach(link => link.remove());
     }
     
-    function loadJS(src, isFirst) {
-      if (!src) return;
-    
-      const script = document.createElement('script');
-      script.src = src;
-      script.className = 'page-script';
-      script.defer = true;
-      document.body.appendChild(script);
-
-      script.onload = () => {
-        pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
-        pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('scroll', $window.scrollTop());
-        if (isFirst) {
-          pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('init');
-        }
-      }
-    }
-    
-    function unloadJS() {
-      document.querySelectorAll('script.page-script').forEach(script => script.remove());
-    }
-
     _barba_core__WEBPACK_IMPORTED_MODULE_0___default().init({
       transitions: [
         {
@@ -11545,7 +11523,9 @@ class Main {
             if (id === 'pdp') {
               (0,_components_work_single__WEBPACK_IMPORTED_MODULE_5__.subscibeScroll)();
             }
-
+            pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('scroll', $window.scrollTop());
+            pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
+        
             currentPageId = id;
 
           },
@@ -11612,8 +11592,6 @@ class Main {
     })
 
     pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('init');
-    pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('scroll', $window.scrollTop());
-    pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
   };
 }
 
