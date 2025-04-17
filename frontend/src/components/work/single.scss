@@ -3,7 +3,12 @@
 
 .profile {
     dl {
-        margin-bottom: 32px;
+        @include m.not-sp {
+            margin-bottom: 32px;
+        }
+        @include m.sp {
+            margin-top: 32px;
+        }
         dt {
             color: #7A7676;
             font-size: 11px;

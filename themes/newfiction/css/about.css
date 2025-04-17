@@ -24,6 +24,20 @@
   font-size: 80px;
   font-family: "Selecta";
 }
+@media screen and (max-width: 768px) {
+  .main[data-language=en] .copy {
+    font-size: 48px;
+  }
+}
+.main[data-language=en] .lead {
+  font-family: "Selecta";
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .main[data-language=en] .lead {
+    font-size: 32px;
+  }
+}
 .main .copy {
   background-color: #E01A12;
   color: #FFFFFF;
@@ -37,36 +51,83 @@
 }
 .main .beliefs h2 {
   color: #16161A;
-  width: 32.4519230769%;
 }
-.main .beliefs .description {
-  width: 57.7724358974%;
+@media screen and (min-width: 769px) {
+  .main .beliefs h2 {
+    width: 32.4519230769%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main .beliefs h2 {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .main .beliefs .description {
+    width: 57.7724358974%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main .beliefs .description {
+    margin-top: 64px;
+  }
 }
 .main .beliefs .description dl {
-  display: flex;
   border-top: 1px solid #E5E1E1;
   padding-top: 16px;
   padding-bottom: 48px;
+}
+@media screen and (min-width: 769px) {
+  .main .beliefs .description dl {
+    display: flex;
+    padding-bottom: 64px;
+  }
 }
 .main .beliefs .description dl dt {
   color: #16161A;
   font-weight: 500;
   font-size: 28px;
-  width: 41.6088765603%;
-  margin-right: 16px;
+}
+@media screen and (min-width: 769px) {
+  .main .beliefs .description dl dt {
+    width: 41.6088765603%;
+    margin-right: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main .beliefs .description dl dt {
+    font-size: 24px;
+  }
 }
 .main .beliefs .description dl dd {
   color: #7A7676;
   font-size: 17px;
-  flex: 1;
 }
-.main .flow .summary {
-  width: 32.4519230769%;
+@media screen and (min-width: 769px) {
+  .main .beliefs .description dl dd {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main .beliefs .description dl dd {
+    font-size: 22px;
+    margin-top: 32px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .main .flow .summary {
+    width: 32.4519230769%;
+  }
 }
 .main .flow .summary .num {
   color: #E01A12;
   font-size: 22px;
   font-family: "Fragment Mono", monospace;
+}
+@media screen and (max-width: 768px) {
+  .main .flow .summary .num {
+    font-size: 17px;
+  }
 }
 .main .flow .summary h3 {
   color: #16161A;
@@ -78,15 +139,22 @@
   font-size: 22px;
   font-family: "Selecta";
 }
-.main .profile .image {
-  width: 32.4519230769%;
-}
-.main .profile .image img {
-  width: 74.0740740741%;
+@media screen and (min-width: 769px) {
+  .main .profile .image {
+    width: 32.4519230769%;
+  }
+  .main .profile .image img {
+    width: 74.0740740741%;
+  }
 }
 .main .profile .summary h3 {
   font-family: "Selecta";
   color: #16161A;
+}
+@media screen and (max-width: 768px) {
+  .main .profile .summary h3 {
+    font-size: 36px;
+  }
 }
 .main .profile .summary p {
   font-family: "Selecta";

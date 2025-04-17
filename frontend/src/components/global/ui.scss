@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: inset 0px -4px 8px 0px rgba(0, 0, 0, 0.2);
     @include m.sp {
         width: 100%;
         height: 52px;

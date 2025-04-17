@@ -10,8 +10,15 @@
   --app-height: 100%;
 }
 
-.profile dl {
-  margin-bottom: 32px;
+@media screen and (min-width: 769px) {
+  .profile dl {
+    margin-bottom: 32px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .profile dl {
+    margin-top: 32px;
+  }
 }
 .profile dl dt {
   color: #7A7676;

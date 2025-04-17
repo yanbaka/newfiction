@@ -21,12 +21,12 @@
 	data-js="<?php echo get_template_directory_uri(); ?>/js/single-work.js"
 	data-id="pdp"
 >
-	<div class="px-4 pt-[200px] pb-16"><h2 class="text-5xl fontSelectaMedium"><?php echo $post_title; ?></h2></div>
+	<div class="px-4 py-6 md:pt-[200px] md:pb-16"><h2 class="text-5xl fontSelectaMedium"><?php echo $post_title; ?></h2></div>
 	<div class="px-4"><img class="w-full" src="<?php echo $visual_url ?>" alt=""></div>
-	<div class="px-4 pt-8 pb-24">
-		<div class="flex">
-			<p class="flex-1 text-[22px] mr-4 fontSelectaRegular"><?php echo $description; ?></p>
-			<div class="profile flex-1 ml-4">
+	<div class="px-4 py-6 md:pt-8 md:pb-24">
+		<div class="md:flex">
+			<p class="flex-1 text-[22px] md:mr-4 fontSelectaRegular"><?php echo $description; ?></p>
+			<div class="profile md:flex-1 md:ml-4">
 				<dl>
 					<dt>CATEGORY</dt>
 					<?php

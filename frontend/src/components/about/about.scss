@@ -22,6 +22,16 @@
         .copy {
             font-size: 80px;
             font-family: v.$fontSelecta;
+            @include m.sp {
+                font-size: 48px;
+            }
+        }
+        .lead {
+            font-family: v.$fontSelecta;
+            font-weight: 500;
+            @include m.sp {
+                font-size: 32px;
+            }
         }
     }
 
@@ -39,26 +49,50 @@
         font-family: v.$fontSelecta;
         h2 {
             color: v.$colorBlack;
-            width: calc(405 / 1248 * 100%);
+            @include m.not-sp {
+                width: calc(405 / 1248 * 100%);
+            }
+            @include m.sp {
+                font-size: 36px;
+            }
         }
         .description {
-            width: calc(721 / 1248 * 100%);
+            @include m.not-sp {
+                width: calc(721 / 1248 * 100%);
+            }
+            @include m.sp {
+                margin-top: 64px;
+            }
             dl {
-                display: flex;
                 border-top: 1px solid #E5E1E1;
                 padding-top: 16px;
                 padding-bottom: 48px;
+                @include m.not-sp {
+                    display: flex;
+                    padding-bottom: 64px;
+                }
                 dt {
                     color: v.$colorBlack;
                     font-weight: 500;
                     font-size: 28px;
-                    width: calc(300 / 721 * 100%);
-                    margin-right: 16px;
+                    @include m.not-sp {
+                        width: calc(300 / 721 * 100%);
+                        margin-right: 16px;
+                    }
+                    @include m.sp {
+                        font-size: 24px;
+                    }
                 }
                 dd {
                     color: #7A7676;
                     font-size: 17px;
-                    flex: 1;
+                    @include m.not-sp {
+                        flex: 1;
+                    }
+                    @include m.sp {
+                        font-size: 22px;
+                        margin-top: 32px;
+                    }
                 }
             }
         }
@@ -66,11 +100,16 @@
 
     .flow {
         .summary {
-            width: calc(405 / 1248 * 100%);
+            @include m.not-sp {
+                width: calc(405 / 1248 * 100%);
+            }
             .num {
                 color: v.$colorRed;
                 font-size: 22px;
                 font-family: v.$fontFragmentMono;
+                @include m.sp {
+                    font-size: 17px;
+                }
             }
             h3 {
                 color: v.$colorBlack;
@@ -87,15 +126,22 @@
 
     .profile {
         .image {
-            width: calc(405 / 1248 * 100%);
+            @include m.not-sp {
+                width: calc(405 / 1248 * 100%);
+            }
             img {
-                width: calc(300 / 405 * 100%);
+                @include m.not-sp {
+                    width: calc(300 / 405 * 100%);
+                }
             }
         }
         .summary {
             h3 {
                 font-family: v.$fontSelecta;
                 color: v.$colorBlack;
+                @include m.sp {
+                    font-size: 36px;
+                }
             }
             p {
                 font-family: v.$fontSelecta;

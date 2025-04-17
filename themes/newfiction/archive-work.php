@@ -18,8 +18,8 @@
 	data-js="<?php echo get_template_directory_uri(); ?>/js/work.js"
 	data-id="work"
 >
-	<p class="px-4 pt-[200px] pb-8 text-[56px] copy">
-		<span class="inline-block -enterAnimation"><span data-animation-type="y">実用性と表現力を兼ね備えたプロダクト</span></span>
+	<p class="px-4 py-6 md:pt-[200px] md:pb-8 text-[48px] md:text-[56px] copy">
+		<span class="block -enterAnimation"><span data-animation-type="y">実用性と表現力を兼ね備えたプロダクト</span></span>
 	<p>
 	<div class="px-4 pb-12 cards flex flex-wrap justify-between">
 		<?php if($custom_query->have_posts()): ?>
