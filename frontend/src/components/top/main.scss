@@ -5,17 +5,33 @@
     background: none;
     .overview {
         background-color: v.$colorWhite;
+        @include m.sp {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
         .lead {
             color: v.$colorBlack;
             font-family: v.$fontIBMPlexSansJP;
             font-size: 40px;
             font-weight: 700;
+            @include m.sp {
+                font-size: 36px;
+            }
         }
         .text {
             color: #7A7676;
             font-family: v.$fontIBMPlexSansJP;
             font-size: 22px;
             font-weight: 500;
+            @include m.sp {
+                font-size: 22px;
+            }
+        }
+        &.overview2 {
+            @include m.sp {
+                justify-content: center;
+            }
         }
     }
 }

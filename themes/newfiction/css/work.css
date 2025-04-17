@@ -13,6 +13,11 @@
 .flow {
   background-color: #F7F7FA;
 }
+@media screen and (max-width: 768px) {
+  .flow .card:not(:first-of-type) {
+    margin-top: 64px;
+  }
+}
 .flow .num {
   color: #E01A12;
   font-family: "Fragment Mono", monospace;

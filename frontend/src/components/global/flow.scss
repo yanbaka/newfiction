@@ -1,7 +1,15 @@
 @use '../../css/common/variables' as v;
+@use '../../css/common/mixin' as m;
 
 .flow {
     background-color: v.$colorOffWhite;
+    .card {
+        @include m.sp {
+            &:not(:first-of-type) {
+                margin-top: 64px;
+            }
+        }
+    }
     .num {
         color: v.$colorRed;
         font-family: v.$fontFragmentMono;

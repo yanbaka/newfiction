@@ -13,6 +13,11 @@
 .flow {
   background-color: #F7F7FA;
 }
+@media screen and (max-width: 768px) {
+  .flow .card:not(:first-of-type) {
+    margin-top: 64px;
+  }
+}
 .flow .num {
   color: #E01A12;
   font-family: "Fragment Mono", monospace;
@@ -30,17 +35,37 @@
 .main .overview {
   background-color: #FFFFFF;
 }
+@media screen and (max-width: 768px) {
+  .main .overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 .main .overview .lead {
   color: #16161A;
   font-family: "IBM Plex Sans JP", sans-serif;
   font-size: 40px;
   font-weight: 700;
 }
+@media screen and (max-width: 768px) {
+  .main .overview .lead {
+    font-size: 36px;
+  }
+}
 .main .overview .text {
   color: #7A7676;
   font-family: "IBM Plex Sans JP", sans-serif;
   font-size: 22px;
   font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .main .overview .text {
+    font-size: 22px;
+  }
+  .main .overview.overview2 {
+    justify-content: center;
+  }
 }
 
 .background-image picture {
