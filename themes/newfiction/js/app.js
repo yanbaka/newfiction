@@ -11179,6 +11179,11 @@ pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('init', () => {
     });
 });
 
+pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('resize', () => {
+    const doc = document.documentElement;
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+})
+
 /***/ }),
 
 /***/ "./src/components/global/resize.js":

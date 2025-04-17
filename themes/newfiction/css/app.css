@@ -19,6 +19,16 @@ header h1 a svg path {
   transition-property: fill;
   transition-duration: 0.5s;
 }
+@media screen and (max-width: 768px) {
+  header .menu {
+    background-color: #E01A12;
+    height: var(--app-height);
+    padding: 16px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
 header ul, header .language {
   font-family: "Selecta";
   font-size: 1rem;
@@ -26,16 +36,63 @@ header ul, header .language {
   transition-property: color;
   transition-duration: 0.5s;
 }
+@media screen and (max-width: 768px) {
+  header ul {
+    flex-direction: column;
+  }
+  header ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    color: #F7F7FA;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0 16px;
+  }
+}
 header ul li a.current {
   pointer-events: none;
   color: #FFFFFF;
   background-color: #E01A12;
+}
+@media screen and (max-width: 768px) {
+  header ul li:not(:first-of-type) {
+    margin-top: 8px;
+  }
+  header ul li.-contact a, header ul li.-linkedin a {
+    height: 52px;
+    font-size: 17px;
+    border-radius: 9999px;
+    justify-content: center;
+    box-shadow: inset 0px -4px 8px 0px rgba(0, 0, 0, 0.2);
+  }
+  header ul li.-contact {
+    margin-top: 24px;
+  }
+  header ul li.-contact a {
+    background-color: #F7F7FA;
+    color: #16161A;
+  }
+  header ul li.-linkedin {
+    margin-top: 12px;
+  }
+  header ul li.-linkedin a {
+    background-color: #E01A12;
+    color: #FFFFFF;
+    border: 2px solid #F7F7FA;
+  }
 }
 header .language a {
   cursor: pointer;
 }
 header #trigger-contact {
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  header:not(.-openMenu) .menu {
+    transform: translateY(-100%);
+  }
 }
 
 body[data-id=about] header {
@@ -202,6 +259,12 @@ footer .foot small {
   transition-property: transform, opacity;
   transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
 }
+@media screen and (max-width: 768px) {
+  .contact-parent .contact {
+    padding: 32px 48px;
+    width: 100%;
+  }
+}
 .contact-parent .contact .close {
   position: absolute;
   top: 0;
@@ -258,7 +321,7 @@ footer .foot small {
 .contact-parent .contact .submit {
   background-color: #F7F7FA;
   width: 100%;
-  font-size: 1rem;
+  font-size: 17px;
   font-family: "Selecta";
   font-weight: 500;
   color: #16161A;

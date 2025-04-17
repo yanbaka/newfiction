@@ -1,4 +1,5 @@
 @use '../../css/common/variables' as v;
+@use '../../css/common/mixin' as m;
 
 header {
     border-top: 12px solid v.$colorRed;
@@ -14,6 +15,16 @@ header {
             }
         }
     }
+    .menu {
+        @include m.sp {
+            background-color: v.$colorRed;
+            height: var(--app-height);
+            padding: 16px 16px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+    }
     ul, .language {
         font-family: v.$fontSelecta;
         font-size: 1rem;
@@ -23,12 +34,61 @@ header {
     }
 
     ul {
+        @include m.sp {
+            flex-direction: column;
+        }
         li {
             a {
+                @include m.sp {
+                    display: flex;
+                    align-items: center;
+                    width:100%;
+                    height: 60px;
+                    color: v.$colorOffWhite;
+                    font-size: 24px;
+                    background-color: rgba(255, 255, 255, 0.15);
+                    padding: 0 16px;
+                }
                 &.current {
                     pointer-events: none;
                     color: v.$colorWhite;
                     background-color: v.$colorRed;
+                }
+            }
+            &:not(:first-of-type) {
+                @include m.sp {
+                    margin-top: 8px;
+                }
+            }
+            &.-contact,
+            &.-linkedin {
+                @include m.sp {
+                    a {
+                        height: 52px;
+                        font-size: 17px;
+                        border-radius: 9999px;
+                        justify-content: center;
+                        box-shadow: inset 0px -4px 8px 0px rgba(0, 0, 0, 0.2);
+                    }
+                }
+            }
+            &.-contact {
+                @include m.sp {
+                    margin-top: 24px;
+                    a {
+                        background-color: v.$colorOffWhite;
+                        color: v.$colorBlack;
+                    }
+                }
+            }
+            &.-linkedin {
+                @include m.sp {
+                    margin-top: 12px;
+                    a {
+                        background-color: v.$colorRed;
+                        color: v.$colorWhite;
+                        border: 2px solid v.$colorOffWhite;
+                    }
                 }
             }
         }
@@ -42,6 +102,14 @@ header {
 
     #trigger-contact {
         cursor: pointer;
+    }
+
+    &:not(.-openMenu) {
+        .menu {
+            @include m.sp {
+                transform: translateY(-100%);
+            }
+        }
     }
 }
 

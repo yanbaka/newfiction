@@ -22,3 +22,8 @@ PubSub.subscribe('init', () => {
         })
     });
 });
+
+PubSub.subscribe('resize', () => {
+    const doc = document.documentElement;
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+})
