@@ -21,6 +21,26 @@ PubSub.subscribe('init', () => {
 
         })
     });
+
+    const $header = $('header');
+    // マウス位置によってのヘッダー挙動
+    $(document).on('mousemove', (e) => {
+        const threshold = 160;
+
+        if (e.clientY <= threshold) {
+            $header.addClass('-showHeader');
+          } else {
+            $header.removeClass('-showHeader');
+        }
+    });
+
+    $('header .toggle').on('click', () => {
+        if ($header.hasClass('-openMenu')) {
+            $header.removeClass('-openMenu');
+        } else {
+            $header.addClass('-openMenu');
+        }
+    })
 });
 
 PubSub.subscribe('resize', () => {

@@ -7,7 +7,7 @@
 	data-id="top"
 >
 	<div class="relative z-[2]">
-		<p class="px-4 py-6 text-4xl md:pt-[200px] md:pb-8 md:text-[80px] bg-white flex flex-col fontSelectaMedium">
+		<p class="px-4 py-6 text-4xl md:pt-[200px] md:pb-8 md:text-[80px] md:leading-normal bg-white flex flex-col fontSelectaMedium">
 			<span class="inline-block -enterAnimation"><span data-animation-type="y">Product & Brand Design Studio.</span></span>
 			<span class="inline-block -enterAnimation"><span data-animation-type="y" class="delay-100">Based in Tokyo, Working Globally.</span></span>
 		<p>

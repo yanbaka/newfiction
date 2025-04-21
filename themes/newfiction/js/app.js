@@ -11177,6 +11177,26 @@ pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('init', () => {
 
         })
     });
+
+    const $header = $('header');
+    // マウス位置によってのヘッダー挙動
+    $(document).on('mousemove', (e) => {
+        const threshold = 160;
+
+        if (e.clientY <= threshold) {
+            $header.addClass('-showHeader');
+          } else {
+            $header.removeClass('-showHeader');
+        }
+    });
+
+    $('header .toggle').on('click', () => {
+        if ($header.hasClass('-openMenu')) {
+            $header.removeClass('-openMenu');
+        } else {
+            $header.addClass('-openMenu');
+        }
+    })
 });
 
 pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('resize', () => {
@@ -11481,6 +11501,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const $window = $(window);
 const $body = $('body');
+const $header = $('header');
 
 let currentPageId = null;
 
@@ -11583,6 +11604,7 @@ class Main {
           enter(data) {
             pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('scroll', $window.scrollTop());
             pubsub_js__WEBPACK_IMPORTED_MODULE_1___default().publish('resize');
+            $header.removeClass('-openMenu');
           },
         },
       ],

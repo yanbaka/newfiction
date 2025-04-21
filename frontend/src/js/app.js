@@ -13,6 +13,7 @@ import { subscibeResize as subscibeResizeTop, unsubscribeResize as unsubscribeRe
 
 const $window = $(window);
 const $body = $('body');
+const $header = $('header');
 
 let currentPageId = null;
 
@@ -115,6 +116,7 @@ class Main {
           enter(data) {
             PubSub.publish('scroll', $window.scrollTop());
             PubSub.publish('resize');
+            $header.removeClass('-openMenu');
           },
         },
       ],

@@ -2,9 +2,13 @@
 @use '../../css/common/mixin' as m;
 
 header {
-    border-top: 12px solid v.$colorRed;
-    transition-property: background-color, border-top-color;
+    transition-property: transform;
     transition-duration: 0.5s;
+    .header-content {
+        border-top: 12px solid v.$colorRed;
+        transition-property: background-color, border-top-color;
+        transition-duration: 0.5s;
+    }
     h1 {
         a {
             svg {
@@ -23,6 +27,9 @@ header {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            transition-property: transform;
+            transition-duration: 0.75s;
+            transition-timing-function: cubic-bezier(0.5,0,0,1);
         }
     }
     ul, .language {
@@ -48,11 +55,14 @@ header {
                     font-size: 24px;
                     background-color: rgba(255, 255, 255, 0.15);
                     padding: 0 16px;
+                    border-radius: 4px;
                 }
                 &.current {
-                    pointer-events: none;
-                    color: v.$colorWhite;
-                    background-color: v.$colorRed;
+                    @include m.not-sp {
+                        pointer-events: none;
+                        color: v.$colorWhite;
+                        background-color: v.$colorRed;
+                    }
                 }
             }
             &:not(:first-of-type) {
@@ -95,6 +105,13 @@ header {
     }
 
     .language {
+        @include m.sp {
+            position: fixed;
+            left: 16px;
+            color: v.$colorWhite;
+            transition-property: opacity;
+            transition-duration: 0.3s;
+        }
         a {
             cursor: pointer;
         }
@@ -104,20 +121,66 @@ header {
         cursor: pointer;
     }
 
+    .toggle {
+        span {
+            position: absolute;
+            background-color: v.$colorRed;
+            width: 100%;
+            height: 1px;
+            transition-duration: 0.3s;
+            transition-property: transform, background-color;
+            &:nth-of-type(1) {
+                top: 12px;
+            }
+            &:nth-of-type(2) {
+                top: 24px;
+            }
+        }
+    }
+
+    &.-openMenu {
+        .toggle {
+            span {
+                background-color: v.$colorOffWhite;
+                &:nth-of-type(1) {
+                    transform: translateY(6px) rotate(45deg);
+                }
+                &:nth-of-type(2) {
+                    transform: translateY(-6px) rotate(-45deg);
+                }
+            }
+        }
+    }
+
     &:not(.-openMenu) {
         .menu {
             @include m.sp {
                 transform: translateY(-100%);
             }
         }
+        .language {
+            @include m.sp {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &:not(.-showHeader) {
+        @include m.not-sp {
+            transform: translateY(-100%);
+        }
+
     }
 }
 
 body {
     &[data-id="about"] {
         header {
-            background-color: v.$colorRed;
-            border-top-color: v.$colorWhite;
+            .header-content {
+                background-color: v.$colorRed;
+                border-top-color: v.$colorWhite;
+            }
             h1 {
                 svg {
                     path {
@@ -133,8 +196,10 @@ body {
                 li {
                     a {
                         &.current {
-                            color: v.$colorRed;
-                            background-color: v.$colorWhite;
+                            @include m.not-sp {
+                                color: v.$colorRed;
+                                background-color: v.$colorWhite;
+                            }
                         }
                     }
                 }
