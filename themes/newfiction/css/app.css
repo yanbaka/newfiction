@@ -161,6 +161,31 @@ body[data-id=about] header ul, body[data-id=about] header .language {
   }
 }
 
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+@keyframes morph {
+  0% {
+    border-radius: 50% 50% 50% 50%;
+  }
+  25% {
+    border-radius: 48% 52% 50% 50%;
+  }
+  50% {
+    border-radius: 53% 47% 49% 51%;
+  }
+  75% {
+    border-radius: 50% 50% 54% 46%;
+  }
+  100% {
+    border-radius: 50% 50% 50% 50%;
+  }
+}
 footer .capabilities {
   background-color: #16161A;
 }
@@ -203,6 +228,27 @@ footer .foot .links a {
 footer .foot small {
   color: #FAF0F1;
   font-family: "Selecta";
+}
+footer .foot .follower .object {
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+footer .foot .follower .object .animation {
+  width: 10rem;
+  height: 10rem;
+  background: white;
+  border-radius: 50%;
+  animation: breathe 4s ease-in-out infinite, morph 4s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+  color: #E01A12;
+  font-family: "Fragment Mono", monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+footer .foot .follower:not(.-show) .object {
+  transform: scale(0);
 }
 
 @font-face {

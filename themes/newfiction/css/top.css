@@ -71,7 +71,6 @@
 @media screen and (min-width: 769px) {
   .bg-image {
     top: 0;
-    position: sticky;
   }
 }
 @media screen and (max-width: 768px) {
@@ -85,13 +84,13 @@
   }
 }
 .bg-image picture {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   .bg-image picture {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
   }
 }

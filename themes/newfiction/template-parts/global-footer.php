@@ -37,5 +37,10 @@
             </div>
             <small class="block mt-[12px] md:mt-0 text-[17px]">&copy; 2025 New Fiction</small>
         </div>
+        <div class="follower absolute top-0 left-0">
+            <div class="object">
+                <div class="animation">SAY HI</div>
+            </div>
+        </div>
     </div>
 </footer>

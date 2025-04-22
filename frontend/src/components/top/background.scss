@@ -4,7 +4,6 @@
 .bg-image {
     @include m.not-sp {
         top: 0;
-        position: sticky;
     }
     @include m.sp {
         top: 75px;
@@ -15,11 +14,11 @@
         z-index: -1;
     }
     picture {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         @include m.sp {
+            position: absolute;
+            top: 0;
+            left: 0;
             height: 100%;
         }
     }
