@@ -1,17 +1,43 @@
 @use '../../css/common/variables' as v;
 @use '../../css/common/mixin' as m;
 
-.background-image {
+.bg-image {
+    @include m.not-sp {
+        top: 0;
+        position: sticky;
+    }
+    @include m.sp {
+        top: 75px;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 75px);
+        z-index: -1;
+    }
     picture {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100%;
+        width: 100%;
+        @include m.sp {
+            height: 100%;
+        }
     }
     img {
-        width: 100vw;
-        height: 100%;
-        object-fit: cover;
+        width: 100%;
+        @include m.sp {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+body {
+    &.-hide-bg-image {
+        .bg-image {
+            @include m.sp {
+                display: none;
+            }
+        }
     }
 }

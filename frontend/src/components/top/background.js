@@ -11,7 +11,7 @@ export function subscibeScroll() {
             const triggerTargetId = triggerTarget.data('bg-trigger-id');
             const triggerTargetType = triggerTarget.data('bg-type');
     
-            const imageTarget = $(`.background-image .background-${triggerTargetId}`);
+            const imageTarget = $(`.bg-image .background-${triggerTargetId}`);
             if (triggerTargetType === 'clip') {
                 const start = triggerTarget.offset().top - $window.height();
                 const end = triggerTarget.offset().top;

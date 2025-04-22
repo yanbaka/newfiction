@@ -430,4 +430,10 @@ footer .foot small {
   z-index: 2;
 }
 
+@media screen and (max-width: 768px) {
+  .h-screen-sp {
+    min-height: calc(100vh - 75px);
+  }
+}
+
 /*# sourceMappingURL=app.css.map*/
