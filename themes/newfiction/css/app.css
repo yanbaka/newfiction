@@ -238,7 +238,7 @@ footer .foot .follower .object .animation {
   height: 10rem;
   background: white;
   border-radius: 50%;
-  animation: breathe 4s ease-in-out infinite, morph 4s ease-in-out infinite;
+  animation: breathe 2s ease-in-out infinite, morph 8s ease-in-out infinite;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
   color: #E01A12;
   font-family: "Fragment Mono", monospace;
