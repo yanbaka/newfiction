@@ -26,7 +26,13 @@
 
 .next {
     background-color: v.$colorBlack;
+    transition-property: background-color;
+    transition-duration: 0.3s;
     dl {
+        dt, dd {
+            transition-property: color;
+            transition-duration: 0.3s;
+        }
         dt {
             font-size: 11px;
             color: #D1C9C9;
@@ -39,6 +45,18 @@
             color: v.$colorWhite;
         }
     }
+    &.-white {
+        background-color: v.$colorWhite;
+        dl {
+            dt {
+                color: v.$colorBlack;
+            }
+            dd {
+                color: v.$colorBlack;
+            }
+        }
+    }
+
 }
 
 .next-post {

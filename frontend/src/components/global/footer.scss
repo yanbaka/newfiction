@@ -50,6 +50,9 @@ footer {
             font-family: v.$fontSelecta;
         }
         .follower {
+            @include m.sp {
+                display: none;
+            }
             .object {
                 transition-property: transform;
                 transition-duration: 0.3s;

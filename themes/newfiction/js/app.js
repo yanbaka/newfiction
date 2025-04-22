@@ -11405,23 +11405,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const $window = $(window);
-const $header = $('header');
-
 let token = null;
+
+const $next = $('.next');
 
 function subscibeScroll() {
     token = pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', (_, $scrollTop) => {
         const $nextPost = $('.next-post');
         if(!$nextPost.length) return;
 
-        const top = $nextPost.offset().top - $header.outerHeight();
+        const top = $nextPost.offset().top;
 
         // 次のworkの色変更
         if (top - $scrollTop <= 50) {
-            $nextPost.addClass('-white')
+            $nextPost.addClass('-white');
+            $next.addClass('-white');
         } else {
-            $nextPost.removeClass('-white')
+            $nextPost.removeClass('-white');
+            $next.removeClass('-white');
         }
 
         // 次のworkへ遷移
