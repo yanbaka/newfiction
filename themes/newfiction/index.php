@@ -36,8 +36,18 @@
 		<div class="h-screen bg-trigger md:hidden" data-bg-trigger-id="1" data-bg-type="clip"></div>
 		<div class="overview px-4 py-16 md:py-[250px] min-h-screen bg-trigger" data-bg-trigger-id="2" data-bg-type="changer">
 			<div>
-				<p class="lead">日本のデジタルプロダクトとブランドを世界に響く形へ。文化的な感性を大切にしながら、その価値を引き上げます</p>
-				<p class="text mt-4">日本ブランドを世界基準へと磨き上げるときも、海外ブランドの日本市場進出を支援するときも、それぞれの文脈に合わせた最適なアプローチを提供します。</p>
+				<p class="lead">
+					<?php get_template_part('template-parts/localize', null, [
+						'ja' => '日本のデジタルプロダクトとブランドを世界に響く形へ。文化的な感性を大切にしながら、その価値を引き上げます',
+						'en' => 'We exist to elevate Japanese design in the digital space, ensuring they resonate globally while remaining culturally attuned.'
+					]); ?>
+				</p>
+				<p class="text mt-4">
+					<?php get_template_part('template-parts/localize', null, [
+						'ja' => '日本ブランドを世界基準へと磨き上げるときも、海外ブランドの日本市場進出を支援するときも、それぞれの文脈に合わせた最適なアプローチを提供します。',
+						'en' => 'Whether refining Japanese brands for the world stage or guiding international partners into the Japanese market, we tailor our approach to each unique context.'
+					]); ?>
+				</p>
 			</div>
 			<a class="see-the-work rounded-full mt-8">See the work</a>
 		</div>
@@ -56,7 +66,12 @@
 		<div class="bg-trigger" data-bg-trigger-id="3" data-bg-type="changer">
 			<?php include get_template_directory() . '/components/flow.php'; ?>
 			<div class="overview overview2 h-screen-sp px-4 md:py-40">
-				<p class="lead">多様な業界経験を活かし、あらゆる規模の企業と協業。プロダクトとブランドの掛け算で価値を生み出します</p>
+				<p class="lead">
+					<?php get_template_part('template-parts/localize', null, [
+						'ja' => '多様な業界経験を活かし、あらゆる規模の企業と協業。プロダクトとブランドの掛け算で価値を生み出します',
+						'en' => 'With diverse industry experience working with companies of all sizes across various fields, we play in the intersection of product and brand.'
+					]); ?>
+				</p>
 			</div>
 		</div>
 		<div class="h-screen md:hidden"></div>

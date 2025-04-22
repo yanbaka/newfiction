@@ -9,11 +9,10 @@
 >
 	<p class="px-4 py-6 md:pt-[256px] md:pb-6 copy">
 		<span class="block -enterAnimation"><span data-animation-type="y">
-			<?php if (get_language() === 'ja'): ?>
-				"異なる"ことは "より良い" よりもより良い。
-			<?php else: ?>
-				<i>Different</i> is better than <i>better</i>.
-			<?php endif; ?>
+			<?php get_template_part('template-parts/localize', null, [
+					'ja' => '"異なる"ことは "より良い" よりもより良い。',
+					'en' => '<i>Different</i> is better than <i>better</i>.'
+			]); ?>
 		</span></span>
 	</p>
 	<p class="px-4 pt-4 pb-12 md:pt-6 md:pb-24 lead">

@@ -1,0 +1,5 @@
+<?php if (get_language() === 'ja'): ?>
+    <?php echo $args['ja'] ?>
+<?php else: ?>
+    <?php echo $args['en'] ?>
+<?php endif; ?>
