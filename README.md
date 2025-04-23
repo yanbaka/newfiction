@@ -9,7 +9,8 @@ admin / password
 ## 接続情報
 
 ### GoDaddy
-https://host.godaddy.com/hosting
+- https://host.godaddy.com/hosting
+- https://account.godaddy.com/products?del_code=1
 
 ### WordPress
 https://7zb.488.myftpupload.com

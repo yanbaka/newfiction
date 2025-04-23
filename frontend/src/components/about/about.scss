@@ -26,8 +26,8 @@
             }
         }
         .lead {
-            font-family: v.$fontSelecta;
             font-size: 48px;
+            font-family: v.$fontSelecta;
             @include m.sp {
                 font-size: 32px;
             }

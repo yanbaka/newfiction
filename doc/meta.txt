@@ -1,0 +1,5 @@
+Meta tag:
+<meta name="keywords" content="new fiction, new, fiction, design, studio, tokyo, japan, product design, digital product, brand design, ux/ui design, ux design, ui design, web design, branding, strategy, graphic design, logo design, package design, kosuke futsukaichi, designer, freelance">
+<meta property="og:title" content="New Fiction" />
+<meta name="description" content="A digital product and brand design studio. Based in Tokyo, working globally.">
+<title>New Fiction</title>

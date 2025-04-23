@@ -68,7 +68,7 @@
 						]); ?>
 					</p>
 				</div>
-				<a class="see-the-work rounded-full mt-8 md:mt-0" href="">See the work</a>
+				<a href="<?php echo esc_url(home_url('/work')); ?>" class="see-the-work rounded-full mt-8 md:mt-0" href="">See the work</a>
 			</div>
 			<div class="flex-1">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/about/flow1.png" alt="">
@@ -86,7 +86,7 @@
 						]); ?>
 					</p>
 				</div>
-				<a class="see-the-work rounded-full mt-8 md:mt-0" href="">See the work</a>
+				<a href="<?php echo esc_url(home_url('/work')); ?>" class="see-the-work rounded-full mt-8 md:mt-0" href="">See the work</a>
 			</div>
 			<div class="flex-1">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/about/flow2.png" alt="">
@@ -104,7 +104,7 @@
 						]); ?>
 					</p>
 				</div>
-				<a class="see-the-work rounded-full mt-8 md:mt-0" href="">See the work</a>
+				<a href="<?php echo esc_url(home_url('/work')); ?>" class="see-the-work rounded-full mt-8 md:mt-0" href="">See the work</a>
 			</div>
 			<div class="flex-1">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/about/flow3.png" alt="">

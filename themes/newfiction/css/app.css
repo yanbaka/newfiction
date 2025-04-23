@@ -218,6 +218,12 @@ footer .foot h2 {
   color: #F7F7FA;
   font-family: "Selecta";
   font-weight: 500;
+  line-height: 1.1;
+}
+@media screen and (max-width: 768px) {
+  footer .foot h2 {
+    line-height: 1.1;
+  }
 }
 footer .foot .logo {
   margin-top: 160px;

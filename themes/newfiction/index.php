@@ -49,7 +49,7 @@
 					]); ?>
 				</p>
 			</div>
-			<a class="see-the-work rounded-full mt-8">See the work</a>
+			<a href="<?php echo esc_url(home_url('/work')); ?>" class="see-the-work rounded-full mt-8">See the work</a>
 		</div>
 		<div class="bg-image">
 			<?php

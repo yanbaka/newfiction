@@ -37,6 +37,10 @@ footer {
             color: v.$colorOffWhite;
             font-family: v.$fontSelecta;
             font-weight: 500;
+            line-height: calc(88 / 80);
+            @include m.sp {
+                line-height: calc(44 / 40);
+            }
         }
         .logo {
             margin-top: 160px;

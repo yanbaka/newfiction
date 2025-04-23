@@ -29,8 +29,8 @@
   }
 }
 .main[data-language=en] .lead {
-  font-family: "Selecta";
   font-size: 48px;
+  font-family: "Selecta";
 }
 @media screen and (max-width: 768px) {
   .main[data-language=en] .lead {

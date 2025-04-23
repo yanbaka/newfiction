@@ -1,3 +1,4 @@
+Email template:
 Subject: Thank you for contacting New Fiction
 Message:
 [相手のお名前] 様
