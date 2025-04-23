@@ -14,7 +14,6 @@
         }
         .lead {
             font-size: 2.25rem;
-            font-weight: 500;
             font-family: v.$fontIBMPlexSansJP;
         }
     }
@@ -28,7 +27,7 @@
         }
         .lead {
             font-family: v.$fontSelecta;
-            font-weight: 500;
+            font-size: 48px;
             @include m.sp {
                 font-size: 32px;
             }
@@ -42,6 +41,7 @@
     
     .lead {
         color: v.$colorBlack;
+        font-weight: 500;
     }
 
     .beliefs {

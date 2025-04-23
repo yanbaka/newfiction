@@ -6,6 +6,7 @@
 	$visual = $pods->field('visual');
 	$visual_url = $visual['guid'];
 	$description = $pods->field('description');
+	$description_ja = $pods->field('description_ja');
 	$industry = $pods->field('industry');
 	$platform = $pods->field('platform');
 	$contributions = $pods->field('contributions');
@@ -25,7 +26,12 @@
 	<div class="px-4"><img class="w-full" src="<?php echo $visual_url ?>" alt=""></div>
 	<div class="px-4 py-6 md:pt-8 md:pb-24">
 		<div class="md:flex">
-			<p class="flex-1 text-[22px] md:mr-4 fontSelectaRegular"><?php echo $description; ?></p>
+			<p class="flex-1 text-[22px] md:mr-4 fontSelectaRegular">
+				<?php get_template_part('template-parts/localize', null, [
+					'ja' => $description_ja,
+					'en' => $description,
+				]); ?>
+			</p>
 			<div class="profile md:flex-1 md:ml-4">
 				<dl>
 					<dt>

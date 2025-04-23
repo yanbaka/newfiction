@@ -17,7 +17,6 @@
 }
 .main[data-language=ja] .lead {
   font-size: 2.25rem;
-  font-weight: 500;
   font-family: "IBM Plex Sans JP", sans-serif;
 }
 .main[data-language=en] .copy {
@@ -31,7 +30,7 @@
 }
 .main[data-language=en] .lead {
   font-family: "Selecta";
-  font-weight: 500;
+  font-size: 48px;
 }
 @media screen and (max-width: 768px) {
   .main[data-language=en] .lead {
@@ -44,6 +43,7 @@
 }
 .main .lead {
   color: #16161A;
+  font-weight: 500;
 }
 .main .beliefs {
   background-color: #F7F7FA;
