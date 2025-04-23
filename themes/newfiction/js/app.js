@@ -11174,6 +11174,7 @@ const $header = $('header');
 const $foot = $('.foot');
 const $capabilities = $('.capabilities');
 const $follower = $('.foot .follower');
+const $logo = $('.foot .logo');
 
 let mouseX = 0;
 let mouseY = 0;
@@ -11205,6 +11206,14 @@ pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('init', () => {
     }
 
     followMouse();
+
+    $logo.on('mouseover', () => {
+        $logo.addClass('-on');
+    });
+
+    $logo.on('mouseout', () => {
+        $logo.removeClass('-on');
+    });
 })
 
 pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('scroll', () => {

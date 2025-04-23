@@ -6,6 +6,7 @@ const $header = $('header');
 const $foot = $('.foot');
 const $capabilities = $('.capabilities');
 const $follower = $('.foot .follower');
+const $logo = $('.foot .logo');
 
 let mouseX = 0;
 let mouseY = 0;
@@ -37,6 +38,14 @@ PubSub.subscribe('init', () => {
     }
 
     followMouse();
+
+    $logo.on('mouseover', () => {
+        $logo.addClass('-on');
+    });
+
+    $logo.on('mouseout', () => {
+        $logo.removeClass('-on');
+    });
 })
 
 PubSub.subscribe('scroll', () => {

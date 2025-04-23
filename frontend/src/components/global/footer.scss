@@ -40,6 +40,21 @@ footer {
         }
         .logo {
             margin-top: 160px;
+            img {
+                pointer-events: none;
+                transition-property: opacity;
+                transition-duration: 0.6s;
+            }
+            &.-on {
+                .-off {
+                    opacity: 0;
+                }
+            }
+            &:not(.-on) {
+                .-on {
+                    opacity: 0;
+                }
+            }
         }
         .links {
             a {
@@ -52,6 +67,7 @@ footer {
             font-family: v.$fontSelecta;
         }
         .follower {
+            pointer-events: none;
             @include m.sp {
                 display: none;
             }

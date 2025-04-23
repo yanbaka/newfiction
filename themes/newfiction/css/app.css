@@ -222,6 +222,17 @@ footer .foot h2 {
 footer .foot .logo {
   margin-top: 160px;
 }
+footer .foot .logo img {
+  pointer-events: none;
+  transition-property: opacity;
+  transition-duration: 0.6s;
+}
+footer .foot .logo.-on .-off {
+  opacity: 0;
+}
+footer .foot .logo:not(.-on) .-on {
+  opacity: 0;
+}
 footer .foot .links a {
   color: #FAF0F1;
   font-family: "Selecta";
@@ -229,6 +240,9 @@ footer .foot .links a {
 footer .foot small {
   color: #FAF0F1;
   font-family: "Selecta";
+}
+footer .foot .follower {
+  pointer-events: none;
 }
 @media screen and (max-width: 768px) {
   footer .foot .follower {

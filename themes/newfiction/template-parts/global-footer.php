@@ -122,7 +122,10 @@
                 'en' => 'A new project, an idea, or an intro. <br />Shoot us a message.'
             ]); ?>
         </h2>
-        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
+        <div class="logo relative flex items-center justify-center">
+            <img class="-off" src="<?php echo get_template_directory_uri(); ?>/images/logo_footer.png" alt="">
+            <img class="absolute -on" src="<?php echo get_template_directory_uri(); ?>/images/logo_footer_on.png" alt="">
+        </div>
         <div class="md:flex md:justify-between mt-[12px] md:mt-4">
             <div class="links flex justify-between md:justify-start">
                 <a class="text-[17px] underline" href="" target="_blank">business@newfiction.org</a>
