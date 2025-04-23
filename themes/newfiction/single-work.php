@@ -28,7 +28,12 @@
 			<p class="flex-1 text-[22px] md:mr-4 fontSelectaRegular"><?php echo $description; ?></p>
 			<div class="profile md:flex-1 md:ml-4">
 				<dl>
-					<dt>CATEGORY</dt>
+					<dt>
+						<?php get_template_part('template-parts/localize', null, [
+							'ja' => 'カテゴリ',
+							'en' => 'CATEGORY'
+						]); ?>
+					</dt>
 					<?php
 						foreach ( $industry as $value ) {
 							echo "<dd>{$value}</dd>";
@@ -36,7 +41,12 @@
 					?>
 				</dl>
 				<dl>
-					<dt>CONTRIBUTIONS</dt>
+					<dt>
+						<?php get_template_part('template-parts/localize', null, [
+							'ja' => '貢献',
+							'en' => 'CONTRIBUTIONS'
+						]); ?>
+					</dt>
 					<?php
 						foreach ( $contributions as $value ) {
 							echo "<dd>{$value}</dd>";
@@ -44,7 +54,12 @@
 					?>
 				</dl>
 				<dl>
-					<dt>LINK</dt>
+					<dt>
+						<?php get_template_part('template-parts/localize', null, [
+							'ja' => 'リンク',
+							'en' => 'LINK'
+						]); ?>
+					</dt>
 					<dd class="underline"><?php echo "<a href=\"{$linkUrl}\" target=\"_blank\">{$linkLabel}</a>" ?></dd>
 				</dl>
 			</div>

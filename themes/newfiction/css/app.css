@@ -415,6 +415,12 @@ footer .foot .follower:not(.-show) .object {
 .contact-parent .contact .form {
   margin-top: 1.5rem;
 }
+@media screen and (min-width: 769px) {
+  .contact-parent .contact .form {
+    overflow-y: scroll;
+    max-height: 400px;
+  }
+}
 .contact-parent .contact .form input, .contact-parent .contact .form textarea {
   width: 100%;
   background-color: #272729;
@@ -425,10 +431,16 @@ footer .foot .follower:not(.-show) .object {
   vertical-align: bottom;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
+  color: #F7F7FA;
 }
 .contact-parent .contact .form textarea {
   height: 10rem;
   resize: none;
+}
+.contact-parent .contact .err-message {
+  color: #E01A12;
+  font-size: 14px;
+  font-family: "Selecta";
 }
 .contact-parent .contact .submit {
   background-color: #F7F7FA;
@@ -442,6 +454,14 @@ footer .foot .follower:not(.-show) .object {
   border-radius: 1rem;
   border-radius: 9999px;
 }
+.contact-parent .contact .send-complete p {
+  color: #F7F7FA;
+  font-family: "Selecta";
+}
+.contact-parent .contact .wpcf7-response-output,
+.contact-parent .contact .wpcf7-spinner {
+  display: none;
+}
 .contact-parent:not(.-show) {
   pointer-events: none;
 }
@@ -450,6 +470,12 @@ footer .foot .follower:not(.-show) .object {
 }
 .contact-parent:not(.-show) .contact-background {
   opacity: 0;
+}
+.contact-parent.-complete .send {
+  display: none;
+}
+.contact-parent:not(.-complete) .send-complete {
+  display: none;
 }
 .contact-parent.-show .contact,
 .contact-parent.-show .contact-background {

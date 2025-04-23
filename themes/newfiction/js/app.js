@@ -11124,8 +11124,11 @@ const $triggerContact = $('#trigger-contact');
 const $contact = $('.contact-parent');
 const $close = $('.contact-parent .contact .close');
 
+const $errMessage = $('.err-message')
+
 pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('init', () => {
     $triggerContact.on('click', () => {
+        $contact.removeClass('-complete');
         $contact.addClass('-show');
     });
 
@@ -11138,7 +11141,16 @@ pubsub_js__WEBPACK_IMPORTED_MODULE_0___default().subscribe('init', () => {
             $contact.removeClass('-hide');
             $contact.removeClass('-show');
         }
-    })
+    });
+
+    document.addEventListener('wpcf7mailsent', function (e) {
+        $contact.addClass('-complete');
+    });
+
+    document.addEventListener('wpcf7mailfailed', function (e) {
+        const message = e.detail.apiResponse.message;
+        $errMessage.html(message);
+    });
 });
 
 /***/ }),

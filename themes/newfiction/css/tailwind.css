@@ -625,6 +625,9 @@ video {
 .min-h-screen {
   min-height: 100vh;
 }
+.min-h-\[320px\] {
+  min-height: 320px;
+}
 .w-1\/2 {
   width: 50%;
 }
@@ -738,6 +741,10 @@ video {
 }
 .text-\[15px\] {
   font-size: 15px;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .font-light {
   font-weight: 300;

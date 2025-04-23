@@ -67,6 +67,10 @@
         }
         .form {
             margin-top: 1.5rem;
+            @include m.not-sp {
+                overflow-y: scroll;
+                max-height: 400px;
+            }
             input, textarea {
                 width: 100%;
                 background-color: #272729;
@@ -77,11 +81,17 @@
                 vertical-align: bottom;
                 border-top-left-radius: 0.25rem;
                 border-top-right-radius: 0.25rem;
+                color: v.$colorOffWhite;
             }
             textarea {
                 height: 10rem;
                 resize: none;
             }
+        }
+        .err-message {
+            color: v.$colorRed;
+            font-size: 14px;
+            font-family: v.$fontSelecta;
         }
         .submit {
             background-color: v.$colorOffWhite;
@@ -95,6 +105,18 @@
             border-radius: 1rem;
             border-radius: 9999px;
         }
+
+        .send-complete {
+            p {
+                color: v.$colorOffWhite;
+                font-family: v.$fontSelecta;
+            }
+        }
+
+        .wpcf7-response-output,
+        .wpcf7-spinner {
+            display: none;
+        }
     }
 
     &:not(.-show) {
@@ -104,6 +126,18 @@
         }
         .contact-background {
             opacity: 0;
+        }
+    }
+
+    &.-complete {
+        .send {
+            display: none;
+        }
+    }
+
+    &:not(.-complete) {
+        .send-complete {
+            display: none;
         }
     }
 

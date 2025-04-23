@@ -5,4 +5,5 @@
     [text* your-subject placeholder "Subject"]
     [textarea your-message placeholder "Inquiry details"]
 </div>
+<div class="err-message"></div>
 [submit class:submit "Send it"]
