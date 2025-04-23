@@ -2,7 +2,12 @@
     <div class="contact-background w-full h-full fixed top-0 left-0"></div>
     <div class="contact">
         <button class="close"><span></span></button>
-        <h2>Get in touch</h2>
+        <h2>
+            <?php get_template_part('template-parts/localize', null, [
+                'ja' => '気軽にご連絡ください',
+                'en' => 'Get in touch'
+            ]); ?>
+        </h2>
         <?php
             echo do_shortcode('[contact-form-7 id="ff21e94" title="contact"]')
         ?>

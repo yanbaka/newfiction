@@ -209,6 +209,7 @@ footer .capabilities .our-services {
   font-size: 17px;
   font-family: "Selecta";
   font-weight: 500;
+  box-shadow: inset 0px -4px 8px 0px rgba(0, 0, 0, 0.2);
 }
 footer .foot {
   background-color: #E01A12;
@@ -228,6 +229,11 @@ footer .foot .links a {
 footer .foot small {
   color: #FAF0F1;
   font-family: "Selecta";
+}
+@media screen and (max-width: 768px) {
+  footer .foot .follower {
+    display: none;
+  }
 }
 footer .foot .follower .object {
   transition-property: transform;

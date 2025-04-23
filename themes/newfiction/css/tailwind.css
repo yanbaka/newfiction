@@ -736,6 +736,9 @@ video {
 .text-\[48px\] {
   font-size: 48px;
 }
+.text-\[15px\] {
+  font-size: 15px;
+}
 .font-light {
   font-weight: 300;
 }
@@ -744,6 +747,13 @@ video {
 }
 .font-normal {
   font-weight: 400;
+}
+.font-\[15px\] {
+  font-weight: 15px;
+}
+.text-\[\#7A7676\] {
+  --tw-text-opacity: 1;
+  color: rgb(122 118 118 / var(--tw-text-opacity, 1));
 }
 .underline {
   text-decoration-line: underline;

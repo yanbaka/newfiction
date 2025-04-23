@@ -19,7 +19,12 @@
 	data-id="work"
 >
 	<p class="px-4 py-6 md:pt-[200px] md:pb-8 text-[48px] md:text-[56px] copy">
-		<span class="block -enterAnimation"><span data-animation-type="y">実用性と表現力を兼ね備えたプロダクト</span></span>
+		<span class="block -enterAnimation"><span data-animation-type="y">
+			<?php get_template_part('template-parts/localize', null, [
+				'ja' => '実用性と表現力を兼ね備えたプロダクト',
+				'en' => 'Designing practical products and identities that communicate clearly.'
+			]); ?>
+		</span></span>
 	<p>
 	<div class="px-4 pb-12 cards flex flex-wrap justify-between">
 		<?php if($custom_query->have_posts()): ?>
