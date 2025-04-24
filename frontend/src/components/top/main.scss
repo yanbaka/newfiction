@@ -3,6 +3,12 @@
 
 .main {
     background: none;
+    .hero-title {
+        line-height: calc(88 / 80);
+        @include m.sp {
+            line-height: calc(48 / 48);
+        }
+    }
     .overview {
         background-color: v.$colorWhite;
         @include m.sp {
@@ -12,18 +18,12 @@
         }
         .lead {
             color: v.$colorBlack;
-            font-family: v.$fontIBMPlexSansJP;
-            font-size: 40px;
-            font-weight: 700;
             @include m.sp {
                 font-size: 36px;
             }
         }
         .text {
             color: #7A7676;
-            font-family: v.$fontIBMPlexSansJP;
-            font-size: 22px;
-            font-weight: 500;
             @include m.sp {
                 font-size: 22px;
             }
@@ -31,6 +31,45 @@
         &.overview2 {
             @include m.sp {
                 justify-content: center;
+            }
+        }
+    }
+}
+
+body {
+    &[data-language="ja"] {
+        .overview {
+            .lead,
+            .text {
+                font-family: v.$fontIBMPlexSansJP;
+            }
+            .lead {
+                font-size: 40px;
+                font-weight: 700;
+                line-height: calc(56 / 40);
+            }
+            .text {
+                font-size: 22px;
+                font-weight: 500;
+                line-height: calc(36 / 22);
+            }
+        }
+    }
+    &[data-language="en"] {
+        .overview {
+            .lead,
+            .text {
+                font-family: v.$fontSelecta;
+            }
+            .lead {
+                font-size: 48px;
+                font-weight: 500;
+                line-height: calc(52 / 48);
+            }
+            .text {
+                font-size: 22px;
+                font-weight: 500;
+                line-height: calc(28 / 22);
             }
         }
     }

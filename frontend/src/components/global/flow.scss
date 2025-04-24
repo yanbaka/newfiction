@@ -13,11 +13,39 @@
     .num {
         color: v.$colorRed;
         font-family: v.$fontFragmentMono;
+        line-height: normal;
     }
     .title {
         color: v.$colorBlack;
+        line-height: calc(40 / 36);
     }
     .text {
         color: #7A7676;
+    }
+}
+
+.main {
+    &[data-language="ja"] {
+        .flow {
+            .card {
+                .text {
+                    font-size: 17px;
+                    font-family: v.$fontIBMPlexSansJP;
+                    font-weight: 500;
+                    line-height: calc(30 / 17);
+                }
+            }
+        }
+    }
+    &[data-language="en"] {
+        .flow {
+            .card {
+                .text {
+                    font-size: 22px;
+                    font-family: v.$fontSelecta;
+                    line-height: calc(28 / 22);
+                }
+            }
+        }
     }
 }

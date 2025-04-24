@@ -2,7 +2,6 @@
 <main role="main" id="main" class="main"
 	data-barba="container"
 	data-barba-namespace="about"
-	data-language="<?php echo get_language(); ?>"
 	data-css="<?php echo get_template_directory_uri(); ?>/css/about.css"
 	data-js="<?php echo get_template_directory_uri(); ?>/js/about.js"
 	data-id="about"

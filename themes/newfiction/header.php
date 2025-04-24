@@ -31,5 +31,8 @@
     </style>
 </head>
 
-<body <?php body_class(); ?> data-barba="wrapper">
+<body <?php body_class(); ?>
+    data-barba="wrapper"
+    data-language="<?php echo get_language(); ?>"
+>
 <?php get_template_part('template-parts/global', 'header'); ?>
