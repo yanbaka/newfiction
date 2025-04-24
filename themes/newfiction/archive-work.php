@@ -18,10 +18,10 @@
 	data-js="<?php echo get_template_directory_uri(); ?>/js/work.js"
 	data-id="work"
 >
-	<p class="px-4 py-6 md:pt-[200px] md:pb-8 text-[48px] md:text-[56px] copy">
+	<p class="px-4 py-6 md:pt-[200px] md:pb-8 copy">
 		<span class="block -enterAnimation"><span data-animation-type="y">
 			<?php get_template_part('template-parts/localize', null, [
-				'ja' => '実用性と表現力を兼ね備えたプロダクト',
+				'ja' => '実用的で、スッと入ってくるプロダクトとアイデンティティのデザイン',
 				'en' => 'Designing practical products and identities that communicate clearly.'
 			]); ?>
 		</span></span>

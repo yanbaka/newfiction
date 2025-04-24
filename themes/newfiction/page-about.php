@@ -122,9 +122,9 @@
 				]); ?>
 			</h3>
 			<?php if (get_language() === 'ja'): ?>
-				<small class="text-[15px] font-medium block text-[#7A7676]">ふつかいち こうすけ</small>
+				<small class="kana text-[15px] font-medium block text-[#7A7676]">ふつかいち こうすけ</small>
 			<?php endif; ?>
-			<p class="text-[22px] mt-8">
+			<p class="mt-8">
 				<?php get_template_part('template-parts/localize', null, [
 					'ja' => 'デジタルプロダクトデザインとブランドデザインを専門とする多文化的なデザイナー。日本で生まれ、その後日本と北米のさまざまな都市を転々として育つ中で、特にアリゾナ州ギルバートでのアメリカ文化との出会いが彼のアイデンティティに大きな影響を与えた。<br /><br />カナダのバンクーバーでデザインを学んだ後、アーリーステージのスタートアップに創業デザイナーとして参画し、デザイナーとしての基盤を築いた。その後、複数のスタートアップで経験を重ね、新たな挑戦を求めて東京へと拠点を移した。<br /><br />父親の仕事の関係で幼少期から引越しを繰り返してきた彼は、自分自身の道を切り開くことを決意。日本市場が変化する中で、特に企業のデジタル体験の分野に成長の余地があることに注目し、2024年12月に自身のスタジオ「New Fiction」を設立した。New Fictionを通じて、日本のデジタル体験のレベルアップに貢献することを目指す。',
 					'en' => 'Kosuke is a multicultural designer specializing in product and brand design. Born in Japan but raised between cities in Japan and North America, his identity was shaped in Gilbert, Arizona, where he connected with American culture.After studying design holistically in Vancouver, Canada, Kosuke launched his career as the founding designer at an early-stage startup—an experience that built a strong professional foundation. He later applied his expertise across multiple startups before moving his life to Tokyo for a new adventure.<br />Having spent much of his early life following his father\'s career moves, Kosuke chose to forge his own path. Recognizing Japan\'s evolving market—especially the opportunity for growth in corporate digital experiences—he founded his studio, New Fiction, in December 2024. Through New Fiction, Kosuke aims to inspire a new wave that amplifies Japanese excellence on the world stage.'

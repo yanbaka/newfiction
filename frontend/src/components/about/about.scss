@@ -1,38 +1,7 @@
 @use '../../css/common/variables' as v;
 @use '../../css/common/mixin' as m;
 
-.copy {
-
-}
-
 .main {
-    &[data-language="ja"] {
-        .copy {
-            font-size: 56px;
-            font-weight: 700;
-            font-family: v.$fontIBMPlexSansJP;
-        }
-        .lead {
-            font-size: 2.25rem;
-            font-family: v.$fontIBMPlexSansJP;
-        }
-    }
-    &[data-language="en"] {
-        .copy {
-            font-size: 80px;
-            font-family: v.$fontSelecta;
-            @include m.sp {
-                font-size: 48px;
-            }
-        }
-        .lead {
-            font-size: 48px;
-            font-family: v.$fontSelecta;
-            @include m.sp {
-                font-size: 32px;
-            }
-        }
-    }
 
     .copy {
         background-color: v.$colorRed;
@@ -46,14 +15,16 @@
 
     .beliefs {
         background-color: v.$colorOffWhite;
-        font-family: v.$fontSelecta;
         h2 {
             color: v.$colorBlack;
+            font-family: v.$fontSelecta;
+            line-height: calc(52/ 48);
             @include m.not-sp {
                 width: calc(405 / 1248 * 100%);
             }
             @include m.sp {
                 font-size: 36px;
+                line-height: calc(30 / 36);
             }
         }
         .description {
@@ -73,8 +44,10 @@
                 }
                 dt {
                     color: v.$colorBlack;
+                    font-family: v.$fontSelecta;
                     font-weight: 500;
                     font-size: 28px;
+                    line-height: normal;
                     @include m.not-sp {
                         width: calc(300 / 721 * 100%);
                         margin-right: 16px;
@@ -85,13 +58,14 @@
                 }
                 dd {
                     color: #7A7676;
-                    font-size: 17px;
+                    line-height: normal;
                     @include m.not-sp {
                         flex: 1;
                     }
                     @include m.sp {
                         font-size: 22px;
                         margin-top: 32px;
+                        line-height: calc(28 / 22);
                     }
                 }
             }
@@ -107,6 +81,7 @@
                 color: v.$colorRed;
                 font-size: 22px;
                 font-family: v.$fontFragmentMono;
+                line-height: calc(28 / 22);
                 @include m.sp {
                     font-size: 17px;
                 }
@@ -115,6 +90,10 @@
                 color: v.$colorBlack;
                 font-weight: 500;
                 font-family: v.$fontSelecta;
+                line-height: calc(52 / 48);
+                @include m.sp {
+                    line-height: calc(40 / 36);
+                }
             }
             .text {
                 color: #7A7676;
@@ -153,7 +132,144 @@
                         color: v.$colorRed;
                         font-size: 13px;
                         font-family: v.$fontFragmentMono;
+                        text-decoration: underline;
+                        @include m.sp {
+                            font-size: 17px;
+                        }
                     }
+                }
+            }
+        }
+    }
+}
+
+body {
+    &[data-language="ja"] {
+        .copy {
+            font-size: 56px;
+            font-weight: 700;
+            font-family: v.$fontIBMPlexSansJP;
+            line-height: calc(80 / 56);
+            @include m.sp {
+                font-size: 48px;
+                line-height: calc(48 / 48);
+            }
+        }
+        .lead {
+            font-size: 2.25rem;
+            font-weight: 500;
+            font-family: v.$fontIBMPlexSansJP;
+            line-height: calc(48 / 36);
+            @include m.sp {
+                font-size: 32px;
+                line-height: calc(40 / 32);
+            }
+        }
+
+        .beliefs {
+            .description {
+                dl {
+                    dd {
+                        font-size: 15px;
+                        font-family: v.$fontIBMPlexSansJP;
+                    }
+                }
+            }
+        }
+
+        .flow {
+            .summary {
+                .text {
+                    font-size: 17px;
+                    font-family: v.$fontIBMPlexSansJP;
+                    font-weight: 500;
+                    line-height: calc(30 / 17);
+                }
+            }
+        }
+
+        .profile {
+            .summary {
+                h3 {
+                    font-size: 24px;
+                    font-weight: 600;
+                    font-family: v.$fontIBMPlexSansJP;
+                    line-height: normal;
+                    @include m.sp {
+                        font-size: 36px;
+                        line-height: calc(40 / 36);
+                    }
+                }
+                .kana {
+                    line-height: normal;
+                }
+                p {
+                    font-family: v.$fontIBMPlexSansJP;
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+            }
+        }
+
+    }
+    &[data-language="en"] {
+        .copy {
+            font-size: 80px;
+            font-family: v.$fontSelecta;
+            line-height: calc(88 / 80);
+            @include m.sp {
+                font-size: 48px;
+                line-height: calc(48 / 48);
+            }
+        }
+        .lead {
+            font-size: 48px;
+            font-family: v.$fontSelecta;
+            line-height: calc(52 / 48);
+            @include m.sp {
+                font-size: 32px;
+                line-height: calc(40 / 32);
+            }
+        }
+
+        .beliefs {
+            .description {
+                dl {
+                    dd {
+                        font-size: 17px;
+                        font-family: v.$fontSelecta;
+                    }
+                }
+            }
+        }
+
+        .flow {
+            .summary {
+                .text {
+                    font-size: 22px;
+                    font-family: v.$fontSelecta;
+                    line-height: calc(28 / 22);
+                }
+            }
+        }
+
+        .profile {
+            .summary {
+                h3 {
+                    font-size: 48px;
+                    font-weight: 500;
+                    font-family: v.$fontSelecta;
+                    line-height: calc(52 / 48);
+                    @include m.sp {
+                        font-size: 36px;
+                        line-height: calc(40 / 36);
+                    }
+                }
+                p {
+                    font-family: v.$fontSelecta;
+                    font-size: 22px;
+                    line-height: calc(28 / 22);
                 }
             }
         }

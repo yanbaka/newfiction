@@ -1,6 +1,19 @@
 @use '../../css/common/variables' as v;
 @use '../../css/common/mixin' as m;
 
+h2 {
+    font-size: 80px;
+    line-height: calc(88 / 80);
+    @include m.sp {
+        font-size: 48px;
+        line-height: calc(48 / 48);
+    }
+}
+
+.description {
+    color: #454547;
+}
+
 .profile {
     dl {
         @include m.not-sp {
@@ -14,12 +27,14 @@
             font-size: 11px;
             font-family: v.$fontFragmentMono;
             margin-bottom: 12px;
+            line-height: normal;
         }
         dd {
             color: v.$colorBlack;
             font-size: 13px;
             font-family: 'Selecta';
             font-weight: 400;
+            line-height: normal;
         }
     }
 }
@@ -78,4 +93,22 @@
 
 footer {
     display: none !important;
+}
+
+
+body {
+    &[data-language="ja"] {
+        .description {
+            font-size: 17px;
+            font-family: v.$fontIBMPlexSansJP;
+            line-height: calc(30 / 17);
+        }
+    }
+    &[data-language="en"] {
+        .description {
+            font-size: 22px;
+            font-family: v.$fontSelecta;
+            line-height: calc(28 / 22);
+        }
+    }
 }

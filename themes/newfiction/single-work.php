@@ -22,11 +22,11 @@
 	data-js="<?php echo get_template_directory_uri(); ?>/js/single-work.js"
 	data-id="pdp"
 >
-	<div class="px-4 py-6 md:pt-[200px] md:pb-16"><h2 class="text-5xl fontSelectaMedium"><?php echo $post_title; ?></h2></div>
+	<div class="px-4 py-6 md:pt-[200px] md:pb-16"><h2 class="fontSelectaMedium"><?php echo $post_title; ?></h2></div>
 	<div class="px-4"><img class="w-full" src="<?php echo $visual_url ?>" alt=""></div>
 	<div class="px-4 py-6 md:pt-8 md:pb-24">
 		<div class="md:flex">
-			<p class="flex-1 text-[22px] md:mr-4 fontSelectaRegular">
+			<p class="description flex-1 md:mr-4">
 				<?php get_template_part('template-parts/localize', null, [
 					'ja' => $description_ja,
 					'en' => $description,

@@ -2,8 +2,7 @@
 @use '../../css/common/mixin' as m;
 
 .copy {
-    font-family: v.$fontIBMPlexSansJP;
-    font-weight: 700;
+    color: v.$colorBlack;
 }
 
 .cards {
@@ -19,6 +18,38 @@
         }
         .caption {
             font-size: 15px;
+            font-family: v.$fontSelecta;
+            line-height: normal;
+            @include m.sp {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+body {
+    &[data-language="ja"] {
+        .copy {
+            font-family: v.$fontIBMPlexSansJP;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: calc(80 / 56);
+            @include m.sp {
+                font-size: 30px;
+                line-height: calc(48 / 48);
+            }
+        }
+    }
+    &[data-language="en"] {
+        .copy {
+            font-family: v.$fontSelecta;
+            font-size: 80px;
+            font-weight: 500;
+            line-height: calc(88 / 80);
+            @include m.sp {
+                font-size: 30px;
+                line-height: calc(48 / 48);
+            }
         }
     }
 }

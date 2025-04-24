@@ -1,6 +1,6 @@
 <footer>
     <div class="capabilities h-screen-sp px-4 py-12 md:py-24 md:flex md:justify-between w-full relative z-[2]">
-        <h2 class="md:w-1/3 text-5xl fontSelectaMedium">Capabilities</h2>
+        <h2 class="md:w-1/3 text-[36px] md:text-5xl fontSelectaMedium">Capabilities</h2>
         <div class="mt-12 md:mt-0 md:w-2/3">
             <h3>PRODUCT</h3>
             <div class="md:flex mt-4">

@@ -20,7 +20,7 @@
                     'en' => 'Thanks for Reaching Out!'
                 ]); ?>
             </h2>
-            <p class="font-light text-xl mt-8 min-h-[320px]">
+            <p class="font-light mt-8 min-h-[320px]">
                 <?php get_template_part('template-parts/localize', null, [
                     'ja' => 'メッセージは正常に送信されました。<br />確認のうえ、できるだけ早くご連絡いたします。',
                     'en' => 'Your message has been sent successfully. We’ll get back to you as soon as we can.'

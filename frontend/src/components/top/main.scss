@@ -18,15 +18,9 @@
         }
         .lead {
             color: v.$colorBlack;
-            @include m.sp {
-                font-size: 36px;
-            }
         }
         .text {
             color: #7A7676;
-            @include m.sp {
-                font-size: 22px;
-            }
         }
         &.overview2 {
             @include m.sp {
@@ -47,6 +41,9 @@ body {
                 font-size: 40px;
                 font-weight: 700;
                 line-height: calc(56 / 40);
+                @include m.sp {
+                    font-size: 36px;
+                }
             }
             .text {
                 font-size: 22px;
@@ -65,6 +62,9 @@ body {
                 font-size: 48px;
                 font-weight: 500;
                 line-height: calc(52 / 48);
+                @include m.sp {
+                    font-size: 36px;
+                }
             }
             .text {
                 font-size: 22px;
