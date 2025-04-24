@@ -9,7 +9,7 @@ import '../components/contact/contact';
 import '../components/work/single';
 
 import { subscibeScroll as subscibeScrollSingle, unsubscribeScroll as unsubscibeScrollSingle } from '../components/work/single';
-import { subscibeScroll as subscibeScrollTop, unsubscribeScroll as unsubscribeScrollTop } from '../components/top/background';
+import { subscibeScroll as subscibeScrollTop, unsubscribeScroll as unsubscribeScrollTop, subscibeHover as subscibeHoverTop, unsubscribeHover as unsubscribeHoverTop } from '../components/top/background';
 import { subscibeResize as subscibeResizeTop, unsubscribeResize as unsubscribeResizeTop } from '../components/top/resize';
 
 const $window = $(window);
@@ -58,12 +58,14 @@ class Main {
             if (id === 'top') {
               subscibeScrollTop();
               subscibeResizeTop();
+              subscibeHoverTop();
             }
             if (id === 'pdp') {
               subscibeScrollSingle();
             }
             PubSub.publish('scroll', $window.scrollTop());
             PubSub.publish('resize');
+            PubSub.publish('hover');
         
             currentPageId = id;
 
@@ -85,6 +87,7 @@ class Main {
             if (id === 'top') {
               subscibeScrollTop();
               subscibeResizeTop();
+              subscibeHoverTop();
             }
             if (id === 'pdp') {
               subscibeScrollSingle();
@@ -108,6 +111,7 @@ class Main {
             if (id === 'top') {
               unsubscribeScrollTop();
               unsubscribeResizeTop();
+              unsubscribeHoverTop();
             }
             if (id === 'pdp') {
               unsubscibeScrollSingle();
@@ -117,6 +121,7 @@ class Main {
           enter(data) {
             PubSub.publish('scroll', $window.scrollTop());
             PubSub.publish('resize');
+            PubSub.publish('hover');
             $header.removeClass('-openMenu');
           },
         },

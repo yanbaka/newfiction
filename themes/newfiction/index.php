@@ -1,4 +1,13 @@
 <?php get_header(); ?>
+<?php
+    $args = array(
+        'post_type'      => 'image_set',
+        'posts_per_page' => 4,
+        'post_status'    => 'publish',
+    );
+    
+    $custom_query = new WP_Query( $args );
+?>
 <main role="main" id="main" class="main"
 	data-barba="container"
 	data-barba-namespace="home"
@@ -11,16 +20,9 @@
 			<span class="-enterAnimation"><span data-animation-type="y">Product & Brand Design Studio.</span></span>
 			<span class="-enterAnimation"><span data-animation-type="y" class="delay-100">Based in Tokyo, Working Globally.</span></span>
 		<p>
-		<div class="bg-image h-screen-sp">
-			<?php
-				$args = [
-					'pc' => 'top/top_thumbnail1_pc.jpg',
-					'sp' => 'top/top_thumbnail1_sp.jpg',
-					'alt' => '',
-				];
-				include get_template_directory() . '/components/image.php';
-			?>
-		</div>
+		<?php get_template_part('template-parts/top-imageset', null, [
+			'id' => $custom_query->posts[0]->ID,
+		]); ?>
 		<div class="bg-image h-screen-sp">
 			<?php
 				$args = [

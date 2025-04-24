@@ -3,9 +3,10 @@ import PubSub from 'pubsub-js';
 const $window = $(window);
 
 let token = null;
+let tokenHover = null;
 
 export function subscibeScroll() {
-    PubSub.subscribe('scroll', (_, $scrollTop) => {
+    token = PubSub.subscribe('scroll', (_, $scrollTop) => {
         $('.bg-trigger').each((key, element) => {
             const triggerTarget = $(element);
             const triggerTargetId = triggerTarget.data('bg-trigger-id');
@@ -31,4 +32,20 @@ export function subscibeScroll() {
 
 export function unsubscribeScroll() {
     PubSub.unsubscribe(token);
+}
+
+export function subscibeHover() {
+    tokenHover = PubSub.subscribe('hover', () => {
+        $('.bg-image').each((index, element) => {
+            $(element).hover(() => {
+                $(element).addClass('-on');
+            }, () => {
+                $(element).removeClass('-on');
+            })
+        });
+    });
+}
+
+export function unsubscribeHover() {
+    PubSub.unsubscribe(tokenHover);
 }
