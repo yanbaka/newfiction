@@ -23,17 +23,10 @@
 		<?php get_template_part('template-parts/top-imageset', null, [
 			'id' => $custom_query->posts[0]->ID,
 		]); ?>
-		<div class="bg-image h-screen-sp">
-			<?php
-				$args = [
-					'pc' => 'top/top_thumbnail2_pc.jpg',
-					'sp' => 'top/top_thumbnail2_sp.jpg',
-					'alt' => '',
-					'class' => 'background-1',
-				];
-				include get_template_directory() . '/components/image.php';
-			?>
-		</div>
+		<?php get_template_part('template-parts/top-imageset', null, [
+			'id' => $custom_query->posts[1]->ID,
+			'class' => 'background-1',
+		]); ?>
 		<div class="h-screen md:hidden"></div>
 		<div class="h-screen bg-trigger md:hidden" data-bg-trigger-id="1" data-bg-type="clip"></div>
 		<div class="overview px-4 py-16 md:py-[250px] min-h-screen bg-trigger" data-bg-trigger-id="2" data-bg-type="changer">
@@ -53,17 +46,10 @@
 			</div>
 			<a href="<?php echo esc_url(home_url('/work')); ?>" class="see-the-work rounded-full mt-8">See the work</a>
 		</div>
-		<div class="bg-image">
-			<?php
-				$args = [
-					'pc' => 'top/top_thumbnail3_pc.jpg',
-					'sp' => 'top/top_thumbnail3_sp.jpg',
-					'alt' => '',
-					'class' => 'background-2',
-				];
-				include get_template_directory() . '/components/image.php';
-			?>
-		</div>
+		<?php get_template_part('template-parts/top-imageset', null, [
+			'id' => $custom_query->posts[2]->ID,
+			'class' => 'background-2',
+		]); ?>
 		<div class="h-screen md:hidden"></div>
 		<div class="bg-trigger" data-bg-trigger-id="3" data-bg-type="changer">
 			<?php include get_template_directory() . '/components/flow.php'; ?>
@@ -77,17 +63,10 @@
 			</div>
 		</div>
 		<div class="h-screen md:hidden"></div>
-		<div class="bg-image">
-			<?php
-				$args = [
-					'pc' => 'top/top_thumbnail4_pc.jpg',
-					'sp' => 'top/top_thumbnail4_sp.jpg',
-					'alt' => '',
-					'class' => 'background-3',
-				];
-				include get_template_directory() . '/components/image.php';
-			?>
-		</div>
+		<?php get_template_part('template-parts/top-imageset', null, [
+			'id' => $custom_query->posts[3]->ID,
+			'class' => 'background-3',
+		]); ?>
 	</div>
 </main><!-- /#main -->
 <?php get_footer(); ?>
