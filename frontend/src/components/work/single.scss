@@ -82,6 +82,10 @@ h2 {
         color: v.$colorWhite;
         transition-property: color;
         transition-duration: 0.3s;
+        font-size: 80px;
+        @include m.sp {
+            font-size: 48px;
+        }
     }
     &.-white {
         background-color: v.$colorWhite;

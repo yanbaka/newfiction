@@ -31,4 +31,9 @@ PubSub.subscribe('init', () => {
         const message = e.detail.apiResponse.message;
         $errMessage.html(message);
     });
+
+    document.addEventListener('wpcf7error', function (e) {
+        const message = e.detail.apiResponse.message;
+        $errMessage.html(message);
+    }, false);
 });

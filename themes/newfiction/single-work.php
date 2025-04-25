@@ -112,8 +112,8 @@
 			</dl>
 		</div>
 	</div>
-	<div class="next-post px-4 pt-[200px] pb-4" data-url="<?php echo get_permalink($next_post->ID); ?>">
-		<h2 class="text-5xl fontSelectaMedium"><?php echo $next_post->post_title; ?></h2>
+	<div class="next-post px-4 pt-[200px] pb-40" data-url="<?php echo get_permalink($next_post->ID); ?>">
+		<h2 class="fontSelectaMedium"><?php echo $next_post->post_title; ?></h2>
 		<?php
 			if ($next_post) {
 				$post_type = get_post_type();
