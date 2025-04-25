@@ -3,10 +3,9 @@ import barba from '@barba/core';
 
 let token = null;
 
-const $next = $('.next');
-
 export function subscibeScroll() {
     token = PubSub.subscribe('scroll', (_, $scrollTop) => {
+        const $next = $('.next');
         const $nextPost = $('.next-post');
         if(!$nextPost.length) return;
 

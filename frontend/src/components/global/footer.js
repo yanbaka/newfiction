@@ -31,8 +31,9 @@ PubSub.subscribe('init', () => {
         const speed = 0.1; // 0.1〜0.3 くらいが自然、数値上げると早く追う
         currentX += (mouseX - currentX) * speed;
         currentY += (mouseY - currentY) * speed;
-      
-        $follower.css('transform', `translate(${currentX}px, ${currentY}px)`);
+        const x = currentX - $follower.width() / 2;
+        const y = currentY - $follower.height() / 2;
+        $follower.css('transform', `translate(${x}px, ${y}px)`);
       
         requestAnimationFrame(followMouse);
     }
@@ -46,6 +47,12 @@ PubSub.subscribe('init', () => {
     $logo.on('mouseout', () => {
         $logo.removeClass('-on');
     });
+
+    $('.foot .links').hover(() => {
+        $follower.removeClass('-show');
+    }, () => {
+        $follower.addClass('-show');
+    })
 })
 
 PubSub.subscribe('scroll', () => {

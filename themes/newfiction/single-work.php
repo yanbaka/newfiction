@@ -98,6 +98,7 @@
 	$next_posts = get_posts($args);
 	$next_post = !empty($next_posts) ? $next_posts[0] : null;
 ?>
+<?php if ($next_post): ?>
 	<div class="next pt-6 px-4">
 		<img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo_black.png" alt="">
 		<div class="mt-8 flex">
@@ -111,7 +112,6 @@
 			</dl>
 		</div>
 	</div>
-<?php if ($next_post): ?>
 	<div class="next-post px-4 pt-[200px] pb-4" data-url="<?php echo get_permalink($next_post->ID); ?>">
 		<h2 class="text-5xl fontSelectaMedium"><?php echo $next_post->post_title; ?></h2>
 		<?php

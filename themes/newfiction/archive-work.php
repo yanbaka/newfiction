@@ -39,14 +39,18 @@
 					$thumbnail_data = $pods->field('thumbnail');
 					$thumbnail_url = $thumbnail_data['guid'];
 					$thumbnail = '<img src="' . esc_url($thumbnail_url) . '" alt="">';
+					$category = $pods->field('platform');
+					$categoryDisplay = implode(', ', $category);
+					$contributions = $pods->field('contributions');
+					$contfibutionsDisplay = !empty($contributions[0]) ? ' / '.$contributions[0] : '';
 
 					$delay = $i * 0.1;
 					echo <<< EOM
 						<a class="card mt-4 -enterAnimation" href="{$post_url}" data-animation-type="thumbnail" style="transition-delay: {$delay}s">
 							{$thumbnail}
-							<p class="caption mt-2">
+							<p class="caption mt-2 flex">
 								<span class="font-normal">{$post_title}</span>
-								<span class="font-light"></span>
+								<span class="font-light">&nbsp;{$categoryDisplay}{$contfibutionsDisplay}</span>
 							</p>
 						</a>
 					EOM;
