@@ -36,4 +36,14 @@ PubSub.subscribe('init', () => {
         const message = e.detail.apiResponse.message;
         $errMessage.html(message);
     }, false);
+
+    document.addEventListener('wpcf7beforesubmit', function (e) {
+        const $submitBtn = $(e.target).find('input[type="submit"]');
+        $submitBtn.val('Sending…').prop('disabled', true);
+    });
+    
+    document.addEventListener('wpcf7submit', function (e) {
+        const $submitBtn = $(e.target).find('input[type="submit"]');
+        $submitBtn.val('Send it').prop('disabled', false);
+    });
 });

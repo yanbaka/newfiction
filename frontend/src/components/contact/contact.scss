@@ -94,8 +94,6 @@
             background-color: v.$colorOffWhite;
             width: 100%;
             font-size: 17px;
-            font-family: v.$fontSelecta;
-            font-weight: 500;
             color: v.$colorBlack;
             height: 3.25rem;
             margin-top: 2rem;
@@ -106,7 +104,6 @@
         .send-complete {
             p {
                 color: v.$colorOffWhite;
-                font-family: v.$fontSelecta;
                 line-height: normal;
             }
         }
@@ -175,6 +172,10 @@ body {
                         line-height: calc(48 / 48);
                     }
                 }
+                .submit {
+                    font-family: v.$fontIBMPlexSansJP;
+                    font-weight: 700;
+                }
             }
             .send-complete {
                 p {
@@ -196,6 +197,10 @@ body {
                     @include m.sp {
                         line-height: calc(48 / 48);
                     }
+                }
+                .submit {
+                    font-family: v.$fontSelecta;
+                    font-weight: 500;
                 }
             }
             .send-complete {

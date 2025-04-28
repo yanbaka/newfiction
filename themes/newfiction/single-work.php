@@ -71,7 +71,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="px-4 pt-4">
+	<div class="px-4 pt-4 pb-4">
 		<?php
 			foreach ( $images as $value ) {
 				$imageUrl = $value['guid'];

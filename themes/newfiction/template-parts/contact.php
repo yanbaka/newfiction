@@ -9,9 +9,11 @@
                     'en' => 'Get in touch'
                 ]); ?>
             </h2>
-            <?php
-                echo do_shortcode('[contact-form-7 id="3a3f390" title="contact"]')
-            ?>
+            <?php if (get_language() === 'ja'): ?>
+                <?php echo do_shortcode('[contact-form-7 id="b9edc49" title="contact_ja"]') ?>
+            <?php else: ?>
+                <?php echo do_shortcode('[contact-form-7 id="3a3f390" title="contact"]') ?>
+            <?php endif; ?>
         </div>
         <div class="send-complete">
             <h2>
