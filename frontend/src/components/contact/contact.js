@@ -1,5 +1,6 @@
 import PubSub from 'pubsub-js';
 
+const $body = $('body');
 const $triggerContact = $('#trigger-contact');
 const $contact = $('.contact-parent');
 const $close = $('.contact-parent .contact .close');
@@ -7,6 +8,8 @@ const $close = $('.contact-parent .contact .close');
 const $errMessage = $('.err-message')
 
 PubSub.subscribe('init', () => {
+    const language = $body.data('language');
+
     $triggerContact.on('click', () => {
         $contact.removeClass('-complete');
         $contact.addClass('-show');
@@ -39,11 +42,13 @@ PubSub.subscribe('init', () => {
 
     document.addEventListener('wpcf7beforesubmit', function (e) {
         const $submitBtn = $(e.target).find('input[type="submit"]');
-        $submitBtn.val('Sending…').prop('disabled', true);
+        const buttonText = language === 'en' ? 'Sending…' : '送信中…';
+        $submitBtn.val(buttonText).prop('disabled', true);
     });
     
     document.addEventListener('wpcf7submit', function (e) {
         const $submitBtn = $(e.target).find('input[type="submit"]');
-        $submitBtn.val('Send it').prop('disabled', false);
+        const buttonText = language === 'en' ? 'Send it' : '送信';
+        $submitBtn.val(buttonText).prop('disabled', false);
     });
 });
