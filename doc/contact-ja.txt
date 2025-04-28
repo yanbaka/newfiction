@@ -1,0 +1,9 @@
+<div class="form">
+    [text* your-name autocomplete:name placeholder "氏名"] 
+    [text* company placeholder "会社名"] 
+    [email* your-email autocomplete:email placeholder "メールアドレス"]
+    [text* your-subject placeholder "題名"]
+    [textarea your-message placeholder "お問い合わせ内容"]
+</div>
+<div class="err-message"></div>
+[submit class:submit "送信"]

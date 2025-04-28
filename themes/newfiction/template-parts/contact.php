@@ -10,7 +10,7 @@
                 ]); ?>
             </h2>
             <?php if (get_language() === 'ja'): ?>
-                <?php echo do_shortcode('[contact-form-7 id="b9edc49" title="contact_ja"]') ?>
+                <?php echo do_shortcode('[contact-form-7 id="0d0a422" title="contact_ja"]') ?>
             <?php else: ?>
                 <?php echo do_shortcode('[contact-form-7 id="3a3f390" title="contact"]') ?>
             <?php endif; ?>
