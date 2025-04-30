@@ -41,12 +41,9 @@ h2 {
 
 .next {
     background-color: v.$colorBlack;
-    transition-property: background-color;
-    transition-duration: 0.3s;
     dl {
         dt, dd {
             transition-property: color;
-            transition-duration: 0.3s;
         }
         dt {
             font-size: 11px;
@@ -76,12 +73,8 @@ h2 {
 
 .next-post {
     background-color: v.$colorBlack;
-    transition-property: background-color;
-    transition-duration: 0.3s;
     h2 {
         color: v.$colorWhite;
-        transition-property: color;
-        transition-duration: 0.3s;
         font-size: 80px;
         @include m.sp {
             font-size: 48px;

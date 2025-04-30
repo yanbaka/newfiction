@@ -99,21 +99,21 @@
 	$next_post = !empty($next_posts) ? $next_posts[0] : null;
 ?>
 <?php if ($next_post): ?>
-	<div class="next pt-6 px-4">
+	<div class="next pt-6 px-4 transform-bg-color" data-color-from="#16161A" data-color-to="#FFFFFF">
 		<img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo_black.png" alt="">
 		<div class="mt-8 flex">
 			<dl class="w-1/2">
-				<dt>Scroll for next project</dt>
-				<dd>↓</dd>
+				<dt class="transform-color" data-color-from="#D1C9C9" data-color-to="#16161A">Scroll for next project</dt>
+				<dd class="transform-color" data-color-from="#FFFFFF" data-color-to="#16161A">↓</dd>
 			</dl>
 			<dl class="w-1/2">
-				<dt>Get in touch</dt>
-				<dd>kosuke@newfiction.org</dd>
+				<dt class="transform-color" data-color-from="#D1C9C9" data-color-to="#16161A">Get in touch</dt>
+				<dd class="transform-color" data-color-from="#FFFFFF" data-color-to="#16161A">kosuke@newfiction.org</dd>
 			</dl>
 		</div>
 	</div>
-	<div class="next-post px-4 pt-[200px] pb-40" data-url="<?php echo get_permalink($next_post->ID); ?>">
-		<h2 class="fontSelectaMedium"><?php echo $next_post->post_title; ?></h2>
+	<div class="next-post px-4 pt-[200px] pb-40 transform-bg-color" data-color-from="#16161A" data-color-to="#FFFFFF" data-url="<?php echo get_permalink($next_post->ID); ?>">
+		<h2 class="fontSelectaMedium transform-color" data-color-from="#FFFFFF" data-color-to="#16161A"><?php echo $next_post->post_title; ?></h2>
 		<?php
 			if ($next_post) {
 				$post_type = get_post_type();
