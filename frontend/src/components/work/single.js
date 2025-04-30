@@ -37,7 +37,8 @@ export function subscibeScroll() {
         const top = $nextPost.offset().top;
         const start = top - 240;
         const end = top - 40;
-        const p = ($scrollTop - start) / (end - start);
+        let p = ($scrollTop - start) / (end - start);
+        p = Math.min(Math.max(p, 0), 1);
 
         // 次のworkの色変更
         // if (top - $scrollTop <= 50) {
