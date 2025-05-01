@@ -9,6 +9,7 @@
 @use '../components/contact/contact';
 
 body {
+    overscroll-behavior: none;
     @include m.sp {
         padding-top: 75px;
     }

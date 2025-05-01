@@ -40,8 +40,8 @@ footer {
         }
         .logo {
             margin-top: 160px;
+            pointer-events: none;
             img {
-                pointer-events: none;
                 transition-property: opacity;
                 transition-duration: 0.6s;
             }
@@ -69,7 +69,6 @@ footer {
             line-height: normal;
         }
         .follower {
-            pointer-events: none;
             @include m.sp {
                 display: none;
             }
@@ -164,5 +163,8 @@ body {
                 }
             }
         }
+    }
+    &.-cursorNone {
+        cursor: none;
     }
 }

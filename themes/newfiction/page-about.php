@@ -17,7 +17,7 @@
 	<p class="px-4 pt-4 pb-12 md:pt-6 md:pb-24 lead">
 		<span class="block -enterAnimation"><span data-animation-type="opacity" class="delay-300">
 			<?php get_template_part('template-parts/localize', null, [
-					'ja' => 'New Fictionは、2024年に二日一宏祐が設立した、東京を拠点にグローバルに展開する独立系デザインスタジオです。私たちは、真摯なクラフトと「半分バカ」な姿勢を大切にし、目の前の課題に集中しながらも、創造的な飛躍の余地を確保します。<br />日本のブランドを世界へと送り出すときも、海外のパートナーがターゲット市場に適応する際も、それぞれの文脈に応じたアプローチを採用し、グローバルに響きつつも文化的な感受性を失わないよう心がけています。',
+					'ja' => 'New Fictionは、2024年に二日一宏祐が設立した、東京を拠点にグローバルに展開する独立系デザインスタジオです。私たちは、真摯なクラフトと「半分バカ」な姿勢を大切にし、目の前の課題に集中しながらも、創造的な飛躍の余地を確保します。<br /><br />日本のブランドを世界へと送り出すときも、海外のパートナーがターゲット市場に適応する際も、それぞれの文脈に応じたアプローチを採用し、グローバルに響きつつも文化的な感受性を失わないよう心がけています。',
 					'en' => 'New Fiction, founded by Kosuke Futsukaichi in 2024, is an independent design studio operating globally from Tokyo. Our practice is rooted in earnest craft and a half-stupid attitude, allowing us to stay focused on the task at hand while making space for creative leaps.<br /><br />Whether preparing Japanese brands for the world stage or guiding international partners into their target markets, we tailor our approach to each unique context—ensuring they resonate globally while staying culturally attuned.'
 			]); ?>
 		</span></span>

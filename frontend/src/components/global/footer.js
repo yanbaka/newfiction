@@ -7,6 +7,7 @@ const $foot = $('.foot');
 const $capabilities = $('.capabilities');
 const $follower = $('.foot .follower');
 const $logo = $('.foot .logo');
+const $contact = $('.contact-parent');
 
 let mouseX = 0;
 let mouseY = 0;
@@ -16,9 +17,11 @@ let currentY = 0;
 PubSub.subscribe('init', () => {
     $foot.on('mouseenter', (e) => {
         $follower.addClass('-show');
+        $body.addClass('-cursorNone');
     })
     $foot.on('mouseleave', () => {
         $follower.removeClass('-show');
+        $body.removeClass('-cursorNone');
     })
 
     const offset = $foot.offset();
@@ -53,6 +56,10 @@ PubSub.subscribe('init', () => {
     }, () => {
         $follower.addClass('-show');
     })
+
+    $follower.on('click', () => {
+        $contact.addClass('-show');
+    });
 })
 
 PubSub.subscribe('scroll', () => {
