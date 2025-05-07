@@ -8,6 +8,10 @@
 @use '../components/global/animation';
 @use '../components/contact/contact';
 
+html {
+    overscroll-behavior: none;
+}
+
 body {
     overscroll-behavior: none;
     @include m.sp {
