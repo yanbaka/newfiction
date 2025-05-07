@@ -15,6 +15,10 @@ h2 {
 }
 
 .profile {
+    @include m.sp {
+        margin-top: 32px;
+        border-top: 1px solid #E5E1E1;
+    }
     dl {
         @include m.not-sp {
             margin-bottom: 32px;
@@ -28,6 +32,9 @@ h2 {
             font-family: v.$fontFragmentMono;
             margin-bottom: 12px;
             line-height: normal;
+            @include m.sp {
+                font-size: 13px;
+            }
         }
         dd {
             color: v.$colorBlack;
@@ -35,6 +42,9 @@ h2 {
             font-family: 'Selecta';
             font-weight: 400;
             line-height: normal;
+            @include m.sp {
+                font-size: 17px;
+            }
         }
     }
 }
@@ -99,6 +109,10 @@ body {
             font-size: 17px;
             font-family: v.$fontIBMPlexSansJP;
             line-height: calc(30 / 17);
+            @include m.sp {
+                font-size: 18px;
+                line-height: calc(32 / 18);
+            }
         }
     }
     &[data-language="en"] {

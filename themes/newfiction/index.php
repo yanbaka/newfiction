@@ -29,7 +29,7 @@
 		]); ?>
 		<div class="h-screen md:hidden"></div>
 		<div class="h-screen bg-trigger md:hidden" data-bg-trigger-id="1" data-bg-type="clip"></div>
-		<div class="overview px-4 py-16 md:py-[250px] min-h-screen bg-trigger" data-bg-trigger-id="2" data-bg-type="changer">
+		<div class="overview px-4 py-16 h-screen-sp md:py-[250px] md:min-h-screen bg-trigger" data-bg-trigger-id="2" data-bg-type="changer">
 			<div>
 				<p class="lead">
 					<?php get_template_part('template-parts/localize', null, [
