@@ -131,8 +131,8 @@
 				]); ?>
 			</p>
 			<ul class="flex mt-8">
-				<li class="mr-8"><a href="">PORTFOLIO</a></li>
-				<li><a href="">LINKEDIN</a></li>
+				<li class="mr-8"><a href="https://thekosuke.com/" target="_blank">PORTFOLIO</a></li>
+				<li><a href="https://www.linkedin.com/in/thekosuke/" target="_blank">LINKEDIN</a></li>
 			</ul>
 		</div>
 	</div>

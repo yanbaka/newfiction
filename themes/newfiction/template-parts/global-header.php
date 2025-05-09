@@ -10,7 +10,7 @@
                 <li class="md:mr-6"><a href="<?php echo esc_url(home_url('/work')); ?>" class="md:px-4 md:py-2 md:rounded-full" data-link="work">Work</a></li>
                 <li class="md:mr-6"><a href="<?php echo esc_url(home_url('/about')); ?>" class="md:px-4 md:py-2 md:rounded-full" data-link="about">About</a></li>
                 <li class="-contact"><a id="trigger-contact" class="md:p-2">Get in touch</a></li>
-                <li class="-linkedin md:hidden"><a class="">Connect on LinkedIn</a></li>
+                <li class="-linkedin md:hidden"><a class="https://www.linkedin.com/in/thekosuke/" target="_blank">Connect on LinkedIn</a></li>
             </ul>
         </div>
         <div class="language flex px-4 py-2">
