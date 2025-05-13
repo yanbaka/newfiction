@@ -108,7 +108,7 @@
 			</dl>
 			<dl class="w-1/2">
 				<dt class="transform-color" data-color-from="#D1C9C9" data-color-to="#16161A">Get in touch</dt>
-				<dd class="transform-color" data-color-from="#FFFFFF" data-color-to="#16161A">kosuke@newfiction.org</dd>
+				<dd class="transform-color" data-color-from="#FFFFFF" data-color-to="#16161A"><!--email_off-->kosuke@newfiction.org<!--/email_off--></dd>
 			</dl>
 		</div>
 	</div>

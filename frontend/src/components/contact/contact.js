@@ -13,6 +13,7 @@ PubSub.subscribe('init', () => {
     $triggerContact.on('click', () => {
         $contact.removeClass('-complete');
         $contact.addClass('-show');
+        $('.form .wpcf7-not-valid-tip').remove();
     });
 
     $close.on('click', () => {
