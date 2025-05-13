@@ -18,6 +18,7 @@ function register_style() {
   if (!is_admin()) {
     wp_register_style('css_tailwind', get_bloginfo('template_directory').'/css/tailwind.css');
     wp_register_style('css_app', get_bloginfo('template_directory').'/css/app.css');
+    wp_register_style('css_customize', get_bloginfo('template_directory').'/css/customize.css');
   }
 }
 
@@ -25,6 +26,7 @@ function add_stylesheet() {
   register_style();
   wp_enqueue_style('css_tailwind');
   wp_enqueue_style('css_app');
+  wp_enqueue_style('css_customize');
 }
 add_action('wp_enqueue_scripts', 'add_stylesheet');
 
