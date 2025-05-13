@@ -126,7 +126,7 @@
             <img class="-off" src="<?php echo get_template_directory_uri(); ?>/images/logo_footer.png" alt="">
             <img class="absolute -on" src="<?php echo get_template_directory_uri(); ?>/images/logo_footer_on.png" alt="">
         </div>
-        <div class="md:flex md:justify-between mt-[12px] md:mt-4">
+        <div class="mt-[12px] relative z-10 md:flex md:justify-between md:mt-4">
             <div class="links flex justify-between md:justify-start">
                 <a class="text-[17px] underline" href="" target="_blank">business@newfiction.org</a>
                 <a class="text-[17px] underline ml-6" href="https://www.linkedin.com/in/thekosuke/" target="_blank">LinkedIn</a>
@@ -143,5 +143,6 @@
                 </div>
             </div>
         </div>
+        <a class="contact absolute top-0 left-0 w-full h-full"></a>
     </div>
 </footer>

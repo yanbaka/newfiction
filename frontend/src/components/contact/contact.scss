@@ -25,7 +25,7 @@
         transition-property: transform, opacity;
         transition-timing-function: cubic-bezier(0.5,0,0,1);
         @include m.sp {
-            padding: 32px 48px;
+            padding: 64px 32px 48px;
             width: 100%;
         }
 
@@ -64,9 +64,12 @@
         }
         .form {
             margin-top: 1.5rem;
+            overflow-y: scroll;
             @include m.not-sp {
-                overflow-y: scroll;
                 max-height: 400px;
+            }
+            @include m.sp {
+                max-height: 336px;
             }
             input, textarea {
                 width: 100%;
@@ -80,6 +83,9 @@
                 border-top-right-radius: 0.25rem;
                 color: v.$colorOffWhite;
                 outline: none;
+                &:focus {
+                    background-color: v.$colorRed;
+                }
             }
             textarea {
                 height: 10rem;

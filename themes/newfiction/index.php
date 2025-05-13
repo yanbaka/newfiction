@@ -27,8 +27,16 @@
 			'id' => $custom_query->posts[1]->ID,
 			'class' => 'background-1',
 		]); ?>
-		<div class="h-screen md:hidden"></div>
-		<div class="h-screen bg-trigger md:hidden" data-bg-trigger-id="1" data-bg-type="clip"></div>
+		<div class="h-screen md:hidden">
+			<?php get_template_part('template-parts/top-link', null, [
+				'id' => $custom_query->posts[0]->ID,
+			]); ?>
+		</div>
+		<div class="h-screen bg-trigger md:hidden" data-bg-trigger-id="1" data-bg-type="clip">
+			<?php get_template_part('template-parts/top-link', null, [
+				'id' => $custom_query->posts[1]->ID,
+			]); ?>
+		</div>
 		<div class="overview px-4 py-16 h-screen-sp md:py-40 bg-trigger" data-bg-trigger-id="2" data-bg-type="changer">
 			<div class="md:pr-80">
 				<p class="lead">
@@ -50,7 +58,11 @@
 			'id' => $custom_query->posts[2]->ID,
 			'class' => 'background-2',
 		]); ?>
-		<div class="h-screen md:hidden"></div>
+		<div class="h-screen md:hidden">
+			<?php get_template_part('template-parts/top-link', null, [
+				'id' => $custom_query->posts[2]->ID,
+			]); ?>
+		</div>
 		<div class="bg-trigger" data-bg-trigger-id="3" data-bg-type="changer">
 			<?php include get_template_directory() . '/components/flow.php'; ?>
 			<div class="overview overview2 h-screen-sp px-4 md:py-40 md:pr-80">
@@ -62,7 +74,11 @@
 				</p>
 			</div>
 		</div>
-		<div class="h-screen md:hidden"></div>
+		<div class="h-screen md:hidden">
+			<?php get_template_part('template-parts/top-link', null, [
+				'id' => $custom_query->posts[3]->ID,
+			]); ?>
+		</div>
 		<?php get_template_part('template-parts/top-imageset', null, [
 			'id' => $custom_query->posts[3]->ID,
 			'class' => 'background-3',

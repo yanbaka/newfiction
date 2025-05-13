@@ -8,6 +8,8 @@ const $capabilities = $('.capabilities');
 const $follower = $('.foot .follower');
 const $logo = $('.foot .logo');
 const $contact = $('.contact-parent');
+const $footCover = $('.foot .contact');
+
 
 let mouseX = 0;
 let mouseY = 0;
@@ -16,16 +18,19 @@ let currentY = 0;
 
 PubSub.subscribe('init', () => {
     $foot.on('mouseenter', (e) => {
+        console.log('enter')
         $follower.addClass('-show');
         $body.addClass('-cursorNone');
     })
     $foot.on('mouseleave', () => {
+        console.log('leave')
         $follower.removeClass('-show');
         $body.removeClass('-cursorNone');
     })
 
     const offset = $foot.offset();
     $foot.on("mousemove", (e) => {
+        console.log('move')
         mouseX = e.clientX - offset.left;
         mouseY = e.clientY - offset.top;
     });
@@ -57,7 +62,7 @@ PubSub.subscribe('init', () => {
         $follower.addClass('-show');
     })
 
-    $follower.on('click', () => {
+    $footCover.on('click', () => {
         $contact.addClass('-show');
     });
 })
