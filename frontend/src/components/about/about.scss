@@ -93,6 +93,8 @@
                 line-height: calc(52 / 48);
                 @include m.sp {
                     line-height: calc(40 / 36);
+                    white-space: nowrap;
+                    letter-spacing: calc(36px * -0.02);
                 }
             }
             .text {
