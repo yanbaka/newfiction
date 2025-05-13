@@ -1,5 +1,5 @@
 <div class="flow px-4 py-16 md:py-24 md:flex">
-    <div class="card md:w-1/3">
+    <div class="card md:w-1/3 md:pr-4">
         <p class="num text-[17px]">-1 → 0</p>
         <p class="title text-4xl fontSelectaMedium mt-4">Research & Discovery</p>
         <p class="text mt-4">
@@ -9,7 +9,7 @@
 			]); ?>
         </p>
     </div>
-    <div class="card md:w-1/3 md:ml-12">
+    <div class="card md:w-1/3 md:pr-4">
         <p class="num text-[17px]">0 → 1</p>
         <p class="title text-4xl fontSelectaMedium mt-4">Design for Launch</p>
         <p class="text mt-4">
@@ -19,7 +19,7 @@
 			]); ?>
         </p>
     </div>
-    <div class="card md:w-1/3 md:ml-12">
+    <div class="card md:w-1/3 md:pr-4">
         <p class="num text-[17px]">1 → 2,3...</p>
         <p class="title text-4xl fontSelectaMedium mt-4">Redesign & Refinement</p>
         <p class="text mt-4">

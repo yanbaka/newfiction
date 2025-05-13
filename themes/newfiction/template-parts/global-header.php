@@ -9,14 +9,18 @@
                 <li class="md:hidden"><a href="<?php echo esc_url(home_url('/')); ?>" class="md:px-4 md:py-2 md:rounded-full" data-link="work">Home</a></li>
                 <li class="md:mr-6"><a href="<?php echo esc_url(home_url('/work')); ?>" class="md:px-4 md:py-2 md:rounded-full" data-link="work">Work</a></li>
                 <li class="md:mr-6"><a href="<?php echo esc_url(home_url('/about')); ?>" class="md:px-4 md:py-2 md:rounded-full" data-link="about">About</a></li>
-                <li class="-contact"><a id="trigger-contact" class="md:p-2">Get in touch</a></li>
-                <li class="-linkedin md:hidden"><a class="https://www.linkedin.com/in/thekosuke/" target="_blank">Connect on LinkedIn</a></li>
+                <li class="-contact"><a id="trigger-contact" class="md:p-2">
+                    <?php get_template_part('template-parts/localize', null, [
+                        'ja' => 'お問い合わせ',
+                        'en' => 'Get in touch'
+                    ]); ?>
+            </a></li>
+                <li class="-linkedin md:hidden"><a class="https://www.linkedin.com/in/thekosuke/" target="_blank">LinkedIn</a></li>
             </ul>
         </div>
         <div class="language flex px-4 py-2">
-            <a class="ja" data-language="ja">JP</a>
-            &nbsp;|&nbsp;
-            <a class="en" data-language="en">EN</a>
+            <a class="ja" data-language="ja">日本語</a>
+            <a class="en" data-language="en">English</a>
         </div>
         <div class="toggle w-[40px] h-[40px] fixed z-10 right-4 md:hidden">
             <span></span>

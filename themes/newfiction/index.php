@@ -17,8 +17,8 @@
 >
 	<div class="relative z-[2]">
 		<p class="hero-title h-screen-sp px-4 py-6 text-4xl md:pt-[200px] md:pb-8 md:text-[80px] bg-white flex flex-col justify-between fontSelectaMedium">
-			<span class="-enterAnimation"><span data-animation-type="y">Product & Brand Design Studio.</span></span>
-			<span class="-enterAnimation"><span data-animation-type="y" class="delay-100">Based in Tokyo, Working Globally.</span></span>
+			<span class="-enterAnimation pb-[0.1em] mb-[-0.1em]"><span data-animation-type="y">Product & Brand Design Studio.</span></span>
+			<span class="-enterAnimation pb-[0.1em] mb-[-0.1em]"><span data-animation-type="y" class="delay-100">Based in Tokyo, Working Globally.</span></span>
 		<p>
 		<?php get_template_part('template-parts/top-imageset', null, [
 			'id' => $custom_query->posts[0]->ID,
@@ -29,8 +29,8 @@
 		]); ?>
 		<div class="h-screen md:hidden"></div>
 		<div class="h-screen bg-trigger md:hidden" data-bg-trigger-id="1" data-bg-type="clip"></div>
-		<div class="overview px-4 py-16 h-screen-sp md:py-[250px] md:min-h-screen bg-trigger" data-bg-trigger-id="2" data-bg-type="changer">
-			<div>
+		<div class="overview px-4 py-16 h-screen-sp md:py-40 bg-trigger" data-bg-trigger-id="2" data-bg-type="changer">
+			<div class="md:pr-80">
 				<p class="lead">
 					<?php get_template_part('template-parts/localize', null, [
 						'ja' => '日本のデジタルプロダクトとブランドを世界に響く形へ。文化的な感性を大切にしながら、その価値を引き上げます',
@@ -53,7 +53,7 @@
 		<div class="h-screen md:hidden"></div>
 		<div class="bg-trigger" data-bg-trigger-id="3" data-bg-type="changer">
 			<?php include get_template_directory() . '/components/flow.php'; ?>
-			<div class="overview overview2 h-screen-sp px-4 md:py-40">
+			<div class="overview overview2 h-screen-sp px-4 md:py-40 md:pr-80">
 				<p class="lead">
 					<?php get_template_part('template-parts/localize', null, [
 						'ja' => '多様な業界経験を活かし、あらゆる規模の企業と協業。プロダクトとブランドの掛け算で価値を生み出します',

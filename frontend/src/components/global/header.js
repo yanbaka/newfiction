@@ -1,5 +1,9 @@
 import PubSub from 'pubsub-js';
 
+const API_KEY = 'AIzaSyDWZtDqsYIrZDrT5XnVitf-d5HHny3Qx2w';
+
+const $window = $(window);
+
 const changeLanguage = (language) => {
     fetch(ajaxUrl, {
         method: 'POST',
@@ -27,12 +31,30 @@ PubSub.subscribe('init', () => {
         })
     });
 
+    function getCountryCode(lat, lng) {
+      const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${API_KEY}`;
+
+      fetch(geocodeUrl)
+        .then(response => response.json())
+        .then(data => {
+          const components = data.results[0].address_components;
+          const country = components.find(c => c.types.includes("country"));
+          document.getElementById("country-code").textContent =
+            "国コード: " + (country ? country.short_name : "不明");
+        })
+        .catch(err => {
+          console.error("Geocodingエラー:", err);
+          document.getElementById("country-code").textContent = "国コード: エラー";
+        });
+    }
+
     // 現在位置情報取得
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           async (position) => {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
+            getCountryCode(lat, lon);
       
             const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`, {
               headers: {
@@ -53,7 +75,9 @@ PubSub.subscribe('init', () => {
         );
       }
 
+    const $body = $('body');
     const $header = $('header');
+
     // マウス位置によってのヘッダー挙動
     $(document).on('mousemove', (e) => {
         const threshold = 160;
@@ -61,7 +85,9 @@ PubSub.subscribe('init', () => {
         if (e.clientY <= threshold) {
             $header.addClass('-showHeader');
           } else {
-            $header.removeClass('-showHeader');
+            if (!$body.hasClass('-is-at-top')) {
+              $header.removeClass('-showHeader');
+            }
         }
     });
 
@@ -77,4 +103,16 @@ PubSub.subscribe('init', () => {
 PubSub.subscribe('resize', () => {
     const doc = document.documentElement;
     doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+})
+
+PubSub.subscribe('scroll', () => {
+  const $body = $('body');
+  const $header = $('header');
+
+  if ($window.scrollTop() <= 0) {
+    $body.addClass('-is-at-top');
+    $header.addClass('-showHeader');
+  } else {
+    $body.removeClass('-is-at-top');
+  }
 })

@@ -86,7 +86,7 @@
                     </li>
                 </ul>
                 <ul class="md:w-1/2">
-                    <li>
+                    <li class="mt-2 md:mt-0">
                         <?php get_template_part('template-parts/localize', null, [
                             'ja' => 'ロゴデザイン',
                             'en' => 'Logo Design'
@@ -131,7 +131,7 @@
                 <a class="text-[17px] underline" href="" target="_blank">business@newfiction.org</a>
                 <a class="text-[17px] underline ml-6" href="https://www.linkedin.com/in/thekosuke/" target="_blank">LinkedIn</a>
             </div>
-            <small class="block mt-[12px] md:mt-0 text-[17px]">&copy; 2025 New Fiction</small>
+            <small class="block text-[17px] mt-[12px] md:mt-0 md:mr-[0.5em]">&copy; 2025 New Fiction</small>
         </div>
         <div class="follower absolute top-0 left-0">
             <div class="object">

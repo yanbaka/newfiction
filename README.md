@@ -16,6 +16,8 @@ admin / password
 https://7zb.488.myftpupload.com
 - /doc/SFTP.txt
 
+## GoogleAPIKey
+AIzaSyDWZtDqsYIrZDrT5XnVitf-d5HHny3Qx2w
 
 ## ページ遷移参考
 - https://www.basicagency.com/case-studies/ocean-spray

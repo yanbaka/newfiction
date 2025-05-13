@@ -215,4 +215,27 @@ body {
             }
         }
     }
+
+    &[data-language="ja"] {
+        .language {
+            a.ja {
+                display: none;
+            }
+        }
+        .menu {
+            .-contact {
+                a {
+                    font-family: v.$fontIBMPlexSansJP;
+                }
+            }
+        }
+    }
+    &[data-language="en"] {
+        .language {
+            a.en {
+                display: none;
+            }
+        }
+    }
+
 }

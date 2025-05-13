@@ -111,10 +111,10 @@
 		</div>
 	</div>
 	<div class="profile px-4 py-12 md:py-24 md:flex">
-		<div class="image md:mr-4">
+		<div class="image md:w-1/3">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/about/profile.jpg" alt="">
 		</div>
-		<div class="summary mt-8 md:mt-0 md:flex-1">
+		<div class="summary mt-8 md:mt-0 md:w-2/3 md:pr-60">
 			<h3 class="text-5xl font-medium">
 				<?php get_template_part('template-parts/localize', null, [
 					'ja' => '二日一 宏祐',

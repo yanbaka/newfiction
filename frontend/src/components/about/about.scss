@@ -105,9 +105,6 @@
 
     .profile {
         .image {
-            @include m.not-sp {
-                width: calc(405 / 1248 * 100%);
-            }
             img {
                 @include m.not-sp {
                     width: calc(300 / 405 * 100%);
