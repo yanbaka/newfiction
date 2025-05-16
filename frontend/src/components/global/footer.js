@@ -23,14 +23,12 @@ PubSub.subscribe('init', () => {
         $body.addClass('-cursorNone');
     })
     $foot.on('mouseleave', () => {
-        console.log('leave')
         $follower.removeClass('-show');
         $body.removeClass('-cursorNone');
     })
 
     const offset = $foot.offset();
     $foot.on("mousemove", (e) => {
-        console.log('move')
         mouseX = e.clientX - offset.left;
         mouseY = e.clientY - offset.top;
     });

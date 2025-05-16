@@ -52,7 +52,7 @@
 					]); ?>
 				</p>
 			</div>
-			<a href="<?php echo esc_url(home_url('/work')); ?>" class="see-the-work rounded-full mt-8">See the work</a>
+			<a href="<?php echo esc_url(home_url('/work')); ?>" class="see-the-work mt-8">See the work</a>
 		</div>
 		<?php get_template_part('template-parts/top-imageset', null, [
 			'id' => $custom_query->posts[2]->ID,

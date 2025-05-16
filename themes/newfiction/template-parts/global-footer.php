@@ -112,7 +112,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="<?php echo esc_url(home_url('/about')); ?>" class="our-services mt-12 flex justify-center items-center w-full h-[44px] md:w-[140px] md:h-[52px] rounded-full">Our services</a>
+            <a href="<?php echo esc_url(home_url('/about')); ?>" class="our-services mt-12 flex justify-center items-center w-full h-[44px] md:w-[140px] md:h-[52px]">Our services</a>
         </div>
     </div>
     <div class="foot px-4 pt-8 md:pt-12 pb-4 fixed bottom-0">
@@ -122,7 +122,7 @@
                 'en' => 'A new project, an idea, or an intro. <br />Shoot us a message.'
             ]); ?>
         </h2>
-        <div class="logo relative flex items-center justify-center">
+        <div class="logo relative z-10 flex items-center justify-center">
             <img class="-off" src="<?php echo get_template_directory_uri(); ?>/images/logo_footer.png" alt="">
             <img class="absolute -on" src="<?php echo get_template_directory_uri(); ?>/images/logo_footer_on.png" alt="">
         </div>

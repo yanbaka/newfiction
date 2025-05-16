@@ -105,8 +105,15 @@
             color: v.$colorBlack;
             height: 3.25rem;
             margin-top: 2rem;
-            border-radius: 1rem;
-            border-radius: 9999px;
+            cursor: pointer;
+            border-radius: 32px;
+            @include m.not-sp {
+                transition-property: border-radius;
+                transition-duration: 320ms;
+                &:hover {
+                    border-radius: 0px;
+                }
+            }
         }
 
         .send-complete {
