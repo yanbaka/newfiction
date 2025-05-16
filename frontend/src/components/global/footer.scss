@@ -48,6 +48,9 @@ footer {
         }
         .logo {
             margin-top: 160px;
+            @include m.sp {
+                pointer-events: none;
+            }
             img {
                 transition-property: opacity;
                 transition-duration: 0.6s;
