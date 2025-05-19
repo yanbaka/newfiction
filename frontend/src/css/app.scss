@@ -28,5 +28,6 @@ body {
 .h-screen-sp {
     @include m.sp {
         min-height: calc(var(--app-height) - 75px);
+        min-height: calc(100dvh - 75px);
     }
 }
