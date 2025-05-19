@@ -85,7 +85,8 @@
                 color: v.$colorOffWhite;
                 outline: none;
                 &:focus {
-                    background-color: v.$colorRed;
+                    background-color: v.$colorBlack;
+                    border: 1px solid #7A7676;
                 }
             }
             textarea {

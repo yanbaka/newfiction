@@ -10,6 +10,10 @@ header {
         transition-duration: 0.5s;
     }
     h1 {
+        @include m.not-sp {
+            position: absolute;
+            left: 1rem;
+        }
         a {
             svg {
                 path {
@@ -106,9 +110,13 @@ header {
     }
 
     .language {
+        @include m.not-sp {
+            position: absolute;
+            right: 1rem;
+        }
         @include m.sp {
             position: fixed;
-            left: 16px;
+            left: 0;
             color: v.$colorWhite;
             transition-property: opacity;
             transition-duration: 0.3s;

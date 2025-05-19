@@ -1,5 +1,5 @@
 <header class="w-full fixed top-0 z-10">
-    <div class="header-content flex justify-between items-center h-[75px] px-4 bg-white">
+    <div class="header-content flex justify-between md:justify-center items-center h-[75px] px-4 bg-white">
         <h1><a href="<?php echo esc_url(home_url('/')); ?>">
             <?php get_template_part('template-parts/logo'); ?>
         </a></h1>
