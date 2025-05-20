@@ -14,6 +14,7 @@ PubSub.subscribe('init', () => {
         $contact.removeClass('-complete');
         $contact.addClass('-show');
         $('.form .wpcf7-not-valid-tip').remove();
+        $errMessage.html('');
     });
 
     $close.on('click', () => {
@@ -49,7 +50,26 @@ PubSub.subscribe('init', () => {
     
     document.addEventListener('wpcf7submit', function (e) {
         const $submitBtn = $(e.target).find('input[type="submit"]');
-        const buttonText = language === 'en' ? 'SEND IT →' : '送信';
+        const buttonText = language === 'en' ? 'SEND IT →' : '送信 →';
         $submitBtn.val(buttonText).prop('disabled', false);
     });
+
+
+    // contact formのイベントで429（リクエストしすぎ）が取得できないから
+    (function($) {
+        const originalFetch = window.fetch;
+        window.fetch = function(...args) {
+            return originalFetch(...args).then(response => {
+                if (response.status === 429) {
+                    const language = $body.data('language');
+                    const message = language === 'en' ? 'You\'ve sent too many requests. Please wait a while before trying again.' : '送信回数が多すぎます。時間を空けて再送信してください。';
+                    $('.err-message').html(message);
+                    const $submitBtn = $('.send input[type="submit"]');
+                    const buttonText = language === 'en' ? 'SEND IT →' : '送信 →';
+                    $submitBtn.val(buttonText).prop('disabled', false);
+                }
+                return response;
+            });
+        };
+    })(jQuery);
 });

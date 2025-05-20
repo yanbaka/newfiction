@@ -18,7 +18,6 @@ let currentY = 0;
 
 PubSub.subscribe('init', () => {
     $foot.on('mouseenter', (e) => {
-        console.log('enter')
         $follower.addClass('-show');
         $body.addClass('-cursorNone');
     })

@@ -6,4 +6,4 @@
     <label><span class="form-title">お問い合わせ内容</span>[textarea* your-message placeholder "Please provide details about your question or request"]</label>
 </div>
 <div class="err-message"></div>
-[submit class:submit "送信"]
+[submit class:submit "送信 →"]
