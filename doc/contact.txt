@@ -1,9 +1,9 @@
 <div class="form">
-    [text* your-name autocomplete:name placeholder "Name"] 
-    [text* company placeholder "Company"] 
-    [email* your-email autocomplete:email placeholder "Email address"]
-    [text* your-subject placeholder "Subject"]
-    [textarea your-message placeholder "Inquiry details"]
+    <label><span class="form-title">Name</span>[text* your-name autocomplete:name placeholder "Sean Carter"] </label>
+    <label><span class="form-title">Company</span>[text* company placeholder "Roc Nation"] </label>
+    <label><span class="form-title">Email address</span>[email* your-email autocomplete:email placeholder "example@email.com"]</label>
+    <label><span class="form-title">Subject</span>[text* your-subject placeholder "Briefly describe the topic of your message"]</label>
+    <label><span class="form-title">Inquiry details</span>[textarea* your-message placeholder "Please provide details about your question or request"]</label>
 </div>
 <div class="err-message"></div>
-[submit class:submit "Send it"]
+[submit class:submit "SEND IT →"]

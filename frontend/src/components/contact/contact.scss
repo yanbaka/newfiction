@@ -67,26 +67,49 @@
             margin-top: 1.5rem;
             overflow-y: scroll;
             @include m.not-sp {
-                max-height: 400px;
+                max-height: 448px;
             }
             @include m.sp {
                 max-height: 336px;
             }
+            label {
+                .form-title {
+                    font-size: 13px;
+                    color: #78787A;
+                    &::after {
+                        content: "*";
+                        color: v.$colorRed;
+                    }
+                }
+                input {
+                    margin-bottom: 0.5rem;
+                }
+            }
             input, textarea {
+                margin-top: 2px;
                 width: 100%;
                 background-color: #272729;
-                font-size: 1rem;
+                font-size: 14px;
                 font-family: v.$fontSelecta;
-                padding: 0.75rem;
-                margin-top: 0.5rem;
+                padding: 0.5rem;
                 vertical-align: bottom;
-                border-top-left-radius: 0.25rem;
-                border-top-right-radius: 0.25rem;
+                border-radius: 0.25rem;
                 color: v.$colorOffWhite;
                 outline: none;
-                &:focus {
-                    background-color: v.$colorBlack;
-                    border: 1px solid #7A7676;
+                &::placeholder {
+                    color: #454547;
+                }
+                @include m.not-sp {
+                    &:hover {
+                        background-color: v.$colorRed;
+                        &::placeholder {
+                            color: v.$colorOffWhite;
+                        }
+                    }
+                    &:focus {
+                        background-color: v.$colorBlack;
+                        border: 1px solid #7A7676;
+                    }
                 }
             }
             textarea {
@@ -102,12 +125,12 @@
         .submit {
             background-color: v.$colorOffWhite;
             width: 100%;
-            font-size: 17px;
+            font-size: 15px;
             color: v.$colorBlack;
-            height: 3.25rem;
+            height: 46px;
             margin-top: 2rem;
             cursor: pointer;
-            border-radius: 32px;
+            border-radius: 8px;
             @include m.not-sp {
                 transition-property: border-radius;
                 transition-duration: 320ms;
@@ -218,6 +241,7 @@ body {
                 .submit {
                     font-family: v.$fontSelecta;
                     font-weight: 500;
+                    letter-spacing: calc(14px * 0.12);
                 }
             }
             .send-complete {

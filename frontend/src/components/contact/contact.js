@@ -43,13 +43,13 @@ PubSub.subscribe('init', () => {
 
     document.addEventListener('wpcf7beforesubmit', function (e) {
         const $submitBtn = $(e.target).find('input[type="submit"]');
-        const buttonText = language === 'en' ? 'Sending…' : '送信中…';
+        const buttonText = language === 'en' ? 'SENDING…' : '送信中…';
         $submitBtn.val(buttonText).prop('disabled', true);
     });
     
     document.addEventListener('wpcf7submit', function (e) {
         const $submitBtn = $(e.target).find('input[type="submit"]');
-        const buttonText = language === 'en' ? 'Send it' : '送信';
+        const buttonText = language === 'en' ? 'SEND IT →' : '送信';
         $submitBtn.val(buttonText).prop('disabled', false);
     });
 });

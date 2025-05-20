@@ -118,7 +118,7 @@
     <div class="foot px-4 pt-8 md:pt-12 pb-4 fixed bottom-0">
         <h2>
             <?php get_template_part('template-parts/localize', null, [
-                'ja' => '新しいプロジェクト、アイデア、またはご相談<br />いつでもご連絡ください',
+                'ja' => '新しいプロジェクト、アイデア、またはご相談、いつでもご連絡ください',
                 'en' => 'A new project, an idea, or an intro. <br />Shoot us a message.'
             ]); ?>
         </h2>
