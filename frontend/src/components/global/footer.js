@@ -62,6 +62,29 @@ PubSub.subscribe('init', () => {
     $footCover.on('click', () => {
         $contact.addClass('-show');
     });
+
+    const observeFooter = () => {
+        const target = document.querySelector('.capabilities');
+
+        const options = {
+            root: null,
+            rootMargin: '0px 0px',
+            threshold: 0,
+        };
+        const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                $foot.addClass('-show');
+            } else {
+                $foot.removeClass('-show');
+            }
+        });
+        }, options);
+
+        observer.observe(target);
+    };
+
+    observeFooter();
 })
 
 PubSub.subscribe('scroll', () => {

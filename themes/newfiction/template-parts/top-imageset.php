@@ -7,7 +7,7 @@
     $sp_image = $pods->field('sp_image');
     $sp_image_url = $sp_image['guid'];
 ?>
-<a href="<?php echo esc_url(home_url('/work/' . $work_id)); ?>" class="bg-image h-screen-sp">
+<a href="<?php echo esc_url(home_url('/work/' . $work_id)); ?>" class="bg-image h-screen-sp -enterAnimation" data-animation-type="thumbnail">
     <?php
         $args = [
             'pc' => $pc_image_url,
