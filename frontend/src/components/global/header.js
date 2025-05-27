@@ -1,7 +1,5 @@
 import PubSub from 'pubsub-js';
 
-const API_KEY = 'AIzaSyDWZtDqsYIrZDrT5XnVitf-d5HHny3Qx2w';
-
 const $window = $(window);
 
 const changeLanguage = (language) => {
@@ -22,8 +20,6 @@ const changeLanguage = (language) => {
 }
 
 PubSub.subscribe('init', () => {
-    const countries = ['en'];
-
     $('.language a').each((index, element) => {
         $(element).on('click', () => {
             const language = $(element).data('language');
@@ -31,49 +27,6 @@ PubSub.subscribe('init', () => {
         })
     });
 
-    function getCountryCode(lat, lng) {
-      const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${API_KEY}`;
-
-      fetch(geocodeUrl)
-        .then(response => response.json())
-        .then(data => {
-          const components = data.results[0].address_components;
-          const country = components.find(c => c.types.includes("country"));
-          document.getElementById("country-code").textContent =
-            "国コード: " + (country ? country.short_name : "不明");
-        })
-        .catch(err => {
-          console.error("Geocodingエラー:", err);
-          document.getElementById("country-code").textContent = "国コード: エラー";
-        });
-    }
-
-    // 現在位置情報取得
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          async (position) => {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-            getCountryCode(lat, lon);
-      
-            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`, {
-              headers: {
-                'User-Agent': 'New Fiction'
-              }
-            });
-      
-            const data = await response.json();
-      
-            if (data.address && data.address.country_code) {
-                const countryCode = data.address.country_code;
-                const bool = countries.includes(countryCode);
-                if (bool) {
-                    changeLanguage(countryCode);
-                }
-            }
-          },
-        );
-      }
 
     const $body = $('body');
     const $header = $('header');

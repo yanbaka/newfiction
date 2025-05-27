@@ -26,3 +26,26 @@ function generate_js_params() {
   <?php
   }
   add_action('wp_head', 'generate_js_params');
+
+add_action('init', function() {
+    // 国コード取得
+    if (!isset($_COOKIE['myplugin_session_flag'])) {
+        $token = 'ff4c127a9b5827';
+
+        $countries = [
+            'US' => 'en',
+            'JP' => 'ja',
+        ];
+
+        $response = file_get_contents("https://ipinfo.io/json?token=$token");
+        $data = json_decode($response, true);
+        if (isset($data['country'])) {
+          $country = $data['country'] ?? null;
+          $countryCode = $countries[$country] ?? null;
+          $_SESSION['site_lang'] = $countryCode;
+        }
+        
+        // ブラウザ閉じるまで有効
+        setcookie('myplugin_session_flag', '1', 0, '/');
+    }
+});
