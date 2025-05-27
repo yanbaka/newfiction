@@ -30,7 +30,7 @@ function generate_js_params() {
 add_action('init', function() {
     // 国コード取得
     if (!isset($_COOKIE['myplugin_session_flag'])) {
-        $token = 'ff4c127a9b5827';
+        $token = '679bff9a0a67c4';
 
         $countries = [
             'US' => 'en',
