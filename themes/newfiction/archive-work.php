@@ -2,11 +2,8 @@
 <?php
     $args = array(
         'post_type'      => 'work',
-        'posts_per_page' => 7,
+        'posts_per_page' => -1,
         'post_status'    => 'publish',
-        'orderby'        => array(
-            'update_dt' => 'DESC', // 最新の日付順
-        ),
     );
     
     $custom_query = new WP_Query( $args );
