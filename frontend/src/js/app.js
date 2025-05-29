@@ -42,8 +42,10 @@ class Main {
       function loadComplete() {
           loadCnt += 1;
           if (loadCnt >= imageLength) {
-            $loading.fadeOut();
-            init();
+            setTimeout(() => {
+              $loading.fadeOut();
+              init();
+            }, 500);
           }
       }
     }
@@ -112,7 +114,6 @@ class Main {
             },
 
             leave(data) {
-              $window.scrollTop(0);
               const container = data.current.container;
               $(container).removeClass('-show');
 
@@ -129,6 +130,7 @@ class Main {
 
             },
             enter(data) {
+              $window.scrollTop(0);
               PubSub.publish('scroll', $window.scrollTop());
               PubSub.publish('resize');
               PubSub.publish('hover');

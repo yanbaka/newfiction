@@ -82,21 +82,32 @@
 	</div>
 <?php
 	global $post;
+
+	$current_post = get_post();
+	$current_order = (int) $current_post->menu_order;
+
 	$args = array(
 		'post_type' => get_post_type(),
-		'posts_per_page' => 1,
-		'orderby' => 'date',
+		'posts_per_page' => -1,
+		'orderby' => 'menu_order',
 		'order' => 'ASC',
 		'post_status' => 'publish',
-		'date_query' => array(
-			array(
-				'after' => get_the_date( 'Y-m-d H:i:s', $post ),
-				'inclusive' => false,
-			),
-		),
 	);
-	$next_posts = get_posts($args);
-	$next_post = !empty($next_posts) ? $next_posts[0] : null;
+
+	$all_posts = get_posts($args);
+
+	$next_post = null;
+	$found = false;
+
+	foreach ($all_posts as $post) {
+		if ($found) {
+			$next_post = $post;
+			break;
+		}
+		if ($post->ID === $current_post->ID) {
+			$found = true;
+		}
+	}
 ?>
 <?php if ($next_post): ?>
 	<div class="next pt-6 px-4 transform-bg-color" data-color-from="#16161A" data-color-to="#FFFFFF">

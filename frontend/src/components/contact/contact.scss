@@ -109,6 +109,9 @@
                     &:focus {
                         background-color: v.$colorBlack;
                         border: 1px solid #7A7676;
+                        &::placeholder {
+                            color: #454547;
+                        }
                     }
                 }
             }
