@@ -44,8 +44,8 @@ class Main {
           if (loadCnt >= imageLength) {
             setTimeout(() => {
               $loading.fadeOut();
-              init();
             }, 500);
+            init();
           }
       }
     }
@@ -170,8 +170,6 @@ class Main {
     $window.on('scroll', () => {
       PubSub.publish('scroll', $window.scrollTop());
     })
-
-    PubSub.publish('init');
 
     loading();
   };

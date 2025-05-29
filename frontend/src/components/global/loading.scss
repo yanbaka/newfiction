@@ -2,33 +2,82 @@
     background-color: #ffffff;
 }
 
-        .loadership_ZWSUR {
+
+        .loadership_JNVKZ {
           display: flex;
           position: relative;
-          width: 70px;
-          height: 70px;
+          width: 53px;
+          height: 53px;
         }
-
-        .loadership_ZWSUR div {
+        .loadership_JNVKZ div {
           position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 70px;
-          height: 70px;
-          border: 10px solid #E01A1233;
+          width: 13px;
+          height: 13px;
           border-radius: 50%;
+          background: #E01A12;
+          animation: loadership_JNVKZ_fade 1.2s linear infinite, loadership_JNVKZ_scale 1.2s linear infinite;
         }
-
-        .loadership_ZWSUR div:nth-child(2) {
-          clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 20.00%);
-          animation: loadership_ZWSUR_spin 1.2s infinite;
-          animation-timing-function: linear;
-          border: 10px solid #E01A12;
+        
+        .loadership_JNVKZ div:nth-child(1) {
+              animation-delay: -0.47s;
+              top: 0px;
+              left: 0px;
+            }
+.loadership_JNVKZ div:nth-child(2) {
+              animation-delay: -0.54s;
+              top: 20px;
+              left: 0px;
+            }
+.loadership_JNVKZ div:nth-child(3) {
+              animation-delay: -0.50s;
+              top: 40px;
+              left: 0px;
+            }
+.loadership_JNVKZ div:nth-child(4) {
+              animation-delay: -0.23s;
+              top: 0px;
+              left: 20px;
+            }
+.loadership_JNVKZ div:nth-child(5) {
+              animation-delay: -0.35s;
+              top: 20px;
+              left: 20px;
+            }
+.loadership_JNVKZ div:nth-child(6) {
+              animation-delay: -1.09s;
+              top: 40px;
+              left: 20px;
+            }
+.loadership_JNVKZ div:nth-child(7) {
+              animation-delay: -0.41s;
+              top: 0px;
+              left: 40px;
+            }
+.loadership_JNVKZ div:nth-child(8) {
+              animation-delay: -0.89s;
+              top: 20px;
+              left: 40px;
+            }
+.loadership_JNVKZ div:nth-child(9) {
+              animation-delay: -0.45s;
+              top: 40px;
+              left: 40px;
+            }
+     
+        
+      @keyframes loadership_JNVKZ_fade {
+        0%, 100% {
+          opacity: 1;
         }
-
-        @keyframes loadership_ZWSUR_spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+        50% {
+          opacity: 0.5;
         }
-    
-    
+      }    
+      @keyframes loadership_JNVKZ_scale {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(0.70);
+        }
+      }    
