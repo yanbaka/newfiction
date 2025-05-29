@@ -18,6 +18,11 @@ body {
     @include m.sp {
         padding-top: 75px;
     }
+    &.-white {
+        .main {
+            opacity: 0;
+        }
+    }
 }
 
 .main {

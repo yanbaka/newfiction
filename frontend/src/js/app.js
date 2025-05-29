@@ -114,6 +114,8 @@ class Main {
             },
 
             leave(data) {
+              $window.scrollTop(0);
+              $body.addClass('-white');
               const container = data.current.container;
               $(container).removeClass('-show');
 
@@ -127,15 +129,16 @@ class Main {
               if (id === 'pdp') {
                 unsubscibeScrollSingle();
               }
-
             },
             enter(data) {
-              $window.scrollTop(0);
               PubSub.publish('scroll', $window.scrollTop());
               PubSub.publish('resize');
               PubSub.publish('hover');
               $header.removeClass('-openMenu');
             },
+            afterEnter() {
+              $body.removeClass('-white');
+            }
           },
         ],
       });
