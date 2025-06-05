@@ -142,6 +142,8 @@ class Main {
           },
         ],
       });
+
+      PubSub.publish('init');
     }
 
     function loadCSS(href, container) {
