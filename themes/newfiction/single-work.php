@@ -7,10 +7,8 @@
 	$visual_url = $visual['guid'];
 	$description = $pods->field('description');
 	$description_ja = $pods->field('description_ja');
-	$industry = $pods->field('industry');
 	$platform = $pods->field('platform');
 	$contributions = $pods->field('contributions');
-	$industry = $pods->field('industry');
 	$linkLabel = $pods->field('link_label');
 	$linkUrl = $pods->field('link_url');
 	$images = $pods->field('images');
@@ -26,12 +24,10 @@
 	<div class="px-4"><img class="w-full" src="<?php echo $visual_url ?>" alt=""></div>
 	<div class="px-4 py-6 md:pt-8 md:pb-24">
 		<div class="md:flex">
-			<p class="description flex-1 md:mr-4">
-				<?php get_template_part('template-parts/localize', null, [
+			<p class="description flex-1 md:mr-4"><?php get_template_part('template-parts/localize', null, [
 					'ja' => $description_ja,
 					'en' => $description,
-				]); ?>
-			</p>
+				]); ?></p>
 			<div class="profile md:flex-1 md:ml-4">
 				<dl>
 					<dt>
@@ -41,7 +37,7 @@
 						]); ?>
 					</dt>
 					<?php
-						foreach ( $industry as $value ) {
+						foreach ( $platform as $value ) {
 							echo "<dd>{$value}</dd>";
 						}
 					?>
