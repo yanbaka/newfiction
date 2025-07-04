@@ -128,7 +128,7 @@
         </div>
         <div class="mt-[12px] relative z-10 md:flex md:justify-between md:mt-4">
             <div class="links flex justify-between md:justify-start">
-                <a class="text-[17px] underline" href="" target="_blank">business@newfiction.org</a>
+                <a class="text-[17px] underline" href="mailto:kosuke@newfiction.org" target="_blank">kosuke@newfiction.org</a>
                 <a class="text-[17px] underline ml-6" href="https://www.linkedin.com/in/thekosuke/" target="_blank">LinkedIn</a>
             </div>
             <small class="block text-[17px] mt-[12px] md:mt-0 md:mr-[0.5em]">&copy; 2025 New Fiction</small>

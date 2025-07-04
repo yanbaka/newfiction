@@ -11,7 +11,7 @@
                 <li class="md:mr-6"><a href="<?php echo esc_url(home_url('/about')); ?>" class="md:px-4 md:py-2 md:rounded-full" data-link="about">About</a></li>
                 <li class="-contact"><a id="trigger-contact" class="md:p-2">
                     <?php get_template_part('template-parts/localize', null, [
-                        'ja' => 'お問い合わせ',
+                        'ja' => 'Contact',
                         'en' => 'Get in touch'
                     ]); ?>
             </a></li>
