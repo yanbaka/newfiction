@@ -15,7 +15,7 @@
                         'en' => 'Get in touch'
                     ]); ?>
             </a></li>
-                <li class="-linkedin md:hidden"><a class="https://www.linkedin.com/in/thekosuke/" target="_blank">LinkedIn</a></li>
+                <li class="-linkedin md:hidden"><a href="https://www.linkedin.com/in/thekosuke/" target="_blank">LinkedIn</a></li>
             </ul>
         </div>
         <div class="language flex px-4 py-2">
